@@ -1,0 +1,89 @@
+/***********************************************************************************************************************************/
+/***********************************************************************************************************************************/
+/****GENERAL CLASSES****/
+body{
+	background-color:#DCDCDC;
+}
+.centeringContainer{
+	margin-left:auto;
+	margin-right:auto;
+	width:1040px;
+	position:relative;
+}
+#appView{
+	background-color: #FFFFFF;
+}
+p, a, h1, h2, h3, h4, h5, h6{
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+
+
+
+/***********************************************************************************************************************************/
+/***********************************************************************************************************************************/
+/*****appPreView TEMPLATE****/
+#appPreView{
+}
+
+
+
+
+/***********************************************************************************************************************************/
+/***********************************************************************************************************************************/
+/*****HEADER****/
+.header{
+}
+
+
+/***********************************************************************************************************************************/
+/**HEADER TOP AREA**/
+.headerTopSection{
+	height:100px;
+	margin:10px;
+}
+.headerLogo{
+	float: left;
+}
+
+.headerContactUs{
+	float: left;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+
+.headerAcctCartCont{
+	float: right;
+}
+.headerAcctCart{
+}
+.headerCartAcct{
+}
+.headerCartAcct span{
+	margin-left: 5px;
+}
+.headerCartAcct a img{
+	margin-top: 5px;
+}
+.headerCartAcct a{
+	color:#004088;
+	text-decoration: underline;
+	font-size:12px;
+}
+.headerCartAcct a:hover{
+	color:black;
+	text-decoration:none;
+}
+.headerCartAcct a.headerCartText{
+	font-weight:bold;
+}
+
+.headerCartDetails{
+}
+.headerCartDetails a{
+	color: #000000;
+    float: right;
+    font-size: 11px;
+    margin-top: 2px;
+    text-decoration: none;
+}
