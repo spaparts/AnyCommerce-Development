@@ -49,7 +49,10 @@ p, a, h1, h2, h3, h4, h5, h6{
 .headerContactUs{
 	float: left;
     margin-left: 10px;
-    margin-top: 50px;
+    margin-top: 10px;
+}
+
+#ci07bc{
 }
 
 .headerAcctCartCont{
@@ -58,6 +61,7 @@ p, a, h1, h2, h3, h4, h5, h6{
 .headerAcctCart{
 }
 .headerCartAcct{
+	float: right;
 }
 .headerCartAcct span{
 	margin-left: 5px;
@@ -86,4 +90,63 @@ p, a, h1, h2, h3, h4, h5, h6{
     font-size: 11px;
     margin-top: 2px;
     text-decoration: none;
+}
+
+
+/***********************************************************************************************************************************/
+/**HEADER MID AREA**/
+
+.headerMidSection{
+	background: none repeat scroll 0 0 #F6F6EE;
+    height: 34px;
+    margin: 0 10px;
+    position: relative;
+}
+.headerMidLeftSection{
+	float: left;
+	margin-top: 1px;
+	font-size: 9pt;
+	text-decoration:none;
+}
+div.headerMidLeftSection a{
+	font: normal 9pt/32px Arial, Helvetica, sans-serif;
+	color: #000;
+	margin: 0 10px;
+	text-decoration: none;
+}
+div.headerMidLeftSection a:hover{
+	color:#B90505;
+}
+div.headerMidLeftSection font{
+	color: rgb(255, 0, 0);
+	display: inline;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.headerMidRightSection{
+	float: right;
+    margin-right: 10px;
+    margin-top: 4px;
+}
+
+
+/***********************************************************************************************************************************/
+/**HEADER BOTTOM AREA**/
+.headerBottomSection{
+	background: none repeat scroll 0 0 #016DF4;
+    border-radius: 4px;
+    height: 33px;
+    margin: 7px 10px;
+}
+
+.headerBottomLeftSection{
+	color: #FFFFFF;
+    font: bold 12pt/33px Arial,Helvetica,sans-serif;
+    margin-left: 10px;
+}
+
+#headerManufacturerSelect{
+	float: right;
+    margin-right: 10px;
+    margin-top: 6px;
 }

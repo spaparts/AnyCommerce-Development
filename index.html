@@ -134,7 +134,10 @@ ANIMATION TESTING
         </div>
         <div class="headerAcctCartCont">
         	<div class="headerChatSupport">
-            	<img src="images/header/free_shipping.jpg" />
+            	<a href='#top' onClick="return showContent('company',{'show':'shipping'});"><img src="images/header/free_shipping.jpg" /></a>
+                <!-- BEGIN ProvideSupport.com Graphics Chat Button Code -->
+                	<div id="ci07bc" style="z-index:100;position:absolute"></div><div id="sc07bc" style="display:inline"></div><div id="sd07bc" style="display:none"></div><script type="text/javascript">var se07bc=document.createElement("script");se07bc.type="text/javascript";var se07bcs=(location.protocol.indexOf("https")==0?"https":"http")+"://image.providesupport.com/js/1kz1y44a1gjk20xce6tg914j6e/safe-standard.js?ps_h=07bc&ps_t="+new Date().getTime();setTimeout("se07bc.src=se07bcs;document.getElementById('sd07bc').appendChild(se07bc)",1)</script><noscript><div style="display:inline"><a href="http://www.providesupport.com?messenger=1kz1y44a1gjk20xce6tg914j6e">Chat Support</a></div></noscript>
+                <!-- END ProvideSupport.com Graphics Chat Button Code -->
             </div>
             <div class="headerCartAcct">
             	<a class="pointer bindByAnchor" href="#cart?."><img src="images/header/spd_cart.gif" /></a>
@@ -149,8 +152,31 @@ ANIMATION TESTING
         </div>
     </div>
     <div class="headerMidSection">
+    	<div class="headerMidLeftSection">
+        	<a href="#homepage?." class='bindByAnchor pointer'>Home</a>
+            |
+            <a href="http://www.spapartsdepot.com/about_us.cgis">About Us</a>
+            |
+            <a target="_blank" href="http://spapartsdepot.blogspot.com">Blog</a>
+            |
+            <a href="http://www.spapartsdepot.com/category/help">Help Files</a>
+            |
+            <a href="https://www.spapartsdepot.com/c=ZHkAO79gl21P4E8pAApm5aJeV/s=www.spapartsdepot.com/customer/login">Register/Login</a>
+             |
+            <a href="http://www.spapartsdepot.com/category/customer_service">Customer Care</a>
+            |   
+            <font color="red">Store Hours: 9am-6pm Mon-Fri (Pacific), Sat-Sun 9am-3pm</font>
+        </div>
+        <div class="headerMidRightSection">
+        	<a style="color:#006FF1; font-size:10pt; text-decoration:underline;" href="mailto:help@spapartsdepot.biz">help@spapartsdepot.biz</a>
+        </div>
     </div>
     <div class="headerBottomSection">
+    	<div class="headerBottomLeftSection">Quality Spa Parts at the Depots Everyday Low Price!</div>
+        <select id="headerManufacturerSelect" onChange="return showContent('category',{'navcat':$(this).val()});"> <!--onChange="app.ext._store_spa.a.headerManufacturerSelect();"-->
+        	<option disabled="disabled"> View By Manufacturer</option>
+            <option value=".shop_by_brand.a_o_smith">A O Smith</option>
+        </select>
     </div>
 </div>
 
