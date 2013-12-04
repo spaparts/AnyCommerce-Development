@@ -43,6 +43,13 @@ app.rq.push(['css',1,app.vars.baseURL+'resources/anyplugins.css']);
 
 
 
+app.rq.push(['templateFunction','homepageTemplate','onCompletes',function(P) {
+}]);
+
+app.rq.push(['templateFunction','categoryTemplate','onCompletes',function(P) {
+	$("#headerManufacturerSelect").val("");
+}]);
+
 //add tabs to product data.
 //tabs are handled this way because jquery UI tabs REALLY wants an id and this ensures unique id's between product
 app.rq.push(['templateFunction','productTemplate','onCompletes',function(P) {
@@ -55,7 +62,8 @@ app.rq.push(['templateFunction','productTemplate','onCompletes',function(P) {
 				}
 			}
 		else	{} //couldn't find the tab to tabificate.
-	}]);
+}]);
+
 
 //sample of an onDeparts. executed any time a user leaves this page/template type.
 //app.rq.push(['templateFunction','homepageTemplate','onDeparts',function(P) {app.u.dump("just left the homepage")}]);

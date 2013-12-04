@@ -3,12 +3,15 @@
 /****GENERAL CLASSES****/
 body{
 	background-color:#DCDCDC;
+	margin:10px;
 }
 .centeringContainer{
 	margin-left:auto;
 	margin-right:auto;
 	width:1040px;
 	position:relative;
+	background-color:#F8F8EE;
+	overflow:hidden;
 }
 #appView{
 	background-color: #FFFFFF;
@@ -17,6 +20,11 @@ p, a, h1, h2, h3, h4, h5, h6{
 	font-family:Arial, Helvetica, sans-serif;
 }
 
+#mainContentArea{
+	max-width:825px;
+	background-color:#F8F8EE;
+	float:left;
+}
 
 
 
@@ -33,23 +41,26 @@ p, a, h1, h2, h3, h4, h5, h6{
 /***********************************************************************************************************************************/
 /*****HEADER****/
 .header{
+	padding-bottom:10px;
 }
 
 
 /***********************************************************************************************************************************/
 /**HEADER TOP AREA**/
 .headerTopSection{
-	height:100px;
+	height:90px;
 	margin:10px;
 }
 .headerLogo{
 	float: left;
 }
+.headerLogo a img {
+    margin-top: -10px;
+}
 
 .headerContactUs{
 	float: left;
     margin-left: 10px;
-    margin-top: 10px;
 }
 
 #ci07bc{
@@ -136,13 +147,15 @@ div.headerMidLeftSection font{
 	background: none repeat scroll 0 0 #016DF4;
     border-radius: 4px;
     height: 33px;
-    margin: 7px 10px;
+    margin: 7px 10px 0;
 }
 
 .headerBottomLeftSection{
 	color: #FFFFFF;
+    float: left;
     font: bold 12pt/33px Arial,Helvetica,sans-serif;
     margin-left: 10px;
+    width: 500px;
 }
 
 #headerManufacturerSelect{
@@ -150,3 +163,75 @@ div.headerMidLeftSection font{
     margin-right: 10px;
     margin-top: 6px;
 }
+
+
+
+
+/***********************************************************************************************************************************/
+/***********************************************************************************************************************************/
+/*****PERSISTENT SIDEBAR****/
+.persistentSidebar{
+	background-color: #F8F8EE;
+    float: left;
+    margin-left: 15px;
+    width: 200px;
+}
+
+/***********************************************************************************************************************************/
+/*****SEARCH BAR****/
+.searchBarCont{
+	background-color: #FFFFFF;
+    border: 1px solid #CDBFB2;
+    border-radius: 3px;
+    height: 35px;
+    margin-top: 3px;
+}
+
+#searchButton{
+	background-image: url("images/sidebar/searchbutton.gif");
+    border: 0 none;
+    height: 20px;
+    margin-top: 7px;
+    width: 24px;
+}
+.productSearchKeyword{
+	background-color: #FFFFFF;
+    border: 1px solid #C0C0C0;
+    color: #000000;
+    float: left;
+    font-family: verdana,arial,helvetica;
+    font-size: 8pt;
+    height: 14px;
+    margin-left: 8px;
+    margin-right: 3px;
+    margin-top: 8px;
+}
+
+
+/***********************************************************************************************************************************/
+/*****SEARCH BY CATEGORY****/
+.sidebarCategoryContainer{
+	background-color: #FFFFFF;
+    border: 1px solid #CDBFB2;
+    border-radius: 3px;
+    margin-top: 3px;
+}
+.sidebarCategoryContainer a{
+	margin-left: 7px;
+    padding-left: 17px;
+	color: #C30505;
+    font-size: 10.6667px;
+    text-decoration: none;
+}
+
+
+/***********************************************************************************************************************************/
+/*****NEWSLETTER SIGN-UP****/
+.sidebarNewsletterCont{
+	background-color: #FFFFFF;
+    border: 1px solid #CDBFB2;
+    border-radius: 3px;
+}
+
+
+
