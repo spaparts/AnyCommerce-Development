@@ -680,10 +680,12 @@ ANIMATION TESTING
     	<img src="images/sidebar/newsletterbar.gif" />
     	<form action='#' id='subscribeFrm' name='subscribeFrm' onSubmit="app.ext.store_crm.u.handleSubscribe($(this)); return false">
             <fieldset class='userInfo'>
+                <p>Enter your Full Name here</p>
                 <input type="text" name='fullname' value='' placeholder="   Name" class="subName" id='subscribeFullname' />
+                <p>Enter your Email here</p>
                 <input type="email" name='login' value='' placeholder="   E-mail Address" class="subEmail" id='subscribeLogin' />
                 <fieldset data-bind="var:newsletters(@lists); format:subscribeCheckboxes; extension:store_crm;" class='borderNone subscriberLists'></fieldset>
-                <input class="subButton pointer" type="submit" value="Join" id="" />
+                <input class="subButton pointer" type="submit" value="" id="" />
             </fieldset>
         </form>
     </div>
