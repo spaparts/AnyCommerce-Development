@@ -725,7 +725,7 @@ ANIMATION TESTING
     </div>
     <div class="footerBottomSection">
     	<div align="center">
-            Copyright © 2013. Please read our <a target="_blank" href="http://www.spapartsdepot.com/privacy.cgis">Privacy</a> and <a target="_blank" href="http://www.spapartsdepot.com/returns.cgis">Returns Policies</a>
+            Copyright © 2013. Please read our <a class="pointer" href='#top' onClick="return showContent('company',{'show':'privacy'});">Privacy</a> and <a class="pointer" href='#top' onClick="return showContent('company',{'show':'return'});">Returns Policies</a>
         </div>
         
         <div align="center">
@@ -780,10 +780,74 @@ the homepageTemplate template is loaded into mainContentArea by default when the
 -->
 <div id='homepageTemplate' class='homeTemplate'>
 	
-	<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList'></ul>
+	<div class="homepageleftSection">
+    	<div class="homepageFeatProdSection">
+        	<div class="homepageFeatProdTitleBar">
+            	<p>Featured Products</p>
+            </div>
+            <div class="homepageFeatProdList">
+            	<a class="pointer" onClick="return showContent('category',{'navcat':'.featured_items'});">More Featured &raquo; </a>
+            </div>
+        </div>
+        <div class="homepageShopCatSection">
+        	<div class="homepageShopCatTitleBar">
+            	<p>Shop By Category</p>
+            </div>
+            <ul class="homepageShopCatList">
+            	<li>
+                	<a class="pointer" onClick="return showContent('category',{'navcat':'.caldera_spas'});"><img src="images/homepage/shopbycategory/calderas.jpg" /></a>
+                	<h5>Caldera Spas PARTS</h5>
+                    <p>We Specialize in Caldera spa parts & Tech Support!</p>
+                </li>
+                <li>
+                	<a class="pointer" onClick="return showContent('category',{'navcat':'.spa_chemicals'});"><img src="images/homepage/shopbycategory/chem.jpg" /></a>
+                	<h5>Spa Chemicals</h5>
+                    <p>More than 25 years, Leisure Time has been the premier name in spa water care.</p>
+                </li>
+                <li>
+                	<a class="pointer" onClick="return showContent('category',{'navcat':'.filter_cartridges'});"><img src="images/homepage/shopbycategory/spa_filters.jpg" /></a>
+                	<h5>Spa Replacement Filters</h5>
+                    <p>Replacement filters for most brands of spas</p>
+                </li>
+                <li>
+                	<a class="pointer" onClick="return showContent('category',{'navcat':'.pumps___pump_parts'});"><img src="images/homepage/shopbycategory/pumpsnparts.jpg" /></a>
+                	<h5>Spa Pumps & Parts</h5>
+                    <p>Aqua Flo, Water Way Laing, Vico, Grundfos & More</p>
+                </li>
+                <li>
+                	<a class="pointer" onClick="return showContent('category',{'navcat':'.heaters___elements'});"><img src="images/homepage/shopbycategory/heatersparts.jpg" /></a>
+                	<h5>Heaters & Elements</h5>
+                    <p>Heater Elements, Flo-Thru, Heater Gaskets & O-Rings, for Caldera, Hot Spring, Sundance</p>
+                </li>
+                <li>
+                	<a class="pointer" onClick="return showContent('category',{'navcat':'.'});"><img src="" /></a>
+                	<h5></h5>
+                    <p></p>
+                </li>
+                
+                <li>
+                	<a class="pointer" onClick="return showContent('category',{'navcat':'.'});"><img src="" /></a>
+                	<h5></h5>
+                    <p></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="homepageRightSection">
+    	<div class="homepageBestsellersSection">
+        	<div class="homepageBestsellersTitleBar">
+            	<p>Best Sellers</p>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    <!--<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList'></ul>
 
 	<ul data-bind="var: category(@products); format: productList; editor: finder; extension: store_prodlist; loadsTemplate: productListTemplate; hide_summary:1; before:<h2>Featured Items</h2>; withReviews:1;" class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul>
 	<p data-bind="var: category(%page.description); format:wiki; wikiFormats:myRIA; editor: textarea;"></p>
+    -->
 
 <!-- a sample of how to format an elastic native search in a data-bind -->
 <!--

@@ -366,3 +366,160 @@ div.headerMidLeftSection font{
 	color:#CC0000;
 }
 
+
+
+
+
+
+
+/***********************************************************************************************************************************/
+/***********************************************************************************************************************************/
+/*****HOMEPAGE****/
+#homepageTemplate{
+}
+
+
+/***********************************************************************************************************************************/
+/*****HOMEPAGE LEFT SECTION****/
+/***********************************************************************************************************************************/
+.homepageleftSection{
+	float: left;
+    margin-left: 5px;
+    width: 600px;
+}
+
+.homepageFeatProdSection{
+	float: left;
+    width: 100%;
+}
+.homepageFeatProdTitleBar{
+	background: #006ef1; /* Old browsers */
+	background: -moz-linear-gradient(top,  #006ef1 0%, #0a55ad 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#006ef1), color-stop(100%,#0a55ad)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #006ef1 0%,#0a55ad 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #006ef1 0%,#0a55ad 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #006ef1 0%,#0a55ad 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #006ef1 0%,#0a55ad 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006ef1', endColorstr='#0a55ad',GradientType=0 ); /* IE6-9 */
+    border-radius: 4px;
+    float: left;
+    margin-bottom: 3px;
+    width: 100%;
+}
+.homepageFeatProdTitleBar p{
+	color: #FFFFFF;
+    font: bold 10pt/23px Arial,Helvetica,sans-serif;
+    left: 10px;
+    position: relative;
+    top: 0;
+	margin-bottom:0;
+}
+.homepageFeatProdList{
+	border: 1px solid #CAC4AE;
+    border-radius: 3px;
+    float: left;
+    width: 100%;
+}
+.homepageFeatProdList a{
+	text-decoration: none;
+	font-family: verdana,arial,helvetica;
+    font-size: 8pt;
+	color: #666666;
+	float:right;
+}
+.homepageFeatProdList a:hover{
+	color:#CC0000;
+}
+
+.homepageShopCatSection{
+	float: left;
+    margin-top: 10px;
+    width: 100%;
+}
+.homepageShopCatTitleBar{
+	background: #006ef1; /* Old browsers */
+	background: -moz-linear-gradient(top,  #006ef1 0%, #0a55ad 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#006ef1), color-stop(100%,#0a55ad)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #006ef1 0%,#0a55ad 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #006ef1 0%,#0a55ad 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #006ef1 0%,#0a55ad 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #006ef1 0%,#0a55ad 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006ef1', endColorstr='#0a55ad',GradientType=0 ); /* IE6-9 */
+	border-radius:4px;
+}
+.homepageShopCatTitleBar p{
+	color: #FFFFFF;
+    font: bold 10pt/23px Arial,Helvetica,sans-serif;
+    left: 10px;
+    position: relative;
+    top: 0;
+}
+
+.homepageShopCatList{
+	float: left;
+    margin: 0;
+    padding: 0;
+}
+.homepageShopCatList li{
+	border: 2px solid #3F67D6;
+    color: #666666;
+    float: left;
+    font-family: verdana,arial,helvetica;
+    font-size: 8pt;
+    height: 196px;
+    list-style: none outside none;
+    margin: 5px;
+    padding: 5px;
+    width: 173px;
+}
+.homepageShopCatList li a img{
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 140px;
+}
+.homepageShopCatList li h5{
+	color: #666666;
+    font-family: verdana,arial,helvetica;
+    font-size: 8pt;
+	font-weight:bold;
+	text-align:center;
+}
+.homepageShopCatList li p{
+	color: #666666;
+    font-family: verdana,arial,helvetica;
+    font-size: 8pt;
+	text-align:center;
+}
+
+/***********************************************************************************************************************************/
+/*****HOMEPAGE RIGHT SECTION****/
+/***********************************************************************************************************************************/
+.homepageRightSection{
+	float: left;
+    margin-left: 5px;
+    width: 200px;
+}
+
+.homepageBestsellersSection{
+}
+.homepageBestsellersTitleBar{
+	background: #006ef1; /* Old browsers */
+	background: -moz-linear-gradient(top,  #006ef1 0%, #0a55ad 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#006ef1), color-stop(100%,#0a55ad)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #006ef1 0%,#0a55ad 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #006ef1 0%,#0a55ad 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #006ef1 0%,#0a55ad 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #006ef1 0%,#0a55ad 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006ef1', endColorstr='#0a55ad',GradientType=0 ); /* IE6-9 */
+
+	border-radius:4px;
+}
+.homepageBestsellersTitleBar p{
+	color: #FFFFFF;
+    font: bold 10pt/23px Arial,Helvetica,sans-serif;
+    left: 10px;
+    position: relative;
+    top: 0;
+}
