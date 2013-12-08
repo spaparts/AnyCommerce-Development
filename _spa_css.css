@@ -592,3 +592,63 @@ div.headerMidLeftSection font{
 	width:120px;
 	height:120px;
 }
+
+
+
+
+
+
+
+
+/***********************************************************************************************************************************/
+/***********************************************************************************************************************************/
+/*****PRODUCT LIST TEMPLATE****/
+.productList > li{
+	height: 80px;
+    width: 275px;
+}
+
+.prodThumbContainer{
+	float: left;
+    margin-right: 5px;
+}
+
+.productList > li h3{
+	float: left;
+    width: 215px;
+	font-family: verdana,arial,helvetica;
+    font-size: 8pt;
+	color:#0000ee;
+}
+.productList > li h3:hover{
+	color:#CC0000;
+}
+
+div.productListPriceSection{
+	float: left;
+    width: 215px;
+	color: #666666;
+    font-family: verdana,arial,helvetica;
+    font-size: 7pt;
+}
+div.productListPriceSection h6{
+	float: left;
+    font-family: verdana,arial,helvetica;
+    font-size: 7pt;
+    font-weight: normal;
+}
+div.productListPriceSection h5{
+	font-family: verdana,arial,helvetica;
+    font-size: 7pt;
+    font-weight: normal;
+    text-decoration: line-through;
+}
+div.productListPriceSection h4{
+	font-family: verdana,arial,helvetica;
+    font-size: 7pt;
+	font-weight:bold;
+}
+div.productListPriceSection span{
+	font-family: verdana,arial,helvetica;
+    font-size: 7pt;
+}
