@@ -903,14 +903,14 @@ the homepageTemplate template is loaded into mainContentArea by default when the
         </div>
     </div>
     <div class="homepageRightSection">
-    	<div class="homepageBestsellersSection">
-        	<div class="homepageBestsellersTitleBar">
+    	<div class="rightSidebarBestsellersSection">
+        	<div class="rightSidebarBestsellersTitleBar">
             	<p>Best Sellers</p>
             </div>
-            <div class="homepageBestsellersList">
+            <div class="rightSidebarBestsellersList">
             </div>
         </div>
-        <div class="homepageLinksSection">
+        <div class="rightSidebarLinksSection">
         	<a target="_blank" class="pointer" href="https://www.facebook.com/SpaPartsDepot"><img src="images/homepage/links/likeusonfacebook_icon.jpg" /></a>
             <a target="_blank" class="pointer" href="http://www.waterwayspapumps.com/"><img src="images/homepage/links/waterwaylogo.png" /></a>
             <a target="_blank" class="pointer" href="http://www.aquaflopumps.spapartsdepot.com/"><img src="images/homepage/links/aqua_flo_pumps.jpg" /></a>
@@ -961,19 +961,42 @@ don't modify the 'data-templateid' unless you are changing template names and up
 -->
 <div id='categoryTemplate' class='loadingBG categoryTemplate'>
 
-	<ul class='breadcrumb clearfix noPadOrMargin fluidList' data-bind='var: category(id); format:breadcrumb; extension:store_navcats; loadsTemplate: breadcrumbTemplate;'></ul>
-
-	<img data-bind="var: category(%page.banner1); format: banner; editor: banner; height:250; width:750; extension: myRIA;" src='images/blank.gif' alt='' />
-
-	<h2 data-bind="var: category(%page.header); format: text; editor: text;"></h2>
-
-	<p data-bind="var: category(%page.description); format:wiki; wikiFormats:myRIA; editor: textarea;"></p>
-
-	<ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList'></ul><!-- outputs a list of subcategories -->
-
-	<ul data-bind="var: category(@products); format: productList; editor: finder; extension: store_prodlist; loadsTemplate: productListTemplate; withReviews:1; items_per_page: 25;" class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul><!-- outputs the product list -->
-
-	<p data-bind="var: category(%page.description2); format:wiki; wikiFormats:myRIA; editor: textarea;"></p>
+	<div class="categoryMainContentSection">
+        <ul class='breadcrumb clearfix noPadOrMargin fluidList' data-bind='var: category(id); format:breadcrumb; extension:store_navcats; loadsTemplate: breadcrumbTemplate;'></ul>
+    
+        <img data-bind="var: category(%page.banner1); format: banner; editor: banner; height:250; width:750; extension: myRIA;" src='images/blank.gif' alt='' />
+    
+        <h2 data-bind="var: category(%page.header); format: text; editor: text;"></h2>
+    
+        <p data-bind="var: category(%page.description); format:wiki; wikiFormats:myRIA; editor: textarea;"></p>
+    
+        <ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList'></ul><!-- outputs a list of subcategories -->
+    
+        <ul data-bind="var: category(@products); format: productList; editor: finder; extension: store_prodlist; loadsTemplate: productListTemplate; withReviews:1; items_per_page: 25;" class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul><!-- outputs the product list -->
+    
+        <p data-bind="var: category(%page.description2); format:wiki; wikiFormats:myRIA; editor: textarea;"></p>
+    </div>
+    <div class="categorySidebarSection">
+    	<div class="rightSidebarBestsellersSection">
+            <div class="rightSidebarBestsellersTitleBar">
+                <p>Best Sellers</p>
+            </div>
+            <div class="rightSidebarBestsellersList">
+            </div>
+        </div>
+        <div class="rightSidebarLinksSection">
+            <a target="_blank" class="pointer" href="https://www.facebook.com/SpaPartsDepot"><img src="images/homepage/links/likeusonfacebook_icon.jpg" /></a>
+            <a target="_blank" class="pointer" href="http://www.waterwayspapumps.com/"><img src="images/homepage/links/waterwaylogo.png" /></a>
+            <a target="_blank" class="pointer" href="http://www.aquaflopumps.spapartsdepot.com/"><img src="images/homepage/links/aqua_flo_pumps.jpg" /></a>
+            <a target="_blank" class="pointer" href="http://www.laingspapumps.com/"><img src="images/homepage/links/laing2.jpg" /></a>
+            <a target="_blank" class="pointer" href="http://www.spapumps.com/"><img src="images/homepage/links/spapumps_sidebar.jpg" /></a>
+            <a target="_blank" class="pointer" href="http://www.sandiegospasales.com/"><img src="images/homepage/links/freeflow_logo.jpg" /></a>
+            <a target="_blank" class="pointer" href="http://www.leisuretimechemicals.com/"><img src="images/homepage/links/spa_chem.jpg" /></a>
+            <a target="_blank" class="pointer" href="http://www.calderaspasparts.com/"><img src="images/homepage/links/caldera_logo.jpg" /></a>
+            <a target="_blank" class="pointer" href="http://www.hydroquipspapack.com/"><img src="images/homepage/links/hydro_quip.jpg" /></a>
+            <a target="_blank" class="pointer" href="http://www.magicplasticsproducts.com/"><img src="images/homepage/links/magic_plastic_sidebar.gif" /></a>
+        </div>
+    </div>
 
 
 </div>

@@ -506,9 +506,9 @@ div.headerMidLeftSection font{
     width: 200px;
 }
 
-.homepageBestsellersSection{
+.rightSidebarBestsellersSection{
 }
-.homepageBestsellersTitleBar{
+.rightSidebarBestsellersTitleBar{
 	background: #006ef1; /* Old browsers */
 	background: -moz-linear-gradient(top,  #006ef1 0%, #0a55ad 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#006ef1), color-stop(100%,#0a55ad)); /* Chrome,Safari4+ */
@@ -520,7 +520,7 @@ div.headerMidLeftSection font{
 
 	border-radius:4px;
 }
-.homepageBestsellersTitleBar p{
+.rightSidebarBestsellersTitleBar p{
 	color: #FFFFFF;
     font: bold 10pt/23px Arial,Helvetica,sans-serif;
     left: 10px;
@@ -528,15 +528,67 @@ div.headerMidLeftSection font{
     top: 0;
 }
 
-.homepageBestsellersList{
+.rightSidebarBestsellersList{
 }
 
-.homepageLinksSection{
+.rightSidebarLinksSection{
 }
-.homepageLinksSection a img{
+.rightSidebarLinksSection a img{
 	background-color: #FFFFFF;
     border: 1px solid #CAC4AE;
     border-radius: 3px;
     margin: 3px;
     padding: 9px 5px;
+}
+
+
+
+
+
+
+
+
+/***********************************************************************************************************************************/
+/***********************************************************************************************************************************/
+/*****CATEGORY TEMPLATE****/
+.categoryMainContentSection{
+	float: left;
+    margin-left: 5px;
+    width: 600px;
+}
+
+.categorySidebarSection{
+	float: left;
+    margin-left: 5px;
+    width: 200px;
+}
+
+
+
+
+
+
+
+/***********************************************************************************************************************************/
+/***********************************************************************************************************************************/
+/*****CATEGORY LIST TEMPLATE****/
+.categoryList > li{
+	margin: 0;
+	height:156px;
+	width:140px;
+	padding:5px;
+	padding-bottom:10px;
+}
+.catName{
+	font-family: verdana,arial,helvetica;
+    font-size: 9pt;
+    font-weight: bold;
+	color: #0F67EC;
+}
+.catName:hover{
+	color:#CC0000;
+}
+.thumbContainer{
+	width:120px;
+	height:120px;
 }
