@@ -518,7 +518,11 @@ div.headerMidLeftSection font{
 	background: linear-gradient(to bottom,  #006ef1 0%,#0a55ad 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006ef1', endColorstr='#0a55ad',GradientType=0 ); /* IE6-9 */
 
-	border-radius:4px;
+	background: linear-gradient(to bottom, #006EF1 0%, #0A55AD 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border-radius: 4px;
+    float: left;
+    height: 23px;
+    width: 100%;
 }
 .rightSidebarBestsellersTitleBar p{
 	color: #FFFFFF;
@@ -539,6 +543,48 @@ div.headerMidLeftSection font{
     border-radius: 3px;
     margin: 3px;
     padding: 9px 5px;
+}
+
+
+/***********************************************************************************************************************************/
+/*****bestsellersProductListTemplate****/
+.bestsellerProductList{
+	background-color: #FFFFFF;
+    border: 1px solid #CAC4AE;
+    border-radius: 3px;
+    float: left;
+    margin-bottom: 3px;
+    margin-top: 3px;
+    width: 100%;
+}
+.bestsellersProductListTemplate h3{
+	color: #666666;
+    float: left;
+    font-family: verdana,arial,helvetica;
+    font-size: 8pt;
+    font-weight: bold;
+    margin-left: 8px;
+    text-align: center;
+    width: 160px;
+}
+.bestsellersProductListTemplate a{
+	color: #0F67EC;
+    float: left;
+    font-family: verdana,arial,helvetica;
+    font-size: 8pt;
+    margin-left: 53px;
+    margin-top: 5px;
+    text-decoration: underline;
+}
+.bestsellersProductListTemplate a:hover{
+	color:#CC0000;
+}
+.bestsellersProductListTemplate div.prodThumbContainer{
+	float: none;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 112px;
 }
 
 
