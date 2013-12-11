@@ -97,6 +97,21 @@ var _store_spa = function() {
 		},//END u FUNCTIONS
 		
 		renderFormats : {
+			wikiAndTruncText : function($tag,data)	{
+				/*
+				try not to barf in your mouth when you read this.
+				The wiki translator doesn't like dealing with a jquery object (this will be addressed at some point).
+				it needs a dom element. so a hidden element is created and the wiki translator saves/modifies that.
+				then the contents of that are saved into the target jquery object.
+				*/
+				var $tmp = $('<div \/>').attr('id','TEMP_'+$tag.attr('id')).hide().appendTo('body');
+				var target = document.getElementById('TEMP_'+$tag.attr('id')); //### creole parser doesn't like dealing w/ a jquery object. fix at some point.
+				myCreole.parse(target, data.value,{},data.bindData.wikiFormats);
+				$tag.append($tmp.html());
+				var o = app.u.truncate($tag.text(),data.bindData.numCharacters)
+				$tag.text(o);
+				$tmp.empty().remove();
+			},
 			
 		}
 	}

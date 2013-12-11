@@ -435,6 +435,12 @@ div.headerMidLeftSection font{
 	color:#CC0000;
 }
 
+.homepageFeatProdList{
+}
+.homepageFeatProdList div div.mpControlContainer{
+	display:none;
+}
+
 .homepageShopCatSection{
 	float: left;
     margin-top: 10px;
@@ -496,6 +502,51 @@ div.headerMidLeftSection font{
     font-size: 8pt;
 	text-align:center;
 }
+
+
+/***********************************************************************************************************************************/
+/*****featuredProductListTemplate****/
+.productList > li.featuredProductListTemplate{
+	height: 282px;
+    width: 176px;
+}
+li.featuredProductListTemplate div.prodThumbContainer{
+	float: none;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 160px;
+}
+.productList > li.featuredProductListTemplate h3{
+	float: none;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 160px;
+	color: #000000;
+    font: bold 9pt Tahoma,Arial,Helvetica,sans-serif;
+    margin-top: 10px;
+	text-align:center;
+}
+.productList > li.featuredProductListTemplate h3:hover{
+	color: #000000;
+}
+.productList > li.featuredProductListTemplate div.featuredProductProdDesc{
+	color: #000000;
+    font: 9pt Tahoma,Arial,Helvetica,sans-serif;
+    margin: 5px 0;
+}
+.productList > li.featuredProductListTemplate img.featuredProductBuyNow{
+	display: block;
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    position: relative;
+    width: 82px;
+}
+
+
 
 /***********************************************************************************************************************************/
 /*****HOMEPAGE RIGHT SECTION****/
