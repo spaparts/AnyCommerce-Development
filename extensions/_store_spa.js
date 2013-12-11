@@ -20,6 +20,7 @@ var _store_spa = function() {
 	var r= {
 		vars : {
 			catTemplates : {
+				".featured_items" : "categoryFeaturedProductsTemplate",
 			},
 		},
 		
