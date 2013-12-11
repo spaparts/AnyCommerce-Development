@@ -418,20 +418,20 @@ div.headerMidLeftSection font{
     top: 0;
 	margin-bottom:0;
 }
-.homepageFeatProdList{
+.homepageFeatProdListCont{
 	border: 1px solid #CAC4AE;
     border-radius: 3px;
     float: left;
     width: 100%;
 }
-.homepageFeatProdList a{
+.homepageFeatProdListCont a{
 	text-decoration: none;
 	font-family: verdana,arial,helvetica;
     font-size: 8pt;
 	color: #666666;
 	float:right;
 }
-.homepageFeatProdList a:hover{
+.homepageFeatProdListCont a:hover{
 	color:#CC0000;
 }
 

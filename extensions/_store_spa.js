@@ -27,6 +27,13 @@ var _store_spa = function() {
 			init : {
 				onSuccess : function(){
 					app.u.dump('BEGIN app.ext_store_spa.callbacks.init.onSuccess');
+					 //REACTIVATE AND REPLACE WITH A CATEGORY NAVPATH IF ANY CATEGORY PRODUCT LISTS NEED TO BE DISPLAYED ON THE HOMEPAGE.
+					 /*
+					 app.rq.push(['templateFunction','homepageTemplate','onCompletes',function(infoObj) {
+                                        var $context = $(app.u.jqSelector('#'+infoObj.parentID));
+                                        app.ext._store_spa.u.loadProductsAsList('.featured_items');
+                                }]);
+					*/
 				},
 				onError : function() {
 					app.u.dump('BEGIN app.ext_store_spa.callbacks.init.onError');
@@ -40,6 +47,16 @@ var _store_spa = function() {
 					app.u.dump('BEGIN ext_store_spa.callbacks.startExtension.onError');
 				}
 			},
+			renderProductsAsList : {
+					onSuccess : function(responseData) {
+			//                app.u.dump(app.data[responseData.datapointer]);
+							$('.homepageFeatProdList').anycontent({"templateID":"featuredItemsTemplate","datapointer":responseData.datapointer});
+					},
+					onError : function(responseData){
+							app.u.dump('Error in extension: _store_spa_ renderProductsAsList');
+							app.u.dump(responseData);
+					}
+			}
 		},
 		
 		
@@ -65,6 +82,17 @@ var _store_spa = function() {
 		},//END a FUNCTIONS
 		
 		u : {
+			loadProductsAsList :function(passedCat) {
+                        
+                                var _tag = {
+                                        "callback":"renderProductsAsList",
+                                        "extension":"_store_spa"
+                                }
+                                app.ext.store_navcats.calls.appNavcatDetail.init(passedCat, _tag,'immutable');
+        
+                                app.model.dispatchThis('immutable');
+                        
+                        }, //loadProductsAsList
 			
 		},//END u FUNCTIONS
 		
