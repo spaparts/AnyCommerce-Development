@@ -509,6 +509,10 @@ div.headerMidLeftSection font{
 .productList > li.featuredProductListTemplate{
 	height: 282px;
     width: 176px;
+	border-right:1px solid transparent;
+	border-image:url(images/homepage/featured/border.gif) 1 202;
+	padding-right:10px;
+	margin:5px;
 }
 li.featuredProductListTemplate div.prodThumbContainer{
 	float: none;
@@ -544,6 +548,10 @@ li.featuredProductListTemplate div.prodThumbContainer{
     margin-top: 5px;
     position: relative;
     width: 82px;
+}
+
+.homepageFeatProdList div .productList > li.featuredProductListTemplate:nth-child(3){
+	border:none;
 }
 
 
