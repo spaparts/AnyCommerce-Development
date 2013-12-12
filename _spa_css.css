@@ -876,9 +876,38 @@ td.prodSummaryContainer a.productPrintProd{
     margin-right: 10px;
 }
 
-.productBottomSection{
+.productBottomContainer{
 	background-color: #FFFFFF;
-    margin: 0 5px;
+    float: left;
+    margin-left: 5px;
     width: 715px;
-	float:left;
+}
+.productBottomSection{
+    float: left;
+    margin: 0 0 0 5px;
+    width: 456px;
+}
+.prodlistRelatedContainer{
+	background-color: #FFFFFF;
+    float: left;
+    width: 252px;
+	padding-top: 10px;
+	border:1px solid #D9D9D9;
+}
+.productBottomContainer h2{
+	color: #F21300;
+    float: left;
+    font: bold 9pt/20px Arial,Helvetica,sans-serif;
+    margin-top: 8px;
+    width: 254px;
+}
+.prodlistRelatedContainer li{
+	border-bottom: 1px solid #CAC4AE;
+	width: 235px;
+}
+.prodlistRelatedContainer li h3{
+	width: 175px;
+}
+.prodlistRelatedContainer li div.productListPriceSection{
+	width: 175px;
 }

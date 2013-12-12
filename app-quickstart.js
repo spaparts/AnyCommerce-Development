@@ -30,6 +30,7 @@ var myRIA = function() {
 //the list of templates that are commonly edited (same order as they appear in appTemplates
 			'homepageTemplate',	'categoryTemplate',
 			'categoryFeaturedProductsTemplate',
+			'productRelatedItemsListTemplate',
 			'categoryListTemplate',
 			'categoryListTemplateRootCats',
 			'productListTemplate',
