@@ -22,6 +22,7 @@ var _store_spa = function() {
 			catTemplates : {
 				".featured_items" : "categoryFeaturedProductsTemplate",
 			},
+            searchSize : 4
 		},
 		
 		callbacks : {
@@ -57,6 +58,19 @@ var _store_spa = function() {
 							app.u.dump('Error in extension: _store_spa_ renderProductsAsList');
 							app.u.dump(responseData);
 					}
+			},
+			populateRelatedItemsForProd : {
+				onSuccess : function(rd){
+						app.u.dump('BEGIN _store_spa.callbacks.populateRelatedItemsForProd.onSuccess');
+						rd.$list.removeClass('loadingBG');
+						rd.$list.anycontent({
+								templateID : "productRelatedItemsListTemplate",
+								datapointer : rd.datapointer
+								});
+						},
+				onError : function(rd){
+						app.u.dump('BEGIN store_thegrilllife.callbacks.populateRelatedItemsForProd.onError');
+						}
 			}
 		},
 		
@@ -85,15 +99,70 @@ var _store_spa = function() {
 		u : {
 			loadProductsAsList :function(passedCat) {
                         
-                                var _tag = {
-                                        "callback":"renderProductsAsList",
-                                        "extension":"_store_spa"
-                                }
-                                app.ext.store_navcats.calls.appNavcatDetail.init(passedCat, _tag,'immutable');
-        
-                                app.model.dispatchThis('immutable');
-                        
-                        }, //loadProductsAsList
+					var _tag = {
+							"callback":"renderProductsAsList",
+							"extension":"_store_spa"
+					}
+					app.ext.store_navcats.calls.appNavcatDetail.init(passedCat, _tag,'immutable');
+
+					app.model.dispatchThis('immutable');
+			
+			}, //loadProductsAsList
+			
+			loadRelatedItemsForProd : function(recentCat, infoObj, $context){
+				//Only render for products that have categories assigned
+				if(app.data[infoObj.datapointer]['%attribs']['user:app_category']){
+						//Check the recentCat against the product's categories. If we've come through search,
+						//or from the homepage, a direct link elsewhere, or loaded the app on the prod pages,
+						//recentCat will not be applicable (or in the latter case, nonexistent)
+						var cats = app.data[infoObj.datapointer]['%attribs']['user:app_category'].split("\n");
+						app.u.dump(cats);
+						if(!recentCat || cats.indexOf(recentCat) === -1){
+								recentCat = cats[0];
+								}
+						
+						var $container = $('.relatedItems', $context);
+						
+						//To avoid re-running searches, we keep any rendered related items lists around for reference.
+						//Iterate through them, hide any non-applicable ones.
+						var thisCatIsRendered = false;
+						$container.children().each(function(){
+								if($(this).data('navcat') !== recentCat){
+										$(this).hide();
+										}
+								else {
+										thisCatIsRendered = true;
+										$(this).show();
+										}
+								});
+						//Haven't rendered this category yet, so let's give it a shot!
+						if(!thisCatIsRendered){
+								app.u.dump(recentCat+" has not yet been rendered");
+								var $itemListContainer = $('<div class="loadingBG relatedItemsList" />');
+								$itemListContainer.data('navcat', recentCat);
+								
+								var elasticsearch = app.ext.store_search.u.buildElasticRaw({
+										"filter" : {
+												"term" : {"app_category":recentCat}
+												}
+										});
+								elasticsearch.size = app.ext._store_spa.vars.searchSize;
+								
+								var _tag = {
+										callback : "populateRelatedItemsForProd",
+										extension : "_store_spa",
+										datapointer : "prodRelatedSearch|"+infoObj.pid+"|"+recentCat,
+										$list : $itemListContainer
+										}
+								
+								app.ext.store_search.calls.appPublicProductSearch.init(elasticsearch, _tag, "mutable");
+								app.model.dispatchThis("mutable");
+								
+								
+								$container.append($itemListContainer);
+								}
+						}
+				}
 			
 		},//END u FUNCTIONS
 		

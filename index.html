@@ -1392,7 +1392,6 @@ this will likely become more flexible in the future. ###
 	</hgroup>
     <div class="productShipsWithinCont">
         <h3 data-bind='var: product(zoovy:ship_latency); format:hideIfSet;'>Normally ships within 1-2 days.</h3>
-        <div class="displayNone" data-bind='var: product(zoovy:ship_latency); format:showIfSet;><h3 data-bind='var: product(zoovy:ship_latency); format:text;pretext:Normally ships within ;posttext: days;'></h3></div>
 	</div>
 
 	<table class='marginBottom fullWidth gridTable' data-app-role='childrenSiblingsContainer'>
@@ -1409,7 +1408,6 @@ this will likely become more flexible in the future. ###
 		<fieldset data-bind='useParentData:true; format:atcQuantityInput; extension:store_product; pretext:Quantity: ; defaultValue:1;' class='borderNone'></fieldset>
 		<div class="productShipsWithinCont2">
             <h3 data-bind='var: product(zoovy:ship_latency); format:hideIfSet;'>Normally ships within 1-2 days.</h3>
-            <div class="displayNone" data-bind='product(zoovy:ship_latency); format:showIfSet;><h3 data-bind='var: product(zoovy:ship_latency); format:text;pretext:Normally ships within ;posttext: days;'></h3></div>
         </div>
 		<input type='submit' value='' class='ui-button ui-button-text ui-corner-all ui-state-default addToCartButton displayNone' data-bind='var: product(pid); format:addToCartButton; extension:store_product;'  />
 	</form>
@@ -1498,6 +1496,7 @@ It's done this way because ID's hard coded into template are bad mojo (templates
     <div style="font:bold 9pt/18px Arial, Helvetica, sans-serif; color:#F21300; border-bottom:1px solid #C5C5C5; margin-top:10px;">Specifications</div>
     <div data-bind='var: product(zoovy:prod_desc); format:wiki; wikiFormats:myRIA;'></div>
     <div style="font:bold 9pt/18px Arial, Helvetica, sans-serif; color:#F21300; border-bottom:1px solid #C5C5C5; margin-top:10px;">Look for Similar products by category:</div>
+	<div class="relatedItems"></div>
 </div>
 
 <!--
@@ -1508,6 +1507,10 @@ It's done this way because ID's hard coded into template are bad mojo (templates
 
 
 </div><!-- productTemplate -->
+
+<div id="productRelatedItemsListTemplate">
+        <ul data-bind="useParentData:true; format:productSearch; extension:myRIA; loadsTemplate:productListTemplateResults;" class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul>
+</div>
 
 
 
