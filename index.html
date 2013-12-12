@@ -1375,14 +1375,6 @@ this will likely become more flexible in the future. ###
 	<td class='prodSummaryContainer marginBottom no_underline'>
 	<h1 data-bind='var: product(zoovy:prod_name); format:text;'></h1>
 
-	<!--
-    <hgroup class='marginBottom'>
-		<h5 class='stid' data-bind='var: product(pid); format:text; pretext: Sku: ;'></h5>
-		<h5 data-bind='var: product(zoovy:prod_mfg); format:searchLink; extension:myRIA; pretext: Mfg: ;'></h5>
-		<h5 data-bind='var: product(zoovy:prod_mfgid); format:text; pretext: Mfg ID: ;'></h5>
-	</hgroup>
-    -->
-
 	<div class='priceContainer marginBottom'>
         <h5 class="prodMSRPPretext">MSRP:&nbsp;</h5><h5 class='prodMSRP' data-bind='var: product(zoovy:prod_msrp); format:money; currencySign: $;  hideZero:true;'></h5>
         <h4 class='basePrice' data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; pretext: Our Price: ;'></h4>
@@ -1391,8 +1383,17 @@ this will likely become more flexible in the future. ###
 			<span class='savingsPercentage' data-bind='var: product(pid); format:priceRetailSavingsPercentage; extension:myRIA; pretext: (; posttext:);'></span>
 		</span>
 	</div>
-	<div class="socialLinks"></div>
-
+    <hgroup class='marginBottom'>
+		<!--
+        <h5 class='stid' data-bind='var: product(pid); format:text; pretext: Sku: ;'></h5>
+        -->
+		<h5 data-bind='var: product(zoovy:prod_mfg); format:searchLink; extension:myRIA; pretext: Mfg: ;'></h5>
+		<h5 data-bind='var: product(zoovy:prod_mfgid); format:text; pretext: Mfg ID: ;'></h5>
+	</hgroup>
+    <div class="productShipsWithinCont">
+        <h3 data-bind='var: product(); format:hideIfSet;'>Normally ships within 1-2 days.</h3>
+        <div class="displayNone" data-bind='var: product(); format:showIfSet;><h3 data-bind='var: product(zoovy:ship_latency); format:text;pretext:Normally ships within ;posttext: days;'></h3></div>
+	</div>
 
 	<table class='marginBottom fullWidth gridTable' data-app-role='childrenSiblingsContainer'>
 		<tbody data-bind="var: product(zoovy:grp_children); format:productList; extension:store_prodlist; loadsTemplate:productListTemplateChildren;hide_summary:true; withInventory:1; withVariations:1;"></tbody>
@@ -1406,25 +1407,32 @@ this will likely become more flexible in the future. ###
 
 		<fieldset data-bind='var: product(pid); format:atcVariations; extension:store_product;' class='borderNone'></fieldset>
 		<fieldset data-bind='useParentData:true; format:atcQuantityInput; extension:store_product; pretext:Quantity: ; defaultValue:1;' class='borderNone'></fieldset>
-
-		<input type='submit' value='Add to Cart' class='ui-button ui-button-text ui-corner-all ui-state-default addToCartButton displayNone' data-bind='var: product(pid); format:addToCartButton; extension:store_product;'  />
+		<div class="productShipsWithinCont2">
+            <h3 data-bind='var: product(); format:hideIfSet;'>Normally ships within 1-2 days.</h3>
+            <div class="displayNone" data-bind='var: product(); format:showIfSet;><h3 data-bind='var: product(zoovy:ship_latency); format:text;pretext:Normally ships within ;posttext: days;'></h3></div>
+        </div>
+		<input type='submit' value='' class='ui-button ui-button-text ui-corner-all ui-state-default addToCartButton displayNone' data-bind='var: product(pid); format:addToCartButton; extension:store_product;'  />
 	</form>
-
-	<div data-bind='var:product(zoovy:prod_cpsiawarning); format:cpsiaWarning; extension:myRIA;'></div>
+    
+    <div class="productActionButtonCont">
+    	<a class="productTellAFriend" target="_blank" onclick="javascript:window.open('mailto:?subject=Check out what I found on spapartsdepot.com. &body=I thought you might be interested in this: ' + window.location);"><img src="images/productpage/spd_p_tellfrd.gif" /></a>
+        <a class="productPrintProd" href="javascript:window.print()"><img src="images/productpage/spd_p_printpg.gif" /></a>
+        <div class="socialLinks"></div>
+    </div>
+    
+    <!--
+    <menu data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='CRMButtonMenu'>
+        <a href='#' onClick='app.ext.store_crm.u.showReviewFrmInModal({"pid":$(this).parent().attr("data-pid"),"templateID":"reviewFrmTemplate"}); return false;'>Write Review</a>	|
+        <a href='#' onClick="app.ext.myRIA.a.add2BuyerList({sku:$(this).parent().attr('data-pid'),'listid':'wishlist'}); return false;">Add to Wishlist</a>
+	</menu>
+  	
+    <div data-bind='var:product(zoovy:prod_cpsiawarning); format:cpsiaWarning; extension:myRIA;'></div>
 	<div data-bind='var:product(zoovy:qty_price);format:quantityDiscounts; extension:store_product; pretext:Quantity Discounts:; className:marginBottom;'></div>
 
 	<section class='marginBottom'>
 		<span data-bind='var: reviews(reviews.average); format:addClass; className:review_;' class='reviewSprite'></span>
 		<span data-bind='var: reviews(reviews.total); format:text;posttext: from ;posttext: reviews; className:numReviews;'></span>
 	</section>
-
-	<menu data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='CRMButtonMenu'>
-
-	<a href='#' onClick='app.ext.store_crm.u.showReviewFrmInModal({"pid":$(this).parent().attr("data-pid"),"templateID":"reviewFrmTemplate"}); return false;'>Write Review</a>	|
-
-	<a href='#' onClick="app.ext.myRIA.a.add2BuyerList({sku:$(this).parent().attr('data-pid'),'listid':'wishlist'}); return false;">Add to Wishlist</a>
-
-	</menu>
 
 	</td>
 </tr>
@@ -1435,6 +1443,7 @@ the tabs are built in an onComplete.  ID's are added based on sku AND index, so 
 or the tab clicked won't open the right content.
 It's done this way because ID's hard coded into template are bad mojo (templates are recycled) and because using data-binds to add id's caused some serious issues
 -->
+<!--
 <div class='prodTabs tabbedProductContent'>
 
 	<ul class='tabs'>
@@ -1479,15 +1488,23 @@ It's done this way because ID's hard coded into template are bad mojo (templates
 
 
 
-
+-->
 </div>
 
 	</td>
 </tr>
 </table>
+<div class="productBottomSection">
+    <div style="font:bold 9pt/18px Arial, Helvetica, sans-serif; color:#F21300; border-bottom:1px solid #C5C5C5; margin-top:10px;">Specifications</div>
+    <div data-bind='var: product(zoovy:prod_desc); format:wiki; wikiFormats:myRIA;'></div>
+    <div style="font:bold 9pt/18px Arial, Helvetica, sans-serif; color:#F21300; border-bottom:1px solid #C5C5C5; margin-top:10px;">Look for Similar products by category:</div>
+</div>
+
+<!--
 <div class='prodlistRelatedContainer'>
 	<ul class='listStyleNone fluidList clearfix noPadOrMargin productList' data-bind="var: product(zoovy:related_products); format:productList; extension:store_prodlist;loadsTemplate:productListTemplate;hide_pagination:true;hide_summary:true; before:<h2>Similar Items</h2>; withReviews:1;"></ul>
 </div>
+-->
 
 
 </div><!-- productTemplate -->

@@ -771,7 +771,7 @@ div.productListPriceSection span{
 }
 .prodViewerContainer{
 	background-color: #FFFFFF;
-    margin: 5px;
+    margin: 5px 5px 0;
     width: 715px;
 }
 
@@ -834,4 +834,51 @@ div.productListPriceSection span{
     font-family: verdana,arial,helvetica;
     font-size: 8pt;
 	font-weight: bold;
+}
+
+.prodViewerContainer hgroup.marginBottom h5{
+	color: #F21300;
+	font:bold 9pt/25px Arial,Helvetica,sans-serif;
+}
+
+.productShipsWithinCont{
+}
+.productShipsWithinCont h3{
+	font-size: 8pt;
+    font-weight: normal;
+	color: #000000;
+}
+.productShipsWithinCont2{
+}
+.productShipsWithinCont2 h3{
+	color: #000000;
+    font-family: verdana,arial,helvetica;
+    font-size: 8pt;
+}
+
+.prodViewerAddToCartForm input.addToCartButton{
+	background-image:url(images/productpage/sp_add_to_cart.jpg);
+	height: 35px;
+    width: 140px;
+}
+
+td.prodSummaryContainer div.productActionButtonCont{
+}
+
+td.prodSummaryContainer a.productTellAFriend{
+	cursor: pointer;
+    float: left;
+}
+
+td.prodSummaryContainer a.productPrintProd{
+	float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.productBottomSection{
+	background-color: #FFFFFF;
+    margin: 0 5px;
+    width: 715px;
+	float:left;
 }
