@@ -1337,22 +1337,36 @@ this will likely become more flexible in the future. ###
 <tr>
 	<td class='imageContainer'>
 
-<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).attr("data-pid")});' class='pointer clearfix'  data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>
+        <div class='largeImageContainer'>
+            <div data-bind="var:product(zoovy:prod_image1; format:assignAttribute; attribute:data-imgsrc;">
+                <img src='blank.gif' class='prodBigImage prodMainImage' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='200' height='234' />
+            </div>
+        </div>
 
-	<div data-bind="var: product(zoovy:prod_is_tags); format:addTagSpans;" class='tagsContainer'></div>
-	<img src='blank.gif' class='prodBigImage' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='340' height='340' />
-
-</div>
-
-	<div data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='prodThumbs'>
-
-<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"2"});' class='pointer'><img src='blank.gif' data-bind='var: product(zoovy:prod_image2); format:imageURL;' alt='' width='100' height='100' /></div>
-
-<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"3"});' class='pointer'><img src='blank.gif' data-bind='var: product(zoovy:prod_image3); format:imageURL;' alt=''  width='100' height='100' /></div>
-
-<div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"4"});' class='pointer'><img src='blank.gif' data-bind='var: product(zoovy:prod_image4); format:imageURL;' alt='' width='100' height='100' /></div>
-
-	</div>
+        <div data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='prodThumbs'>
+    
+            <div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"1"});' class='pointer'>
+                <div data-bind="var:product(zoovy:prod_image1; format:assignAttribute; attribute:data-imgsrc;">
+                    <img class="thumbnail" src='blank.gif' data-bind='var: product(zoovy:prod_image1); format:imageURL;' alt='' width='60' height='60' />
+                </div>
+            </div>
+            <div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"2"});' class='pointer'>
+                <div data-bind="var:product(zoovy:prod_image2; format:assignAttribute; attribute:data-imgsrc;">
+                    <img class="thumbnail" src='blank.gif' data-bind='var: product(zoovy:prod_image2); format:imageURL;' alt='' width='60' height='60' />
+                </div>
+            </div>
+            <div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"3"});' class='pointer'>
+                <div data-bind="var:product(zoovy:prod_image3; format:assignAttribute; attribute:data-imgsrc;">
+                    <img class="thumbnail" src='blank.gif' data-bind='var: product(zoovy:prod_image3); format:imageURL;' alt='' width='60' height='60' />
+                </div>
+            </div>
+            <div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"4"});' class='pointer'>
+                <div data-bind="var:product(zoovy:prod_image4; format:assignAttribute; attribute:data-imgsrc;">
+                    <img class="thumbnail" src='blank.gif' data-bind='var: product(zoovy:prod_image4); format:imageURL;' alt='' width='60' height='60' />
+                </div>
+            </div>
+    
+        </div>
 
 	</td>
 

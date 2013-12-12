@@ -19,6 +19,9 @@ app.rq.push(['extension',0,'myRIA','app-quickstart.js','startMyProgram']);
 app.rq.push(['extension',0,'_store_spa','extensions/_store_spa.js']);
 app.rq.push(['extension',0,'prodlist_infinite','extensions/prodlist_infinite.js']);
 
+//CUSTOM SCRIPTS
+app.rq.push(['script',0,app.vars.baseURL+'zoom-master/jquery.zoom.js']);
+
 
 app.rq.push(['extension',0,'entomologist','extensions/entomologist/extension.js']);
 app.rq.push(['extension',0,'tools_animation','extensions/tools_animation.js']);
@@ -63,6 +66,54 @@ app.rq.push(['templateFunction','productTemplate','onCompletes',function(P) {
 				}
 			}
 		else	{} //couldn't find the tab to tabificate.
+	
+	//Begin hover zoom code
+	var image = $('.prodMainImage',$context).parent().attr('data-imgsrc');
+		 var imageURL = app.u.makeImage({
+		   "name" : image,
+		   "w" : 600,
+		   "h" : 750,
+		   "b" : "FFFFFF"
+		   });
+		 $('.largeImageContainer').zoom({
+		  url: imageURL,
+		  on:'mouseover',
+		  onZoomIn: function(){
+		   // the active class causes the curser to be switched to a zoom out image - this occurs when the image has zoom
+		   $('.largeImageContainer').addClass('active');
+		   },
+		  onZoomOut: function(){
+		   // restores the zoom in curser after zoom out
+		   $('.largeImageContainer').removeClass('active');
+		   }});
+		 $('.thumbnail',$context).on('mouseenter.productHover', function(){
+		  $('.largeImageContainer').trigger('zoom.destroy');
+		  var newImage = $(this).parent().attr('data-imgsrc');
+		  $('.prodMainImage',$context).attr('src', app.u.makeImage({
+		   "name" : newImage,
+		   "w" : 200,
+		   "h" : 234,
+		   "b" : "FFFFFF"
+		   }));
+		  var newImageURL = app.u.makeImage({
+		   "name" : newImage,
+		   "w" : 600,
+		   "h" : 750,
+		   "b" : "FFFFFF"
+		   });
+		  $('.largeImageContainer').zoom({
+		   url: newImageURL,
+		   on:'mouseover',
+		   onZoomIn: function(){
+			$('.largeImageContainer').addClass('active');
+			//app.u.dump("we're running addClass");
+			},
+		   onZoomOut: function(){
+			$('.largeImageContainer').removeClass('active');
+			}
+		   });
+		});
+	//End hover zoom code
 }]);
 
 
