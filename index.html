@@ -1331,7 +1331,9 @@ this will likely become more flexible in the future. ###
 
 <div id='productTemplate' class='productPage'>
 
+<!--
 <ul class='clearfix noPadOrMargin fluidList breadcrumb' data-bind='var: session(session.recentCategories.0); format:breadcrumb; extension:store_navcats; loadsTemplate: breadcrumbTemplate;'></ul>
+-->
 
 <table class='prodViewerContainer'>
 <tr>
@@ -1345,22 +1347,22 @@ this will likely become more flexible in the future. ###
 
         <div data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;' class='prodThumbs'>
     
-            <div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"1"});' class='pointer'>
+            <div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"1"});' class='pointer prodThumb'>
                 <div data-bind="var:product(zoovy:prod_image1; format:assignAttribute; attribute:data-imgsrc;">
                     <img class="thumbnail" src='blank.gif' data-bind='var: product(zoovy:prod_image1); format:imageURL;' alt='' width='60' height='60' />
                 </div>
             </div>
-            <div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"2"});' class='pointer'>
+            <div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"2"});' class='pointer prodThumb'>
                 <div data-bind="var:product(zoovy:prod_image2; format:assignAttribute; attribute:data-imgsrc;">
                     <img class="thumbnail" src='blank.gif' data-bind='var: product(zoovy:prod_image2); format:imageURL;' alt='' width='60' height='60' />
                 </div>
             </div>
-            <div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"3"});' class='pointer'>
+            <div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"3"});' class='pointer prodThumb'>
                 <div data-bind="var:product(zoovy:prod_image3; format:assignAttribute; attribute:data-imgsrc;">
                     <img class="thumbnail" src='blank.gif' data-bind='var: product(zoovy:prod_image3); format:imageURL;' alt='' width='60' height='60' />
                 </div>
             </div>
-            <div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"4"});' class='pointer'>
+            <div onClick='app.ext.store_product.u.showPicsInModal({"pid":$(this).parent().attr("data-pid"),"int":"4"});' class='pointer prodThumb'>
                 <div data-bind="var:product(zoovy:prod_image4; format:assignAttribute; attribute:data-imgsrc;">
                     <img class="thumbnail" src='blank.gif' data-bind='var: product(zoovy:prod_image4); format:imageURL;' alt='' width='60' height='60' />
                 </div>
@@ -1373,17 +1375,19 @@ this will likely become more flexible in the future. ###
 	<td class='prodSummaryContainer marginBottom no_underline'>
 	<h1 data-bind='var: product(zoovy:prod_name); format:text;'></h1>
 
-	<hgroup class='marginBottom'>
+	<!--
+    <hgroup class='marginBottom'>
 		<h5 class='stid' data-bind='var: product(pid); format:text; pretext: Sku: ;'></h5>
 		<h5 data-bind='var: product(zoovy:prod_mfg); format:searchLink; extension:myRIA; pretext: Mfg: ;'></h5>
 		<h5 data-bind='var: product(zoovy:prod_mfgid); format:text; pretext: Mfg ID: ;'></h5>
 	</hgroup>
+    -->
 
 	<div class='priceContainer marginBottom'>
-		<h4 class='basePrice' data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; pretext: Our Price: ;'></h4>
-		<h5 class='prodMSRP' data-bind='var: product(zoovy:prod_msrp); format:money; currencySign: $;  hideZero:true; pretext: MSRP: ;'></h5>
+        <h5 class="prodMSRPPretext">MSRP:&nbsp;</h5><h5 class='prodMSRP' data-bind='var: product(zoovy:prod_msrp); format:money; currencySign: $;  hideZero:true;'></h5>
+        <h4 class='basePrice' data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; pretext: Our Price: ;'></h4>
 		<span class='savings'>
-			<span class='savingsDifference' data-bind='var: product(pid); format:priceRetailSavingsDifference; extension:myRIA; pretext: You save: ;'></span>
+			<span class='savingsDifference' data-bind='var: product(pid); format:priceRetailSavingsDifference; extension:myRIA; pretext: You savings: ;'></span>
 			<span class='savingsPercentage' data-bind='var: product(pid); format:priceRetailSavingsPercentage; extension:myRIA; pretext: (; posttext:);'></span>
 		</span>
 	</div>
