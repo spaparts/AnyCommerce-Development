@@ -114,9 +114,7 @@ app.rq.push(['templateFunction','productTemplate','onCompletes',function(P) {
 		   });
 		});
 	//End hover zoom code
-	//app.ext._store_spa.u.loadRelatedItemsForProd(app.ext.myRIA.vars.session.recentCategories[0], P, $context);
 }]);
-						
 
 
 //sample of an onDeparts. executed any time a user leaves this page/template type.

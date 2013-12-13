@@ -29,19 +29,20 @@ var myRIA = function() {
 		"templates" : [
 //the list of templates that are commonly edited (same order as they appear in appTemplates
 			'homepageTemplate',	'categoryTemplate',
-			'categoryFeaturedProductsTemplate',
-			'productRelatedItemsListTemplate',
 			'categoryListTemplate',
 			'categoryListTemplateRootCats',
 			'productListTemplate',
-			'bestsellersProductListTemplate',
-			'featuredProductListTemplate',
 			'productListTemplateATC',
 			'productListTemplateBuyerList',
 			'productListTemplateResults',
 			'productTemplate',
 			'productTemplateQuickView',
 			'pageNotFoundTemplate',
+			//CUSTOM TEMPLATES
+			'categoryFeaturedProductsTemplate',
+			'productRelatedItemsListTemplate',
+			'bestsellersProductListTemplate',
+			'featuredProductListTemplate',
 //the list of templates that, in most cases, are left alone. Also in the same order as appTemplates
 			'breadcrumbTemplate',
 			'companyTemplate',
@@ -69,6 +70,7 @@ var myRIA = function() {
 			"recentCategories" : []
 			} //a list of other extensions (just the namespace) that are required for this one to load
 		},
+
 
 
 					////////////////////////////////////   CALLS    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\		
@@ -128,8 +130,8 @@ if(typeof window.onpopstate == 'object')	{
 	}
 //if popstate isn't supporeted, hashchange will use the anchor.
 else if ("onhashchange" in window)	{ // does the browser support the hashchange event?
-		_ignoreHashChange = false; //global var. when hash is changed from JS, set to true. see handleHashState for more info on this.
-		window.onhashchange = function () {
+	_ignoreHashChange = false; //global var. when hash is changed from JS, set to true. see handleHashState for more info on this.
+	window.onhashchange = function () {
 		app.ext.myRIA.u.handleHashState();
 		}
 	}
@@ -151,7 +153,7 @@ document.write = function(v){
 //The request for appCategoryList is needed early for both the homepage list of cats and tier1.
 //piggyback a few other necessary requests here to reduce # of requests
 				app.ext.store_navcats.calls.appCategoryList.init(zGlobals.appSettings.rootcat,{"callback":"showRootCategories","extension":"myRIA"},'mutable');
-				app.calls.appProfileInfo.init({'profile':app.vars.profile},{callback : function(rd){
+				app.calls.appProfileInfo.init({'domain':zGlobals.appSettings.domain_only},{callback : function(rd){
 					if(app.model.responseHasErrors(rd)){
 						$('#globalMessaging').anymessage({'message':rd});
 						}
@@ -160,7 +162,7 @@ document.write = function(v){
 							var $logo = $(this);
 							if($logo.is('img') || $('img',$logo).length)	{} //the element with the logo class already has an image. do nothing.
 							else if(app.data[rd.datapointer]['zoovy:logo_website'])	{
-								$logo.append(app.u.makeImage({'tag':true,'m':true,'b':'TTTTTT','w':$logo.width(),'h':$logo.height(),'alt':app.data[rd.datapointer]['zoovy:company_name'] || "",'name':app.data[rd.datapointer]['zoovy:logo_website']}))
+								$logo.append(app.u.makeImage({'tag':true,'m':false,'b':'TTTTTT','w':$logo.width(),'h':$logo.height(),'alt':app.data[rd.datapointer]['zoovy:company_name'] || "",'name':app.data[rd.datapointer]['zoovy:logo_website']}))
 								}
 							else	{} //logo field not set.
 							});
@@ -186,13 +188,14 @@ document.write = function(v){
 //adds submit functionality to search form. keeps dom clean to do it here.
 				app.ext.myRIA.u.bindAppViewForms('#appView'); //added the selector on 20121026. was blank before.
 				app.ext.myRIA.vars.mcSetInterval = setInterval(function(){app.ext.myRIA.u.handleMinicartUpdate({'datapointer':'cartDetail'})},4000); //make sure minicart stays up to date.
-				showContent = app.ext.myRIA.a.showContent; //a shortcut for easy execution.
-				quickView = app.ext.myRIA.a.quickView; //a shortcut for easy execution.
+				
+				window.showContent = app.ext.myRIA.a.showContent; //a shortcut for easy execution.
+				window.quickView = app.ext.myRIA.a.quickView; //a shortcut for easy execution.
 				
 				app.ext.myRIA.u.bindNav('#appView .bindByAnchor');
 				if(typeof app.u.appInitComplete == 'function'){app.u.appInitComplete(page)}; //gets run after app has been init
 				
-				app.ext.myRIA.u.bindAppNav();
+				app.ext.myRIA.u.bindAppNav(); //adds click handlers for the next/previous buttons (product/category feature).
 
 				}
 			}, //startMyProgram 
@@ -261,22 +264,27 @@ document.write = function(v){
 				}
 			}, //showProd 
 
-
+/*
+*** 201346 -> content for these pages is no longer dynamic. It should be hard coded into the template OR allow to be set thru a wizard.
 		showCompany : 	{
 			onSuccess : function(tagObj)	{
 				app.renderFunctions.translateTemplate(app.data[tagObj.datapointer],tagObj.parentID);
 				app.ext.myRIA.u.bindNav('#companyNav a');
-				app.ext.myRIA.u.showArticle(tagObj.infoObj);
-				if(!tagObj.infoObj.templateID)	{
-					if(tagObj.infoObj.templateID){} //use existing value
-					else if(tagObj.templateID)	{tagObj.infoObj.templateID = 'companyTemplate'}
-					else	{tagObj.infoObj.templateID = 'companyTemplate'}
+				if(app.ext.myRIA.u.showArticle(tagObj.infoObj))	{
+					if(!tagObj.infoObj.templateID)	{
+						if(tagObj.infoObj.templateID){} //use existing value
+						else if(tagObj.templateID)	{tagObj.infoObj.templateID = 'companyTemplate'}
+						else	{tagObj.infoObj.templateID = 'companyTemplate'}
+						}
+					tagObj.infoObj.state = 'onCompletes';
+					app.ext.myRIA.u.handleTemplateFunctions(tagObj.infoObj);
 					}
-				tagObj.infoObj.state = 'onCompletes';
-				app.ext.myRIA.u.handleTemplateFunctions(tagObj.infoObj);				
+				else	{
+					//showArticle will handle the error display.
+					}
 				}
 			}, //showCompany 
-
+*/
 
 
 
@@ -782,7 +790,8 @@ fallback is to just output the value.
 						buttonText = 'Choose Size'; className = 'variational sizeable';
 						}
 //pdata is a shortcut to attribs.
-					else if(!$.isEmptyObject(data.value['@variations']))	{
+//*** 201346 Must also check for product children as variations, as parent products cannot be added to cart.
+					else if(!$.isEmptyObject(data.value['@variations']) || pData['zoovy:grp_children'])	{
 						buttonText = 'Choose Options'; className = 'variational';
 						}
 					else	{
@@ -2267,6 +2276,7 @@ effects the display of the nav buttons only. should be run just after the handle
 				
 //Show one of the company pages. This function gets executed by showContent.
 //handleTemplateFunctions gets executed in showContent, which should always be used to execute this function.
+// ** 201346 -> The company navlinks are now generated based on what articles are present and not disabled. built to allow for wizard to easily add new pages.
 			showCompany : function(infoObj)	{
 				infoObj.show = infoObj.show ? infoObj.show : 'about'; //what page to put into focus. default to 'about us' page
 //				$('#mainContentArea').empty(); //clear Existing content.
@@ -2275,25 +2285,31 @@ effects the display of the nav buttons only. should be run just after the handle
 				infoObj.templateID = 'companyTemplate';
 				infoObj.state = 'onInits';
 				infoObj.parentID = parentID;
-				app.ext.myRIA.u.handleTemplateFunctions(infoObj);
-				
-				
-
-//only create instance once.
+	
 				if($('#mainContentArea_company').length)	{
-					app.ext.myRIA.u.showArticle(infoObj);
-					infoObj.state = 'onCompletes';
-					app.ext.myRIA.u.handleTemplateFunctions(infoObj);
+					//template has already been added to the DOM. likley moving between company pages.
 					}
 				else	{
 					var $content = app.renderFunctions.createTemplateInstance(infoObj.templateID,parentID);
 					$content.addClass("displayNone");
+
+					var $nav = $('#companyNav ul:first',$content);
+//builds the nav menu.
+					$('.textContentArea',$content).not('.disabled').each(function(){
+						$nav.append("<li><a href='#company?show="+$(this).attr('id').replace('Article','')+"'>"+($('h1:first',$(this)).text())+"</a></li>");
+						});
+
 					$('#mainContentArea').append($content);
-					app.ext.myRIA.u.bindNav('#sideline a');
-					app.calls.appProfileInfo.init({'profile':app.vars.profile},{'callback':'showCompany','extension':'myRIA','infoObj':infoObj,'parentID':parentID},'mutable');
-					app.model.dispatchThis();
+					app.ext.myRIA.u.bindNav('#companyNav a');
 					}
-					
+
+				if(app.ext.myRIA.u.showArticle(infoObj))	{
+					app.ext.myRIA.u.handleTemplateFunctions(infoObj);
+					infoObj.state = 'onCompletes';
+					app.ext.myRIA.u.handleTemplateFunctions(infoObj);
+					}
+				else	{} //showArticle will handle displaying the error messaging.
+
 
 				}, //showCompany
 				
@@ -2347,18 +2363,21 @@ ex:  elasticsearch.size = 200
 */
 elasticsearch.size = 50;
 
-				$.extend(infoObj,{'callback':'handleElasticResults','datapointer':"appPublicSearch|"+JSON.stringify(elasticsearch),'extension':'store_search','templateID':'productListTemplateResultsNoPreview','list':$('#resultsProductListContainer')});
+// ** 201346 -> extended infoObj w/ a new templateID was causing the ondepart templatefunctions to not execute properly for search results.
+//				$.extend(infoObj,{'callback':'handleElasticResults','datapointer':"appPublicSearch|"+JSON.stringify(elasticsearch),'extension':'store_search','templateID':'productListTemplateResults','list':$('#resultsProductListContainer')});
 				
 				//Used to build relative path
 				infoObj.elasticsearch = $.extend(true, {}, elasticsearch);
 				
 				
 				app.ext.store_search.u.updateDataOnListElement($('#resultsProductListContainer'),elasticsearch,1);
-				app.ext.store_search.calls.appPublicSearch.init(elasticsearch,infoObj);
+//				app.ext.store_search.calls.appPublicSearch.init(elasticsearch,infoObj);
+				app.ext.store_search.calls.appPublicSearch.init(elasticsearch,$.extend(true,{},infoObj,{'callback':'handleElasticResults','datapointer':"appPublicSearch|"+JSON.stringify(elasticsearch),'extension':'store_search','templateID':'productListTemplateResults','list':$('#resultsProductListContainer')}));
 				app.model.dispatchThis();
-
+//				app.u.dump(" --------> execute onCompletes for searchTemplate");
 				infoObj.state = 'onCompletes'; //needed for handleTemplateFunctions.
 				app.ext.myRIA.u.handleTemplateFunctions(infoObj);
+
 
 				}, //showSearch
 
@@ -2650,7 +2669,9 @@ buyer to 'take with them' as they move between  pages.
 //executed from showCompany (used to be used for customer too)
 //articles should exist inside their respective pageInfo templates (companyTemplate or customerTemplate)
 //NOTE - as of version 201225, the parameter no longer has to be a string (subject), but can be an object. This allows for uri params or any other data to get passed in.
+// * 201346 -> function now returns a boolean based on whether or not hte page is shown.
 			showArticle : function(infoObj)	{
+				var r = true; //what is returned. set to false if the article is NOT shown.
 //				app.u.dump("BEGIN myRIA.u.showArticle"); app.u.dump(infoObj);
 				$('#mainContentArea .textContentArea').hide(); //hide all the articles by default and we'll show the one in focus later.
 				
@@ -2663,21 +2684,44 @@ buyer to 'take with them' as they move between  pages.
 				else	{
 					app.u.dump("WARNING - unknown type for 'infoObj' ["+typeof infoObj+"] in showArticle")
 					}
+
 				if(subject)	{
-//					$('html, body').animate({scrollTop : 0},1000); //scroll up.
-					$('#'+subject+'Article').show(); //only show content if page doesn't require authentication.
-					switch(subject)	{
-						case 'faq':
-							app.ext.store_crm.calls.appFAQsAll.init({'parentID':'faqContent','callback':'showFAQTopics','extension':'store_crm','templateID':'faqTopicTemplate'});
-							app.model.dispatchThis();
-							break;
-						default:
-							//the default action is handled in the 'show()' above. it happens for all.
+					var $article = $('#'+subject+'Article');
+					if($article.length)	{
+						if(!$article.hasClass('disabled'))	{
+							$('#'+subject+'Article').show(); //only show content if page doesn't require authentication.
+							switch(subject)	{
+								case 'faq':
+									app.ext.store_crm.calls.appFAQsAll.init({'parentID':'faqContent','callback':'showFAQTopics','extension':'store_crm','templateID':'faqTopicTemplate'});
+									app.model.dispatchThis();
+									break;
+								default:
+									//the default action is handled in the 'show()' above. it happens for all.
+								}
+							}
+						else	{
+							r = false;
+							$('#globalMessaging').anymessage({
+								'gMessage' : true,
+								'message' : "In myRIA.u.showArticle, subject = "+subject+" no longer exists."
+								});
+							}
+						}
+					else	{
+						r = false;
+						$('#globalMessaging').anymessage({
+							'gMessage' : true,
+							'message' : "In myRIA.u.showArticle, subject = "+subject+" but that article has no length on the DOM"
+							});
 						}
 					}
 				else	{
-					app.u.dump("WARNING! - no article/show set for showArticle");
+					$('#globalMessaging').anymessage({
+						'gMessage' : true,
+						'message' : "In myRIA.u.showArticle, infoObj.show was not defined."
+						});
 					}
+				return r;
 				},
 
 //will return a list of recent searches as a jq object ordered list.
@@ -3097,7 +3141,7 @@ else	{
 			createTemplateFunctions : function()	{
 
 				app.ext.myRIA.template = {};
-				var pageTemplates = new Array('categoryTemplate','categoryFeaturedProductsTemplate','productTemplate','companyTemplate','customerTemplate','homepageTemplate','searchTemplate','cartTemplate','checkoutTemplate','pageNotFoundTemplate');
+				var pageTemplates = new Array('categoryTemplate','categoryFeaturedProductsTemplate','productRelatedItemsListTemplate','bestsellersProductListTemplate','featuredProductListTemplate','productTemplate','companyTemplate','customerTemplate','homepageTemplate','searchTemplate','cartTemplate','checkoutTemplate','pageNotFoundTemplate');
 				var L = pageTemplates.length;
 				for(var i = 0; i < L; i += 1)	{
 					app.ext.myRIA.template[pageTemplates[i]] = {"onCompletes":[],"onInits":[],"onDeparts":[]};

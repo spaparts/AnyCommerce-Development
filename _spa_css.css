@@ -706,6 +706,15 @@ li.featuredProductListTemplate div.prodThumbContainer{
     width: 200px;
 }
 
+.breadcrumb li a{
+	text-decoration: none;
+	color: #0F67EC;
+	font-size: 9pt;
+}
+.breadcrumb li a:hover{
+	color:#CC0000;
+}
+
 
 
 
