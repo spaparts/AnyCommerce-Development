@@ -45,7 +45,7 @@ css files should be included before any .js file to ensure they are downloaded i
 -->
 <link rel="stylesheet" type="text/css" href="app-quickstart.css" />
 <link rel="stylesheet" type="text/css" href="_spa_css.css" />
-<link rel="stylesheet" type="text/css" href="jquery-ui-1.10.3.custom/css/blitzer/jquery-ui-1.10.3.custom.css" />
+<link rel="stylesheet" type="text/css" href="jquery-ui-1.10.3.custom/css/custom-theme/jquery-ui-1.10.3.custom.css" />
 
 
 <!-- ** 201338 -> jquery and jquery ui are pivotal to the functionality of the app. load them first -->
@@ -1379,7 +1379,7 @@ this will likely become more flexible in the future. ###
         <h5 class="prodMSRPPretext">MSRP:&nbsp;</h5><h5 class='prodMSRP' data-bind='var: product(zoovy:prod_msrp); format:money; currencySign: $;  hideZero:true;'></h5>
         <h4 class='basePrice' data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; pretext: Our Price: ;'></h4>
 		<span class='savings'>
-			<span class='savingsDifference' data-bind='var: product(pid); format:priceRetailSavingsDifference; extension:myRIA; pretext: You savings: ;'></span>
+			<span class='savingsDifference' data-bind='var: product(pid); format:priceRetailSavingsDifference; extension:myRIA; pretext: Your savings: ;'></span>
 			<span class='savingsPercentage' data-bind='var: product(pid); format:priceRetailSavingsPercentage; extension:myRIA; pretext: (; posttext:);'></span>
 		</span>
 	</div>
@@ -1501,7 +1501,7 @@ It's done this way because ID's hard coded into template are bad mojo (templates
     </div>
     
     <h2 class="displayNone" data-bind="var: product(zoovy:related_products); format:showIfSet;">You May Also Like</h2>
-    <div class='prodlistRelatedContainer'>
+    <div class='prodlistRelatedContainer displayNone' data-bind="var: product(zoovy:related_products); format:showIfSet;">
         <ul class='listStyleNone fluidList clearfix noPadOrMargin productList' data-bind="var: product(zoovy:related_products); format:productList; extension:store_prodlist;loadsTemplate:productListTemplate;hide_pagination:true;hide_summary:true; withReviews:1;"></ul>
     </div>
 </div>

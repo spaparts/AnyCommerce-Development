@@ -2347,7 +2347,7 @@ ex:  elasticsearch.size = 200
 */
 elasticsearch.size = 50;
 
-				$.extend(infoObj,{'callback':'handleElasticResults','datapointer':"appPublicSearch|"+JSON.stringify(elasticsearch),'extension':'store_search','templateID':'productListTemplateResults','list':$('#resultsProductListContainer')});
+				$.extend(infoObj,{'callback':'handleElasticResults','datapointer':"appPublicSearch|"+JSON.stringify(elasticsearch),'extension':'store_search','templateID':'productListTemplateResultsNoPreview','list':$('#resultsProductListContainer')});
 				
 				//Used to build relative path
 				infoObj.elasticsearch = $.extend(true, {}, elasticsearch);
