@@ -194,50 +194,20 @@ var _store_spa = function() {
 			},
 			
 			productRelatedCategoryList : function($tag,data)	{
-//				app.u.dump("BEGIN store_navcats.renderFormats.categoryList");
-				if(typeof data.value == 'object' && data.value.length > 0)	{
-					var L = data.value.length;
-					var call = 'appNavcatDetail';
-					var numRequests = 0;
-//The process is different depending on whether or not 'detail' is set.  detail requires a call for additional data.
-//detail will be set when more than the very basic information about the category is displayed (thumb, subcats, etc)
-					if(data.bindData.detail)	{
-						if(data.bindData.detail == 'min')	{} //uses default call
-						else if(data.bindData.detail == 'more' || data.bindData.detail == 'max')	{
-							call = call+(data.bindData.detail.charAt(0).toUpperCase() + data.bindData.detail.slice(1)); //first letter of detail needs to be uppercase
-							}
-						else	{
-							app.u.dump("WARNING! invalid value for 'detail' in productRelatedCategoryList renderFunction");
-							}
-						for(var i = 0; i < L; i += 1)	{
-// *** 201344 null pretty name is NOT a hidden category. But we have to check to avoid a null ptr error. -mc
-							if(!data.value[i].pretty || data.value[i].pretty[0] != '!')	{
-// ** 201336+ appNavcatDetail id param changed to path -mc
-// *** 201338 Missed a few references to id here -mc
-								var parentID = data.value[i].path+"_catgid+"+(app.u.guidGenerator().substring(10));
-								$tag.append(app.renderFunctions.createTemplateInstance(data.bindData.loadsTemplate,{'id':parentID,'catsafeid':data.value[i].path}));
-								numRequests += app.ext.store_navcats.calls[call].init(data.value[i].path,{'parentID':parentID,'callback':'translateTemplate'});
-								}
-							}
-						if(numRequests)	{app.model.dispatchThis()}
-						}
-//if no detail level is specified, only what is in the actual value (typically, id, pretty and @products) will be available. Considerably less data, but no request per category.
-					else	{
-						for(var i = 0; i < L; i += 1)	{
-// ** 201336+ appNavcatDetail id param changed to path -mc
-							var parentID = data.value[i].path+"_catgid+"+(app.u.guidGenerator().substring(10));
-							if(data.value[i].pretty[0] != '!')	{
-								$tag.append(app.renderFunctions.transmogrify({'id':parentID,'catsafeid':data.value[i].path},data.bindData.loadsTemplate,data.value[i]));
-								}
-							}
-						}
-					}
-				else	{
-					//value isn't an object or is empty. perfectly normal to get here if a page has no subs.
-					}
-				},
-			
+				app.u.dump ("data.value = " + data.value);
+				var navCats = data.value.split("\n");
+				app.u.dump ("navCats = " + navCats[0]);
+				var L = navCats.length;
+				var call = 'appNavcatDetail';
+				var numRequests = 0;
+				for(var i = 0; i < L; i += 1)	{
+					var parentID = navCats[i]+"_catgid+"+(app.u.guidGenerator().substring(10));
+					$tag.append(app.renderFunctions.createTemplateInstance(data.bindData.loadsTemplate,{'id':parentID,'catsafeid':navCats[i]}));
+					numRequests += app.ext.store_navcats.calls[call].init(navCats[i],{'parentID':parentID,'callback':'translateTemplate'});
+				}
+				if(numRequests)	{app.model.dispatchThis()}
+				}
+			}
 		}
-	}
 	return r;
 }

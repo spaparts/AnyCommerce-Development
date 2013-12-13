@@ -1079,6 +1079,14 @@ don't modify the 'data-templateid' unless you are changing template names and up
 	</div>
 </li>
 
+<li id='categoryListProductPageTemplate' class="categoryListProductPageTemplate">
+	<div onClick="showContent('category',{'navcat':$(this).parent().attr('data-catsafeid')});" class='pointer'>
+		<!--<div class='thumbContainer'><img src='blank.gif' class='catThumb' alt='' data-bind='var: category(%meta.CAT_THUMB); format:imageURL;' width='120' height='120' /></div>-->
+		<div class='catName white2LGray'><span data-bind='var: category(pretty); format:catText; extension: myRIA;'></span></div>
+        <!--<div class='catName white2LGray'><span data-bind='var: category(path); format:catText; extension: myRIA;'></span></div>-->
+	</div>
+</li>
+
 
 <li id='categoryListTemplateRootCats'>
 	<div onClick="showContent('category',{'navcat':$(this).parent().attr('data-catsafeid')});" class='pointer'>
@@ -1506,7 +1514,7 @@ It's done this way because ID's hard coded into template are bad mojo (templates
         <div data-bind='var: product(zoovy:prod_desc); format:wiki; wikiFormats:myRIA;'></div>
         <div style="font:bold 9pt/18px Arial, Helvetica, sans-serif; color:#F21300; border-bottom:1px solid #C5C5C5; margin-top:10px;">Look for Similar products by category:</div>
         <div class="relatedItems">
-        	<ul data-bind="var: product(user:app_category); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList'></ul><!-- outputs a list of subcategories -->
+        	<ul data-bind="var: product(user:app_category); format: productRelatedCategoryList; extension: _store_spa; loadsTemplate: categoryListProductPageTemplate;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList'></ul>
         </div>
     </div>
     

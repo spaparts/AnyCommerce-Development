@@ -43,6 +43,7 @@ var myRIA = function() {
 			'productRelatedItemsListTemplate',
 			'bestsellersProductListTemplate',
 			'featuredProductListTemplate',
+			'categoryListProductPageTemplate',
 //the list of templates that, in most cases, are left alone. Also in the same order as appTemplates
 			'breadcrumbTemplate',
 			'companyTemplate',
