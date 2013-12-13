@@ -29,13 +29,23 @@ var _store_spa = function() {
 			init : {
 				onSuccess : function(){
 					app.u.dump('BEGIN app.ext_store_spa.callbacks.init.onSuccess');
-					 //REACTIVATE AND REPLACE WITH A CATEGORY NAVPATH IF ANY CATEGORY PRODUCT LISTS NEED TO BE DISPLAYED ON THE HOMEPAGE.
+					 //BEGIN RELATED CATEGORY LIST FOR PRODUCT PAGE
+					 var r = false; //return false if extension won't load for some reason (account config, dependencies, etc).
+						app.rq.push(['templateFunction','productTemplate','onCompletes',function(P){
+							var $context = $(app.u.jqSelector('#', P.parentID));
+							app.ext._store_spa.u.loadRelatedItemsForProd(app.ext.myRIA.vars.session.recentCategories[0], P, $context);
+							}]);
+						//if there is any functionality required for this extension to load, put it here. such as a check for async google, the FB object, etc. return false if dependencies are not present. don't check for other extensions.
+						//REACTIVATE AND REPLACE WITH A CATEGORY NAVPATH IF ANY CATEGORY PRODUCT LISTS NEED TO BE DISPLAYED ON THE HOMEPAGE.
 					 /*
 					 app.rq.push(['templateFunction','homepageTemplate','onCompletes',function(infoObj) {
                                         var $context = $(app.u.jqSelector('#'+infoObj.parentID));
                                         app.ext._store_spa.u.loadProductsAsList('.featured_items');
                                 }]);
 					*/
+						r = true;
+		
+						return r;
 				},
 				onError : function() {
 					app.u.dump('BEGIN app.ext_store_spa.callbacks.init.onError');
@@ -98,7 +108,7 @@ var _store_spa = function() {
 		
 		u : {
 			loadProductsAsList :function(passedCat) {
-                        
+                     app.u.dump("loadProductsAsList function started.");   
 					var _tag = {
 							"callback":"renderProductsAsList",
 							"extension":"_store_spa"

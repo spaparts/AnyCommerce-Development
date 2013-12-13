@@ -153,7 +153,7 @@ ANIMATION TESTING
     </div>
     <div class="headerMidSection">
     	<div class="headerMidLeftSection">
-        	<a class="pointer" href="#homepage?." class='bindByAnchor pointer'>Home</a>
+        	<a href="#homepage?." class='bindByAnchor pointer'>Home</a>
             |
             <a class="pointer" href='#top' onClick="return showContent('company',{'show':'about'});">About Us</a>
             |
@@ -763,6 +763,10 @@ ANIMATION TESTING
 <div id='appTemplates' class='displayNone'>
 
 
+
+<div id="productRelatedItemsListTemplate">
+	<ul data-bind="useParentData:true; format:productSearch; extension:myRIA; loadsTemplate:productListTemplateResults;" class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul>
+</div>
 <!--
 
 ############################
@@ -1509,10 +1513,6 @@ It's done this way because ID's hard coded into template are bad mojo (templates
 
 
 </div><!-- productTemplate -->
-
-<div id="productRelatedItemsListTemplate">
-        <ul data-bind="useParentData:true; format:productSearch; extension:myRIA; loadsTemplate:productListTemplateResults;" class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul>
-</div>
 
 
 
