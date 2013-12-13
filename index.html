@@ -72,28 +72,30 @@ app.u.loadScript(app.vars.baseURL+"_spa_init.js");
 <!-- what is displayed onLoad until the view is loaded -->
 <div class="centeringContainer">
 <div id='appPreView'>
-<table>
-<tr>
-	<td><!-- put logo here --></td>
-	<td>
-
-	<div id="loader">
-		<img src="images/preloader/Logo.jpg" />
+    <div class="appPreViewCenteringContainer">
+        <table>
+        <tr>
+            <td><!-- put logo here --></td>
+            <td>
         
-        <h3>One moment please.</h3>
-
-		<div class='alignCenter'>
-		<progress id="appPreViewProgressBar" max="100" value="0"></progress><br>
-		</div>
-		<div id='appPreViewProgressText'>0% Complete</div>
-	</div>
-	<div id="clickToLoad" class="displayNone pointer">
-		Click here to load your shopping experience!
-	</div>
-	<div class='appMessaging'></div>
-	</td>
-</tr>
-</table>
+            <div id="loader">
+                <img src="images/preloader/Logo.jpg" />
+                
+                <h3>One moment please.</h3>
+        
+                <div class='alignCenter'>
+                <progress id="appPreViewProgressBar" max="100" value="0"></progress><br>
+                </div>
+                <div id='appPreViewProgressText'>0% Complete</div>
+            </div>
+            <div id="clickToLoad" class="displayNone pointer">
+                Click here to load your shopping experience!
+            </div>
+            <div class='appMessaging'></div>
+            </td>
+        </tr>
+        </table>
+    </div>
 </div>
 
 
