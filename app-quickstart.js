@@ -2373,7 +2373,7 @@ elasticsearch.size = 50;
 				
 				app.ext.store_search.u.updateDataOnListElement($('#resultsProductListContainer'),elasticsearch,1);
 //				app.ext.store_search.calls.appPublicSearch.init(elasticsearch,infoObj);
-				app.ext.store_search.calls.appPublicSearch.init(elasticsearch,$.extend(true,{},infoObj,{'callback':'handleElasticResults','datapointer':"appPublicSearch|"+JSON.stringify(elasticsearch),'extension':'store_search','templateID':'productListTemplateResults','list':$('#resultsProductListContainer')}));
+				app.ext.store_search.calls.appPublicSearch.init(elasticsearch,$.extend(true,{},infoObj,{'callback':'handleElasticResults','datapointer':"appPublicSearch|"+JSON.stringify(elasticsearch),'extension':'store_search','templateID':'productListTemplateResultsNoPreview','list':$('#resultsProductListContainer')}));
 				app.model.dispatchThis();
 //				app.u.dump(" --------> execute onCompletes for searchTemplate");
 				infoObj.state = 'onCompletes'; //needed for handleTemplateFunctions.

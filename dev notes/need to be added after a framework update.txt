@@ -1,0 +1,43 @@
+Things that need to be re-added after a framework update:
+
+app-quickstart.js:
+- //CUSTOM TEMPLATES
+'categoryFeaturedProductsTemplate',
+'productRelatedItemsListTemplate',
+'bestsellersProductListTemplate',
+'featuredProductListTemplate',
+'categoryListProductPageTemplate',
+
+to vars : template : [
+
+- In showpage :
+Change:
+else	{
+Below:
+infoObj.templateID = 'homepageTemplate'
+ 						}
+
+To:
+
+else if(app.ext._store_spa.vars.catTemplates[catSafeID]){
+					   	app.u.dump("category list template option selected");
+						infoObj.templateID = app.ext._store_spa.vars.catTemplates[catSafeID]
+					}
+					else{
+						app.u.dump("category default template option selected");
+						infoObj.templateID = 'categoryTemplate'
+						}
+
+
+- Add new category template to:
+var pageTemplates = new Array('categoryTemplate'
+
+- Change:
+app.ext.store_search.calls.appPublicSearch.init(elasticsearch,$.extend(true,{},infoObj,{'callback':'handleElasticResults','datapointer':"appPublicSearch|"+JSON.stringify(elasticsearch),'extension':'store_search','templateID':'productListTemplateResults','list':$('#resultsProductListContainer')}));
+
+to:
+
+app.ext.store_search.calls.appPublicSearch.init(elasticsearch,$.extend(true,{},infoObj,{'callback':'handleElasticResults','datapointer':"appPublicSearch|"+JSON.stringify(elasticsearch),'extension':'store_search','templateID':'productListTemplateResultsNoPreview','list':$('#resultsProductListContainer')}));
+
+
+
