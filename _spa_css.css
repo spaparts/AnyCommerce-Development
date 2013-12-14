@@ -1038,3 +1038,38 @@ td.prodSummaryContainer a.productPrintProd{
 .productList > li.searchResultsProduct div.moreDetails:hover{
 	color:#CC0000;
 }
+
+
+
+
+
+
+
+
+
+/***********************************************************************************************************************************/
+/***********************************************************************************************************************************/
+/*****CART TEMPLATE****/
+.cartStuffContainer{
+	width: 750px;
+}
+.cartSummaryTotalsContainer{
+}
+.cartSummaryTotalsContainer section#cartTemplateCostSummary{
+	float: left;
+    margin-bottom: 5px;
+    width: 100%;
+}
+.cartSummaryTotalsContainer section#cartTemplateShippingContainer{
+	float: left;
+    margin-bottom: 5px;
+    width: 100%;
+}
+.cartSummaryTotalsContainer div.cartZipCodeContainer{
+}
+.cartSummaryTotalsContainer menu.cartAltButtonsContainer{
+	margin-top: 10px;
+}
+.cartSummaryTotalsContainer div.checkoutButtonsContainer{
+	margin-top: 10px;
+}
