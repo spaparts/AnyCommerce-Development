@@ -2435,49 +2435,71 @@ The 'data-action' attribute is used to assign an onclick.
 <p id='loginMessaging' class='marginBottom appMessaging'></p>
 
 <div id='loginFormContainer'>
-<form action='#' onSubmit='app.ext.myRIA.u.loginFrmSubmit($("input[name=login]", $(this)).val(),$("input[name=password]", $(this)).val()); return false;'>
-<input type='hidden' name='loginCallback' id='loginCallback' value='' /><!-- used to save a callback action in -->
-	<fieldset>
-
-	<div>
-	<label for='login'>Login/Email</label>
-	<input type='email' class='zform_textbox zform_email'  name='login' value='' size='25' />
-	</div>
-
-	<div>
-	<label for='password'>Password</label>
-	<input type='password' class='zform_textbox zform_password'   name='password' value='' size='25' />
-	</div>
-
-	<div>
-	<input type='submit' value='log in' class='ui-button-text ui-button ui-state-default ui-corner-all ' />
-	</div>
-	</fieldset>
-</form>
-
-<div id='recoverPasswordContainer'>
-<hr />
-
-<h3 class='marginBottom'>Recover Password</h3>
-<div id='recoverPasswordMessaging' class='appMessaging'></div>
-<form action='#' onSubmit="app.calls.appBuyerPasswordRecover.init($('#passwordRecoveryLogin').val(),{'callback':'showMessaging','message':'Thank you, will receive an email shortly','jqObj':$('.appMessaging', $(this).parent())}); app.model.dispatchThis('immutable'); return false;">
-<fieldset>
-<div class='marginBottom'><label for='passwordRecoveryLogin'>Login/Email</label> <input type='text' name='login' required='required' id='passwordRecoveryLogin' size='25' /></div>
-
-<div><input type='submit' class='ui-button-text ui-button ui-state-default ui-corner-all ' value='Email Password to Me' /></div>
-
-</fieldset>
-</form>
-
-</div><!-- /recoverPasswordContainer -->
-
-<div>
-<hr />
-<button class='ui-button-text ui-button ui-state-default ui-corner-all ' onClick="showContent('customer',{'show':'newsletter'});">Create Account</button>
+    <form action='#' onSubmit='app.ext.myRIA.u.loginFrmSubmit($("input[name=login]", $(this)).val(),$("input[name=password]", $(this)).val()); return false;'>
+        <input type='hidden' name='loginCallback' id='loginCallback' value='' /><!-- used to save a callback action in -->
+        <fieldset>
+        	<legend>Account Login</legend>
+            <div>
+                <label for='login'>Login/Email</label>
+                <input type='email' class='zform_textbox zform_email'  name='login' value='' size='25' />
+                <span>(this is usually your email address) </span>
+            </div>
+        
+            <div>
+                <label for='password'>Password</label>
+                <input type='password' class='zform_textbox zform_password'   name='password' value='' size='25' />
+            </div>
+        
+            <div>
+                <input type='submit' value='Log In' class='ui-button-text ui-button ui-state-default ui-corner-all ' />
+            </div>
+        </fieldset>
+    </form>
+    
+    <div id='recoverPasswordContainer'>
+    	<hr />
+    	<div id='recoverPasswordMessaging' class='appMessaging'></div>
+    	<form action='#' onSubmit="app.calls.appBuyerPasswordRecover.init($('#passwordRecoveryLogin').val(),{'callback':'showMessaging','message':'Thank you, will receive an email shortly','jqObj':$('.appMessaging', $(this).parent())}); app.model.dispatchThis('immutable'); return false;">
+    		<fieldset>
+            	<legend>Password Recovery</legend>
+                <div class=''><label for='passwordRecoveryLogin'>Login/Email</label> <input type='text' name='login' required='required' id='passwordRecoveryLogin' size='25' /></div>
+                <span>(this is usually your email address) </span>
+                <div><input type='submit' class='ui-button-text ui-button ui-state-default ui-corner-all recoverPasswordButton' value='Recover Password' /></div>
+    		</fieldset>
+    	</form>
+	</div><!-- /recoverPasswordContainer -->
+    <!--
+    <div>
+        <hr />
+        <button class='ui-button-text ui-button ui-state-default ui-corner-all ' onClick="showContent('customer',{'show':'newsletter'});">Create Account</button>
+    </div>
+    -->
 </div>
-
-
-
+<div class="LoginModalInstructCont">
+	<b>New Customer</b>
+    <br>
+    No need for Login info you will be taken to a page after Checkout for Account Login info.
+    <br>
+    <br>
+    <b>How to Order</b>
+    <br>
+    Shopping with us is easy!
+    <br>
+    <ul>
+    <li>1. Shop for spa products by clicking a product picture on our home page or, on the bar at left, use the Shop by Category, or Search.</li>
+    </ul>
+    <ul>
+    <li>2. When you find the item you want, click Add to Cart to add the item to your shopping cart. You will see the contents of your shopping cart and be able to make changes. You can then either Shop More or Checkout.</li>
+    </ul>
+    <ul>
+    <li>3. If you choose to continue shopping, you will be taken back to the category you came from. Use the bar at left to choose another product, or to go elsewhere on our website.</li>
+    </ul>
+    <ul>
+    <li>4. To view the contents of your shopping cart, click View Basket on the upper right.</li>
+    </ul>
+    <ul>
+    <li>5. When you are ready to finalize the purchase of items in your shopping cart, click Checkout and you will go to the sales order page where you will fill in billing information needed to process and ship your order.</li>
+    </ul>
 </div>
 
 <!-- this div will appear after a successful login. if you bind a new action to the button, best to empty the div and re-add the button, so the actions don't statck. -->

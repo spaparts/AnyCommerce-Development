@@ -1074,6 +1074,16 @@ td.prodSummaryContainer a.productPrintProd{
 	margin-top: 10px;
 }
 
+
+
+
+
+
+
+/***********************************************************************************************************************************/
+/***********************************************************************************************************************************/
+/*****CHECKOUT TEMPLATE****/
+
 .panelContent section div div.passwordContainer{
 	float: left;
 }
@@ -1082,4 +1092,92 @@ td.prodSummaryContainer a.productPrintProd{
 .panelContent section div label.accountCreateContainer{
 	clear: left;
     float: left;
+}
+
+
+
+
+
+
+
+
+
+/***********************************************************************************************************************************/
+/***********************************************************************************************************************************/
+/*****LOGIN MODAL TEMPLATE****/
+#loginFormContainer{
+	float: left;
+    width: 182px;
+}
+#loginFormContainer form fieldset{
+	border:solid 1px #848484;
+}
+#loginFormContainer form fieldset legend{
+	color: #333333;
+    font-family: verdana,arial,helvetica;
+    font-size: 9pt;
+    font-weight: bold;
+}
+#loginFormContainer form fieldset label{
+	color: #000000;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 8pt;
+    text-align: left;
+}
+#loginFormContainer form fieldset span{
+	color: #666666;
+    float: left;
+    font-family: verdana,arial,helvetica;
+    font-size: 7pt;
+    margin-bottom: 5px;
+}
+#loginFormContainer form fieldset input{
+	background-color: #FFFFFF;
+    border: 1px solid #C0C0C0;
+    color: #000000;
+    font-family: verdana,arial,helvetica;
+    font-size: 8pt;
+	width:152px;
+	height:14px;
+}
+#loginFormContainer form fieldset input.ui-button{
+	background-color: #0B2F79;
+    background-image: none;
+    border: 1px solid #0B2F79;
+    border-radius: 0;
+    color: #FFFFFF;
+    font-family: verdana,arial,helvetica;
+    font-size: 8pt;
+    font-weight: 500;
+    height: 19px;
+    padding: 2px;
+    width: 42px;
+}
+#loginFormContainer form fieldset input.recoverPasswordButton{
+	background-color: #0B2F79;
+    background-image: none;
+    border: 1px solid #0B2F79;
+    border-radius: 0;
+    color: #FFFFFF;
+    font-family: verdana,arial,helvetica;
+    font-size: 8pt;
+    font-weight: 500;
+    height: 19px;
+    padding: 2px;
+    width: 111px;
+}
+.LoginModalInstructCont{
+	color: #000000;
+    float: left;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 8pt;
+    margin: 0 0 0 10px;
+    padding: 0;
+    text-align: left;
+    width: 270px;
+}
+.loginOption fieldset div{
+	margin-bottom:0;
+}
+#recoverPasswordContainer form fieldset span{
 }
