@@ -1181,3 +1181,26 @@ td.prodSummaryContainer a.productPrintProd{
 }
 #recoverPasswordContainer form fieldset span{
 }
+
+
+
+
+
+
+
+
+
+/***********************************************************************************************************************************/
+/***********************************************************************************************************************************/
+/*****COMPANY TEMPLATE****/
+.companyTemplate{
+}
+.companyTemplate div.sideline{
+	float: right;
+    margin: 0 0 24px;
+    width: 160px;
+}
+.companyTemplate div.mainColumn{
+	float: left;
+    width: 650px;
+}
