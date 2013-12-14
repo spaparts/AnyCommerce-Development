@@ -1073,3 +1073,13 @@ td.prodSummaryContainer a.productPrintProd{
 .cartSummaryTotalsContainer div.checkoutButtonsContainer{
 	margin-top: 10px;
 }
+
+.panelContent section div div.passwordContainer{
+	float: left;
+}
+.panelContent section div input{
+}
+.panelContent section div label.accountCreateContainer{
+	clear: left;
+    float: left;
+}
