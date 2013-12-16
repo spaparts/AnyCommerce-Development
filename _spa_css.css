@@ -1239,3 +1239,11 @@ td.prodSummaryContainer a.productPrintProd{
 #contactForm{
 	margin-right: 5px;
 }
+
+#paymentArticle p{
+	color: #000000;
+    font-family: verdana,arial,helvetica;
+    font-size: 8pt;
+    line-height: 130%;
+    text-align: left;
+}
