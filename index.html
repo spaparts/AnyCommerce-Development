@@ -1647,7 +1647,7 @@ if you change these, you should move them above this comment so that when you (o
 
 
 <!-- loadingBG needed on this for app init (content may take a moment to load) -->
-<div id='companyTemplate' class='clearfix companyTemplate''>
+<div id='companyTemplate' class='clearfix companyTemplate'>
 
 	<div class='sideline' >
 <nav id='companyNav'>
@@ -1659,14 +1659,106 @@ if you change these, you should move them above this comment so that when you (o
 
 	<div class='mainColumn'>
 <!-- .textContentArea is used as a selector in quickstart.js because article tag type isn't ie8 friendly -->
-		<div id='aboutArticle' class='textContentArea article'>
-			<h1>About Us</h1>
-			<div data-bind='var: profile(zoovy:about); format:wiki; wikiFormats:myRIA;' id='aboutUsContent'></div>
+		<div id='aboutArticle' class='textContentArea article' align="left">
+            <h1 style="margin:0 0 10px 0; font-size:12pt;">About Spa Parts Depot we are in the San Diego area</h1>
+            <div class="ztxt" style="margin-bottom:5px; line-height:130%;">
+                <div style="font-size:11pt; font-weight:bold; margin-bottom:3px;">Spa Parts Depot</div>
+                <p>Thanks for stopping by and visiting Spa Parts Depot - The BEST source for all your spa parts, chemicals and accessories! </p>
+                <p>Spa Parts Depot was founded in 1999 by Ron Smith, but his experience in the spa industry goes back over 30 years. He began his career working in the development, manufacture and repair of Caldera Spas, starting out at the bottom and working his way up through the ranks from building spas to supervising others in the process, all the way to a minority ownership in the company. </p>
+                <p>While manufacturing spas and being an integral part of the success of Caldera Spas was very fulfilling for 20 years, Ron's entrepeneurial side was ready to shine. He saw a need to give spa owners access to expert information and just as importantly, provide an easy, secure way to order spa supplies, parts and accessories. That need still exists today, and Spa Parts Depot is still here over 10 years later, still delighting customers with great service year after year. </p>
+                <p>Browse our website to see our great selection of spa parts and accessories online. If you don't see what you're looking for, we're just an email, online chat or toll-free phone call away!</p>
+            </div>
+			<!--<div data-bind='var: profile(zoovy:about); format:wiki; wikiFormats:myRIA;' id='aboutUsContent'></div>-->
 		</div>
 
 
-		<div id='contactArticle' class='displayNone textContentArea'>
-			<h1>Contact Information</h1>
+		<div id='contactArticle' class='displayNone textContentArea contactArticle'>
+			<div class="contactArticleTextCont" align="left">
+                <h1 style="margin:0 0 10px 0; font-size:12pt;">Spa Parts Depot - San Diego (El Cajon), CA</h1>
+                <font class="ztxt">
+                    <p>
+                        <font face="Arial" size="+1" color="#ff0000">Contact Us</font>
+                        <b>
+                            <font face="Arial" color="#0000ff"></font>
+                        </b>
+                    </p>
+                    <p>
+                        <b>
+                            <font face="Arial" color="#0000ff">Email</font>
+                        </b>
+                        <font face="Arial">
+                            <br/>
+                            Customer Service (shopping/ordering)
+                            <a href="mailto:sales@spapartsdepot.com">sales@spapartsdepot.biz</a>
+                        </font>
+                        <br />
+                        <font face="Arial">
+                            Parts (replacement spa parts)
+                            <a href="mailto:parts@spapartsdepot.com">parts@spapartsdepot.biz</a>
+                        </font>
+                        <br />
+                        <font face="Arial">
+                            Technical questions (Ask An Expert)
+                            <a href="mailto:tech@spapartsdepot.com">tech@spapartsdepot.biz</a>
+                        </font>
+                    </p>
+                    <p>
+                        <font face="Arial">
+                            Help
+                            <a href="mailto:help@spapartsdepot.biz">help@spapartsdepot.biz</a>
+                        </font>
+                    </p>
+                <p>
+                    <b>
+                        <font face="Arial" color="#0000ff">Fax</font>
+                    </b>
+                    <font face="Arial">
+                        (all departments)
+                        <br>
+                        (619) 258-8134
+                    </font>
+                </p>
+                <p>
+                    <b>
+                        <font face="Arial" color="#0000ff">Phone</font>
+                    </b>
+                    <font face="Arial">
+                        (Pacific Time)
+                        <br>
+                        Mon-Fri 8am-5pm
+                        <br />
+                        Customer Service for shopping/ordering, call toll free (800) 927-6110
+                        <br />
+                        <br />
+                        <b>Who to call</b>
+                        <br />
+                        Ron Smith - x106 - Owner/Sales/Technical Support
+                        <br />
+                        Scott Hisaw - x101 - Technical/Sales/Customer Support (Tracking/Returns)
+                        <br />
+                        <br />
+                        <b>Technical Questions (Ask An Expert)</b>
+                        <br />
+                        Call (619) 258-8130. Please have your order number ready so we can assist you faster.
+                    </font>
+                </p>
+            </font>
+            <p>
+                <font class="ztxt">
+                    <b>
+                        <font face="Arial" color="#0000ff">Mailing Address</font>
+                    </b>
+                    <font face="Arial">
+                        <br />
+                        Spa Parts Depot
+                        <br />
+                        1000 W Bradley Ave. Suite # A
+                        <br />
+                        El Cajon, CA 92020
+                    </font>
+                </font>
+            </p>
+    	</div>
 			<form action='#' onSubmit="app.calls.appSendMessage.init($(this).serializeJSON(),{'callback':'showMessaging','parentID':'contactFormMessaging','message':'Thank you, your message has been sent'},'immutable'); app.model.dispatchThis('immutable');  return false;" id='contactForm' name='contactForm'>
 			<fieldset>
 				<legend>Contact Us</legend>
@@ -1679,7 +1771,7 @@ if you change these, you should move them above this comment so that when you (o
 				</div>
 			</fieldset>
 			</form>
-			<div data-bind='var: profile(zoovy:contact); format:wiki; wikiFormats:myRIA;' id='contactContent'></div>
+			<!--<div data-bind='var: profile(zoovy:contact); format:wiki; wikiFormats:myRIA;' id='contactContent'></div>-->
 		</div>
 
 
