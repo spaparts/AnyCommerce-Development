@@ -2164,7 +2164,119 @@ So the cart template should contain these two elements and the extension should 
 <tr>
 	<td class='cartStuffContainer'>
         <h2>You have <span class="cartItemCount">0</span> items in your shopping cart</h2>
-        <ul id='cartStuffList' data-bind="var: cart(@ITEMS); format:stuffList; loadsTemplate:productListTemplateCart;" class='listStyleNone fluidList clearfix noPadOrMargin productList lineItemProdlist'></ul>
+        
+        <div class="cartBillMeLaterBanner">
+            <a href="https://www.securecheckout.billmelater.com/paycapture-content/fetch?hash=AU826TU8&content=/bmlweb/ppwpsiw.html"> <img border="0" src="http://upstream.where.com/jin/spotlight/ads?pubid=b5817bfd32&format=png&v=2.4&channel=email&placementtype=468x60&td={%22d%22:{%22segments%22:{%22distro%22:%22email%22}}}" width="468" height="60" alt="Check out with PayPal and choose Bill Me Later. Subject to credit approval. See Terms."></a>
+        </div>
+        <br>
+        <p>
+        	<b>RETURN POLICY</b>
+            <br>
+            Not all items are returnable. Please see our
+            <a href='#top' onClick="return showContent('company',{'show':'return'});">return policy</a>
+            page for more information.
+            <br>
+            <b></b>
+            <br>
+            <br>
+            <b>*FREE SHIPPING OVER $99</b>
+            <br>
+            *Free FedEx Ground (FedEx Business Delivery or FedEx Home Delivery) shipping on all orders over $99 in the 48 contiguous states
+            <font color="#FF0000">(Excludes Spa Covers).</font>
+            Orders under $99 ship for a low flat rate of $7.50.
+            <br>
+            <b></b>
+            <br>
+            <br>
+            <b>No longer shipping with USPS Priority Mail, NO More PO Boxes</b>
+            <br>
+            <b></b>
+            <br>
+            <br>
+            <b>NOTE</b>
+            Alaska Hawaii shipping is not Guaranteed for Next Day, 2nd Day or 3 Day.
+            <br>
+            <b></b>
+            <br>
+            <br>
+            <b>SHIPPING TO CANADA</b>
+            <br>
+            Shipping: FedEx International Priority or FedEx International Economy ONLY <font color="#FF0000">Duty and Taxes will be your responsibility.</font>
+            <br>
+            <i>See below for more shipping information</i>
+        </p>
+        <div class="cartStuffListContainer">
+            <span title='proceed to secure checkout'><button class='ui-button ui-button-text-only ui-state-default ui-corner-all checkoutButton' onClick="showContent('checkout',{});"></button></span>
+            <div class="cartStuffListTitleBar">
+            	<h6>Item Information</h6><p>Quantity</p><p>Price</p><p>Item Subtotal</p>
+            </div>
+            <ul id='cartStuffList' data-bind="var: cart(@ITEMS); format:stuffList; loadsTemplate:productListTemplateCart;" class='listStyleNone fluidList clearfix noPadOrMargin productList lineItemProdlist'></ul>
+        </div>
+        <div class="cartBottomText">
+        	<p>
+            <br>
+            <b>For International Customers</b>
+            <br>
+            <b></b>
+            <br>
+            Please note that all international customers must use Bongo's personal shopper service to place the order with us as we cannot accept international credit cards.
+            <br>
+            <b></b>
+            <br>
+            Bongo provides a Personal Shopping option where they would purchase the goods for you using the Bongo US credit card, and then charge your card for the total fees. There is a 10% fee on the total for using the Personal Shopper.
+            <br>
+            <b></b>
+            <br>
+            You can find detailed information on bongo's website
+            <a class="wikilink wikilink_popup" href="http://www.bongous.com/personal_shopper.php" title="Click Here" target="blank">Click Here</a>
+            <br>
+            <b></b>
+            <br>
+            You can place the personal shopper order in your Bongo account by clicking on the personal shopper icon and filling out the order form and clicking on submit.
+            <br>
+            <b></b>
+            <br>
+            <br>
+            <b>SHIPPING INFORMATION</b>
+            <br>
+            <b></b>
+            <br>
+            NOTE: Estimated shipping times are from when the order leaves our facility (normally in 1 to 2 business days), not when the order is placed. Some items take longer to process. If you are in a hurry and need to know when your order will ship, please call or email us.
+            <br>
+            <b></b>
+            </p>
+            <br>
+            <ul>
+            <li>
+            FedEx Overnight on a Friday is a Monday Delivery
+            <br>
+            </li>
+            <li>
+            FedEx Ground (Business Delivery) is for Business Addresses ONLY: please put in the business name at checkout
+            <br>
+            </li>
+            <li>
+            FedEx Home Delivery is Ground Shipping to Residential Addresses
+            <br>
+            </li>
+            <li>
+            Spa Covers have a shipping charge specifications on the product page
+            </li>
+            </ul>
+            <br>
+            <b></b>
+            <br>
+            <p>
+            <b>ALASKA and HAWAII</b>
+            Due to shipping regulations, Spa Chemicals cannot be shipped to Alaska or Hawaii.
+            <br>
+            <br>
+            <b></b>
+            <br>
+            <b>NOTE</b>
+            Alaska Hawaii shipping is not Guaranteed for Next Day, 2nd Day or 3 Day.
+            </p>
+		</div>
 	</td>
 
 	<td class='cartSummaryTotalsContainer'>
@@ -2209,12 +2321,13 @@ So the cart template should contain these two elements and the extension should 
 
 	<!-- some buttons that are alternatives to checkout. fewer is better -->
 	<menu class='cartAltButtonsContainer noPadOrMargin'>
-	<button class='ui-button-text-only ui-button ui-state-default ui-corner-all continueShoppingButton' onClick="$('#modalCart').dialog('close');"><span class="ui-button-text">Continue Shopping</span></button>
-	</menu>
+	<button class="cartUpdateCartButton"></button>
+    <button class="cartEmptyCartButton" onClick="app.ext._store_spa.a.clearCart();"></button>
+    <button class='ui-button-text-only ui-button ui-state-default ui-corner-all continueShoppingButton' onClick="$('#modalCart').dialog('close');"></button>
+	<span title='proceed to secure checkout'><button class='ui-button ui-button-text-only ui-state-default ui-corner-all checkoutButton' onClick="showContent('checkout',{});"></button></span>
+    </menu>
 
 	<div class='checkoutButtonsContainer'>
-
-		<span title='proceed to secure checkout'><button class='ui-button ui-button-text-only ui-state-default ui-corner-all checkoutButton' onClick="showContent('checkout',{});"><span class="ui-button-text">Store Checkout</span></button></span>
 
 		<span id='paypalECButton' data-bind='var: cart(cart/cartid); format:paypalECButton;'></span>
 
@@ -2222,7 +2335,8 @@ So the cart template should contain these two elements and the extension should 
 
 		<span id='amazonCheckoutButton' class='pointer' data-bind='var: cart(cart/cartid); format:amazonCheckoutButton;'></span>
 
-	</div>
+		<i>Canadian shipping quotes available upon checkout.</i>
+    </div>
 
 </section>
 
@@ -2244,24 +2358,28 @@ So the cart template should contain these two elements and the extension should 
 
 <!-- cart line-item template -->
 <ul>
-	<li id='productListTemplateCart' class='padMargBorderBottom clearfix'>
+	<li id='productListTemplateCart' class='padMargBorderBottom clearfix productListTemplateCart'>
 
 		<button class='floatRight removeButton' data-bind='format:removeItemBtn; extension:store_cart; useParentData:true;' >Remove Item From Cart</button>
 		<button class='floatRight moveToWishlist marginRight' data-bind='format:moveToWishlistButton; extension:myRIA; useParentData:true;' >Move to Wishlist</button>
 
-		<div class='floatLeft'><img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); defaultVar: product(%attribs.zoovy:prod_image1); format:imageURL;' width='75' height='75' /></div>
-
-		<h4 data-bind='var: product(prod_name); format:text; '></h4>
-
-		<div class='ztable_row_small stid' data-bind='var: product(sku); format:text; className: stid; pretext: Sku: ;'></div>
-
-		<div>
-		qty: <input type='number' class='qtyInput numberInput' onChange="app.ext.store_cart.u.updateCartQty($(this)); app.model.dispatchThis('immutable');"  data-bind='format:cartItemQty;extension:store_cart;useParentData:true;' />
-		<button class='displayNone'>update</button><!-- here to stop 'enter' in input above from closing modal -->
-		<span data-bind='var: product(price); format:money; currencySign: $;  hideZero:false; pretext: x ;' ></span>
-		<span data-bind='var: product(extended); format:money; currencySign: $; hideZero:false; pretext: = ;'></span>
-
+		<div class="cartProductItemMainContentCont">
+            <div class='floatLeft'><img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); defaultVar: product(%attribs.zoovy:prod_image1); format:imageURL;' width='75' height='75' /></div>
+            <h4 data-bind='var: product(prod_name); format:text; '></h4>
+            <div class='ztable_row_small stid' data-bind='var: product(sku); format:text; className: stid; pretext: Sku: ;'></div>
 		</div>
+        
+		<div class="cartProductListQuantCont">
+            <input type='number' class='qtyInput numberInput' onChange="app.ext.store_cart.u.updateCartQty($(this)); app.model.dispatchThis('immutable');"  data-bind='format:cartItemQty;extension:store_cart;useParentData:true;' />
+            <button class='displayNone'>update</button><!-- here to stop 'enter' in input above from closing modal -->
+		</div>
+        <div class="cartProductListPriceCont">
+            <span data-bind='var: product(price); format:money; currencySign: $;  hideZero:false; pretext: x ;' ></span>
+        </div>
+        <div class="cartProductListTotalCont">
+            <span data-bind='var: product(extended); format:money; currencySign: $; hideZero:false; pretext: = ;'></span>
+        </div>
+
 
 		<div class='ztable_row_small prodOptions' data-bind='var: variations(%options); format:selectedOptionsDisplay;'></div>
 	</li>

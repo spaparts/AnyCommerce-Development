@@ -102,6 +102,19 @@ var _store_spa = function() {
 					default:
 					break;
 				}
+			},
+			//END headerManufacturerSelect
+			
+			clearCart : function() {
+				var itemCount = $("#cartStuffList > li").length;
+				app.u.dump("var itemCount = " + itemCount);
+				for (var i=1;i<=itemCount;i++)
+				{
+					$(".qtyInput").val(0);
+					//app.u.dump($("#cartStuffList li:nth-child("+i+") input.qtyInput"));	
+					app.ext._store_spa.u.updateCartQty($("#cartStuffList li:nth-child("+i+") input.qtyInput")); 
+				}
+					app.model.dispatchThis('immutable');
 			}
 		
 		},//END a FUNCTIONS
@@ -172,7 +185,41 @@ var _store_spa = function() {
 								$container.append($itemListContainer);
 								}
 						}
-				}
+				},
+				
+				updateCartQty : function($input,tagObj)	{
+				
+				var stid = $input.attr('data-stid');
+				var qty = $input.val();
+				
+				if(stid && qty && !$input.hasClass('disabled'))	{
+					$input.attr('disabled','disabled').addClass('disabled').addClass('loadingBG');
+					app.u.dump('got stid: '+stid);
+//some defaulting. a bare minimum callback needs to occur. if there's a business case for doing absolutely nothing
+//then create a callback that does nothing. IMHO, you should always let the user know the item was modified.
+//you can do something more elaborate as well, just by passing a different callback.
+					tagObj = $.isEmptyObject(tagObj) ? {} : tagObj;
+					tagObj.callback = tagObj.callback ? tagObj.callback : 'updateCartLineItem';
+					tagObj.extension = tagObj.extension ? tagObj.extension : 'store_cart';
+					tagObj.parentID = 'cartViewer_'+app.u.makeSafeHTMLId(stid);
+/*
+the request for quantity change needs to go first so that the request for the cart reflects the changes.
+the dom update for the lineitem needs to happen last so that the cart changes are reflected, so a ping is used.
+*/
+					app.ext.store_cart.calls.cartItemUpdate.init(stid,qty);
+					app.ext.store_cart.u.updateCartSummary();
+//lineitem template only gets updated if qty > 1 (less than 1 would be a 'remove').
+					if(qty >= 1)	{
+						app.calls.ping.init(tagObj,'immutable');
+						}
+					else	{
+						$('#cartViewer_'+app.u.makeSafeHTMLId(stid)).empty().remove();
+						}
+					}
+				else	{
+					app.u.dump(" -> a stid ["+stid+"] and a quantity ["+qty+"] are required to do an update cart.");
+					}
+				},
 			
 		},//END u FUNCTIONS
 		
