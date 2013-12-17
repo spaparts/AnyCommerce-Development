@@ -1839,7 +1839,7 @@ if you change these, you should move them above this comment so that when you (o
 		<div class='displayNone textContentArea' id='returnArticle'>
 			<H1><FONT COLOR="#ff0000" SIZE="+1" FACE="Arial">Spa Parts Depot Return Policy</FONT></H1>
 			<P>
-            	<FONT FACE="Arial">If you should need to return an item allqualified returns must follow RMA return procedures.</FONT>
+            	<FONT FACE="Arial">If you should need to return an item all qualified returns must follow RMA return procedures.</FONT>
 				<UL>
   					<LI><FONT FACE="Arial">All returns must be madewithin 30 days of invoice date.</FONT></LI>
   					<LI><FONT FACE="Arial">You must get an RMA before returning an item (NOT ALL ITEMS ARE RETURNABLE)</FONT></LI>
@@ -2163,7 +2163,8 @@ So the cart template should contain these two elements and the extension should 
 <table class='cartContainer'>
 <tr>
 	<td class='cartStuffContainer'>
-	<ul id='cartStuffList' data-bind="var: cart(@ITEMS); format:stuffList; loadsTemplate:productListTemplateCart;" class='listStyleNone fluidList clearfix noPadOrMargin productList lineItemProdlist'></ul>
+        <h2>You have <span class="cartItemCount">0</span> items in your shopping cart</h2>
+        <ul id='cartStuffList' data-bind="var: cart(@ITEMS); format:stuffList; loadsTemplate:productListTemplateCart;" class='listStyleNone fluidList clearfix noPadOrMargin productList lineItemProdlist'></ul>
 	</td>
 
 	<td class='cartSummaryTotalsContainer'>
