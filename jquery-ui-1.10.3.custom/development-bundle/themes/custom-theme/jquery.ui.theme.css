@@ -8,7 +8,7 @@
  *
  * http://docs.jquery.com/UI/Theming/API
  *
- * To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Helvetica%2CArial%2Csans-serif&fwDefault=bold&fsDefault=1.1em&cornerRadius=2px&bgColorHeader=%23016DF4&bgTextureHeader=flat&bgImgOpacityHeader=50&borderColorHeader=%23dddddd&fcHeader=%23ffffff&iconColorHeader=%230073ea&bgColorContent=%23ffffff&bgTextureContent=flat&bgImgOpacityContent=75&borderColorContent=%23dddddd&fcContent=%23444444&iconColorContent=%23cc0000&bgColorDefault=%23f6f6f6&bgTextureDefault=highlight_soft&bgImgOpacityDefault=100&borderColorDefault=%23dddddd&fcDefault=%230073ea&iconColorDefault=%23666666&bgColorHover=%23016DF4&bgTextureHover=highlight_soft&bgImgOpacityHover=25&borderColorHover=%230073ea&fcHover=%23ffffff&iconColorHover=%23ffffff&bgColorActive=%23ffffff&bgTextureActive=glass&bgImgOpacityActive=65&borderColorActive=%23dddddd&fcActive=%23cc0000&iconColorActive=%23454545&bgColorHighlight=%23ffffff&bgTextureHighlight=flat&bgImgOpacityHighlight=55&borderColorHighlight=%23cccccc&fcHighlight=%23444444&iconColorHighlight=%230073ea&bgColorError=%23ffffff&bgTextureError=flat&bgImgOpacityError=55&borderColorError=%23cc0000&fcError=%23222222&iconColorError=%23cc0000&bgColorOverlay=%23eeeeee&bgTextureOverlay=flat&bgImgOpacityOverlay=0&opacityOverlay=80&bgColorShadow=%23aaaaaa&bgTextureShadow=flat&bgImgOpacityShadow=0&opacityShadow=60&thicknessShadow=4px&offsetTopShadow=-4px&offsetLeftShadow=-4px&cornerRadiusShadow=0px
+ * To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Helvetica%2CArial%2Csans-serif&fwDefault=bold&fsDefault=1.1em&cornerRadius=2px&bgColorHeader=%23dddddd&bgTextureHeader=highlight_soft&bgImgOpacityHeader=50&borderColorHeader=%23dddddd&fcHeader=%23444444&iconColorHeader=%231286B5&bgColorContent=%23ffffff&bgTextureContent=flat&bgImgOpacityContent=75&borderColorContent=%23dddddd&fcContent=%23444444&iconColorContent=%23ff0000&bgColorDefault=%23f6f6f6&bgTextureDefault=highlight_soft&bgImgOpacityDefault=100&borderColorDefault=%23dddddd&fcDefault=%231286B5&iconColorDefault=%23666666&bgColorHover=%231286B5&bgTextureHover=highlight_soft&bgImgOpacityHover=25&borderColorHover=%231286B5&fcHover=%23ffffff&iconColorHover=%23ffffff&bgColorActive=%23ffffff&bgTextureActive=glass&bgImgOpacityActive=65&borderColorActive=%23dddddd&fcActive=%23ff0000&iconColorActive=%23454545&bgColorHighlight=%23ffffff&bgTextureHighlight=flat&bgImgOpacityHighlight=55&borderColorHighlight=%23cccccc&fcHighlight=%23444444&iconColorHighlight=%231286B5&bgColorError=%23ffffff&bgTextureError=flat&bgImgOpacityError=55&borderColorError=%23ff0000&fcError=%23222222&iconColorError=%23ff0000&bgColorOverlay=%23eeeeee&bgTextureOverlay=flat&bgImgOpacityOverlay=0&opacityOverlay=80&bgColorShadow=%23aaaaaa&bgTextureShadow=flat&bgImgOpacityShadow=0&opacityShadow=60&thicknessShadow=4px&offsetTopShadow=-4px&offsetLeftShadow=-4px&cornerRadiusShadow=0px
  */
 
 
@@ -38,12 +38,12 @@
 }
 .ui-widget-header {
 	border: 1px solid #dddddd;
-	background: #016DF4 url(images/ui-bg_flat_50_016DF4_40x100.png) 50% 50% repeat-x;
-	color: #ffffff;
+	background: #dddddd url(images/ui-bg_highlight-soft_50_dddddd_1x100.png) 50% 50% repeat-x;
+	color: #444444;
 	font-weight: bold;
 }
 .ui-widget-header a {
-	color: #ffffff;
+	color: #444444;
 }
 
 /* Interaction states
@@ -54,12 +54,12 @@
 	border: 1px solid #dddddd;
 	background: #f6f6f6 url(images/ui-bg_highlight-soft_100_f6f6f6_1x100.png) 50% 50% repeat-x;
 	font-weight: bold;
-	color: #0073ea;
+	color: #1286B5;
 }
 .ui-state-default a,
 .ui-state-default a:link,
 .ui-state-default a:visited {
-	color: #0073ea;
+	color: #1286B5;
 	text-decoration: none;
 }
 .ui-state-hover,
@@ -68,8 +68,8 @@
 .ui-state-focus,
 .ui-widget-content .ui-state-focus,
 .ui-widget-header .ui-state-focus {
-	border: 1px solid #0073ea;
-	background: #016DF4 url(images/ui-bg_highlight-soft_25_016DF4_1x100.png) 50% 50% repeat-x;
+	border: 1px solid #1286B5;
+	background: #1286B5 url(images/ui-bg_highlight-soft_25_1286B5_1x100.png) 50% 50% repeat-x;
 	font-weight: bold;
 	color: #ffffff;
 }
@@ -86,12 +86,12 @@
 	border: 1px solid #dddddd;
 	background: #ffffff url(images/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x;
 	font-weight: bold;
-	color: #cc0000;
+	color: #ff0000;
 }
 .ui-state-active a,
 .ui-state-active a:link,
 .ui-state-active a:visited {
-	color: #cc0000;
+	color: #ff0000;
 	text-decoration: none;
 }
 
@@ -112,7 +112,7 @@
 .ui-state-error,
 .ui-widget-content .ui-state-error,
 .ui-widget-header .ui-state-error {
-	border: 1px solid #cc0000;
+	border: 1px solid #ff0000;
 	background: #ffffff url(images/ui-bg_flat_55_ffffff_40x100.png) 50% 50% repeat-x;
 	color: #222222;
 }
@@ -159,10 +159,10 @@
 }
 .ui-icon,
 .ui-widget-content .ui-icon {
-	background-image: url(images/ui-icons_cc0000_256x240.png);
+	background-image: url(images/ui-icons_ff0000_256x240.png);
 }
 .ui-widget-header .ui-icon {
-	background-image: url(images/ui-icons_0073ea_256x240.png);
+	background-image: url(images/ui-icons_1286B5_256x240.png);
 }
 .ui-state-default .ui-icon {
 	background-image: url(images/ui-icons_666666_256x240.png);
@@ -175,11 +175,11 @@
 	background-image: url(images/ui-icons_454545_256x240.png);
 }
 .ui-state-highlight .ui-icon {
-	background-image: url(images/ui-icons_0073ea_256x240.png);
+	background-image: url(images/ui-icons_1286B5_256x240.png);
 }
 .ui-state-error .ui-icon,
 .ui-state-error-text .ui-icon {
-	background-image: url(images/ui-icons_cc0000_256x240.png);
+	background-image: url(images/ui-icons_ff0000_256x240.png);
 }
 
 /* positioning */
