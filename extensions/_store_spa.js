@@ -115,6 +115,18 @@ var _store_spa = function() {
 					app.ext._store_spa.u.updateCartQty($("#cartStuffList li:nth-child("+i+") input.qtyInput")); 
 				}
 					app.model.dispatchThis('immutable');
+			},
+			//END clearCart
+			
+			termsOfAgreementClick : function() {
+				if($(".checkoutTermsOfAgreementCB").is(':checked')){
+					$(".checkoutPlaceOrderButton").css( "opacity", "1");
+					$(".checkoutPlaceOrderButtonBlocker").hide();
+				}
+				else{
+					$(".checkoutPlaceOrderButton").css( "opacity", "0.4");
+					$(".checkoutPlaceOrderButtonBlocker").show();
+				}
 			}
 		
 		},//END a FUNCTIONS

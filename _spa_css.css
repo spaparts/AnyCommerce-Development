@@ -1413,3 +1413,62 @@ td.prodSummaryContainer a.productPrintProd{
     line-height: 130%;
     text-align: left;
 }
+
+
+
+
+
+
+
+
+/***********************************************************************************************************************************/
+/***********************************************************************************************************************************/
+/*****CHECKOUT TEMPLATE****/
+.checkoutInternationalShippingWarning{
+	color: #000000;
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+.checkoutTermsOfAgreementCB{
+	float:left;
+}
+.checkoutTermsOfAgreementText{
+	color: #000000;
+    font-family: verdana,arial,helvetica;
+    font-size: 10pt;
+	float:left;
+}
+.checkoutTermsOfAgreementText a{
+	color:#0000EE;
+}
+.checkoutTermsOfAgreementText a:hover{
+	color:#CC0000;
+}
+.checkoutTermsOfAgreementWarningText{
+	clear: left;
+    color: #000000;
+    float: left;
+    font-family: verdana,arial,helvetica;
+    font-size: 8pt;
+}
+
+.checkoutPlaceOrderButtonContainer{
+	clear: left;
+    float: left;
+    height: 38px;
+    position: relative;
+    width: 138px;
+}
+.checkoutPlaceOrderButtonBlocker{
+	background-color: #000000;
+    height: 37px;
+    opacity: 0.4;
+    position: absolute;
+    width: 135px;
+    z-index: 1;
+    filter: alpha(opacity=40); /* msie */
+}
+.checkoutPlaceOrderButton{
+	opacity: 0.4;
+    filter: alpha(opacity=40); /* msie */
+}
