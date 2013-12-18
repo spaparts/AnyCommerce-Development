@@ -166,7 +166,7 @@ ANIMATION TESTING
             |
             <a class="pointer" href='#top' onClick="return showContent('customer',{'show':'myaccount'});">Register/Login</a>
              |
-            <a class=" pointer zlink bindByAnchor" href="#!category?navcat=.customer_service">Customer Care</a>
+            <a class="pointer" href='#top' onClick="return showContent('company',{'show':'customerCare'});">Customer Care</a>
             |   
             <font color="red">Store Hours: 9am-6pm Mon-Fri (Pacific), Sat-Sun 9am-3pm</font>
         </div>
@@ -1017,6 +1017,49 @@ don't modify the 'data-templateid' unless you are changing template names and up
     </div>
 </div>
 
+
+
+
+<div id='categoryHelpTemplate' class='loadingBG categoryHelpTemplate'>
+
+	<div class="categoryMainContentSection">
+        <ul class='breadcrumb clearfix noPadOrMargin fluidList' data-bind='var: category(path); format:breadcrumb; extension:store_navcats; loadsTemplate: breadcrumbTemplate;'></ul>
+    
+        <img data-bind="var: category(%page.banner1); format: banner; editor: banner; height:250; width:750; extension: myRIA;" src='images/blank.gif' alt='' />
+    
+        <h2 data-bind="var: category(%page.header); format: text; editor: text;"></h2>
+    
+        <p data-bind="var: category(%page.description); format:wiki; wikiFormats:myRIA; editor: textarea;"></p>
+    
+        <ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList'></ul><!-- outputs a list of subcategories -->
+    
+        <ul data-bind="var: category(@products); format: productList; editor: finder; extension: store_prodlist; loadsTemplate: productListTemplate; withReviews:1; items_per_page: 25;" class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul><!-- outputs the product list -->
+    
+        <p data-bind="var: category(%page.description2); format:wiki; wikiFormats:myRIA; editor: textarea;"></p>
+    </div>
+    <div class="categorySidebarSection">
+    	<div class="rightSidebarBestsellersSection">
+            <div class="rightSidebarBestsellersTitleBar">
+                <p>Best Sellers</p>
+            </div>
+            <div class="rightSidebarBestsellersList">
+            </div>
+        </div>
+        <div class="rightSidebarLinksSection">
+            <a target="_blank" class="pointer" href="https://www.facebook.com/SpaPartsDepot"><img src="images/homepage/links/likeusonfacebook_icon.jpg" /></a>
+            <a target="_blank" class="pointer" href="http://www.waterwayspapumps.com/"><img src="images/homepage/links/waterwaylogo.png" /></a>
+            <a target="_blank" class="pointer" href="http://www.aquaflopumps.spapartsdepot.com/"><img src="images/homepage/links/aqua_flo_pumps.jpg" /></a>
+            <a target="_blank" class="pointer" href="http://www.laingspapumps.com/"><img src="images/homepage/links/laing2.jpg" /></a>
+            <a target="_blank" class="pointer" href="http://www.spapumps.com/"><img src="images/homepage/links/spapumps_sidebar.jpg" /></a>
+            <a target="_blank" class="pointer" href="http://www.sandiegospasales.com/"><img src="images/homepage/links/freeflow_logo.jpg" /></a>
+            <a target="_blank" class="pointer" href="http://www.leisuretimechemicals.com/"><img src="images/homepage/links/spa_chem.jpg" /></a>
+            <a target="_blank" class="pointer" href="http://www.calderaspasparts.com/"><img src="images/homepage/links/caldera_logo.jpg" /></a>
+            <a target="_blank" class="pointer" href="http://www.hydroquipspapack.com/"><img src="images/homepage/links/hydro_quip.jpg" /></a>
+            <a target="_blank" class="pointer" href="http://www.magicplasticsproducts.com/"><img src="images/homepage/links/magic_plastic_sidebar.gif" /></a>
+        </div>
+    </div>
+</div>
+
 <div id='categoryFeaturedProductsTemplate' class='loadingBG categoryTemplate'>
 
 	<div class="categoryMainContentSection">
@@ -1641,11 +1684,11 @@ if you change these, you should move them above this comment so that when you (o
 <div id='companyTemplate' class='clearfix companyTemplate'>
 
 	<div class='sideline' >
-<nav id='companyNav'>
-<ul class='listStyleNone noPadOrMargin'>
-<!-- these are generated via javascript, based on the myRIA.pages object. -->
-</ul>
-</nav>
+        <nav id='companyNav'>
+        <ul class='listStyleNone noPadOrMargin'>
+        <!-- these are generated via javascript, based on the myRIA.pages object. -->
+        </ul>
+        </nav>
 	</div>
 
 	<div class='mainColumn'>
@@ -1914,9 +1957,267 @@ if you change these, you should move them above this comment so that when you (o
                                 <tr><td><font face="arial" size="-1">$350</td><td><font face="arial" size="-1">&nbsp;Delivery to Alaska</font></td></tr></table></font></p>
 			<!--<div data-bind='var: profile(zoovy:shipping_policy); format:wiki; wikiFormats:myRIA;' id='shippingContent'></div>-->
 		</div>
+        
+        <div id='customerCareArticle' class='displayNone textContentArea'>
+            <h1>Customer Care</h1>
+            <table width="90%" cellspacing="0" cellpadding="10" align="center" style="background:#ffffff;">
+            <tbody>
+            <tr>
+            <td>
+            <img src="images/header/Logo.jpg" />
+            </td>
+            <td align="right"> </td>
+            </tr>
+            <tr>
+            <td style="background:#F6F6EE;" colspan="2">
+            <script language="JavaScript">
+            <!--
+            function zoom (url) {
+            z = window.open('','zoom_popUp','status=0,directories=0,toolbar=0,menubar=0,resizable=1,scrollbars=1,location=0');
+            z.document.write('<html>\n<head>\n<title>Picture Zoom</title>\n</head>\n<body>\n<div align="center">\n<img src="' + url + '"><br>\n<form><input type="button" value="Close Window" onClick="self.close(true)"></form>\n</div>\n</body>\n</html>\n');
+            z.document.close();
+            z.focus(true);
+            }
+            //-->
+            </script>
+            <center>
+            <table width="560">
+            <tbody>
+            <tr>
+            <td width="180" align="center"> </td>
+            <td width="180" align="center"> </td>
+            <td width="180" align="center"> </td>
+            </tr>
+            </tbody>
+            </table>
+            </center>
+            <p>
+            <font class="ztxt"></font>
+            </p>
+            <p></p>
+            <center>
+            <font class="ztxt">
+            <font face="Arial" size="+1" color="#ff0000">Return Policy</font>
+            </font>
+            </center>
+            <p></p>
+            <font class="ztxt">
+            <br>
+            <p>
+            <font face="Arial">If you should need to return and item all qualified returns must follow RMA return procedures, the following is return qualifications and guidelines which must be followed</font>
+            </p>
+            <br>
+            <ol>
+            <li>
+            <font face="Arial">All returns or other matters must be made within 30 days of invoice days.</font>
+            </li>
+            <li>
+            <font face="Arial">You must get an RMA before returning an item (NOT ALL ITEMS ARE RETURNABLE)</font>
+            </li>
+            <li>
+            <font face="Arial">All qualified returns will incur a 25 % re-stock fee, unless a mistake was made by Spa Parts Depot or the part ordered was incorrect and the intent is to order the correct part.</font>
+            </li>
+            <li>
+            <font face="Arial">All authorized returns must be shipped prepaid and carefully boxed.</font>
+            </li>
+            <li>
+            <font face="Arial">You may use any carrier, but we highly recommend insuring your return and get a tracking #.</font>
+            </li>
+            <li>
+            <font face="Arial">Shipping charges will only be refunded in the event an error of Spa Parts Depot</font>
+            </li>
+            </ol>
+            <br>
+            <p>
+            <font face="Arial">Non-returnable items:</font>
+            </p>
+            <br>
+            <ul>
+            <li>
+            <font face="Arial">Used items</font>
+            </li>
+            <li>
+            <font face="Arial">Special orders</font>
+            </li>
+            <li>
+            <font face="Arial">Spa & Bath Control Systems</font>
+            </li>
+            <li>
+            <font face="Arial">Spa Cover (Please double check your measurements to make sure you have the correct we will have it made per your measurements)</font>
+            </li>
+            <li>
+            <font face="Arial">Transformers</font>
+            </li>
+            <li>
+            <font face="Arial">Sensors</font>
+            </li>
+            <li>
+            <font face="Arial">Topside Control</font>
+            </li>
+            <li>
+            <font face="Arial">Circuit boards which have been installed can NOT be returned, if the board ordered was incorrect and the intent is to order the correct one it can be exchanged for the correct board with out restock fee.</font>
+            </li>
+            <li>
+            <font face="Arial">Mechanical parts such as Time Clocks, Contactors, Relays, Thermostats, Hi-Limits, etc.</font>
+            </li>
+            </ul>
+            <br>
+            <p>
+            <font face="Arial" size="+1" color="#ff0000">Clearance Sale Item have a 90 Day Warranty</font>
+            <font face="Arial"></font>
+            </p>
+            <font face="Arial">
+            <br>
+            <p></p>
+            <center>
+            <font face="Arial" size="+1" color="#ff0000">Contact Us</font>
+            </center>
+            <p></p>
+            <br>
+            <p>
+            <b>
+            <font face="Arial" color="#0000ff">Email</font>
+            </b>
+            <font face="Arial">
+            <br>
+            Customer Service (shopping/ordering)
+            <a href="mailto:sales@spapartsdepot.biz">sales@spapartsdepot.biz</a>
+            </font>
+            <br>
+            <font face="Arial">
+            Parts (replacement spa parts)
+            <a href="mailto:parts@spapartsdepot.biz">parts@spapartsdepot.biz</a>
+            </font>
+            <br>
+            <font face="Arial">
+            Technical questions(Ask An Expert)
+            <a href="mailto:tech@spapartsdepot.biz">tech@spapartsdepot.biz</a>
+            </font>
+            </p>
+            <br>
+            <p>
+            <font face="Arial">
+            Help
+            <a href="mailto:help@spapartsdepot.biz">help@spapartsdepot.biz</a>
+            </font>
+            </p>
+            <br>
+            <p>
+            <b>
+            <font face="Arial" color="#0000ff">Fax</font>
+            </b>
+            <font face="Arial">
+            (all departments)
+            <br>
+            (619) 258-8134
+            </font>
+            </p>
+            <br>
+            <p>
+            <b>
+            <font face="Arial" color="#0000ff">Phone</font>
+            </b>
+            <font face="Arial">
+            (Pacific Time)
+            <br>
+            Mon-Fri 9am-6pm
+            <br>
+            Saturday 9am-3pm
+            <br>
+            Sunday 9am-3pm
+            <br>
+            Customer Service for shopping/ordering, call toll free (800) 927-6110
+            <br>
+            Technical questions (Ask An Expert) call (800) 927-6110
+            </font>
+            </p>
+            <br>
+            <p>
+            <b>
+            <font face="Arial" color="#0000ff">Mailing Address</font>
+            </b>
+            <font face="Arial">
+            <br>
+            Spa Parts Depot
+            <br>
+            1000 W Bradley Ave. Suite # A
+            <br>
+            El Cajon, CA 92020
+            </font>
+            </p>
+            <br>
+            <p></p>
+            <center>
+            <font face="Arial" size="+1" color="#ff0000">Shipping, Handling</font>
+            </center>
+            <p></p>
+            <br>
+            <p>
+            <font face="Arial">
+            Free UPS Ground shipping and free handling on all orders over $99
+            <br>
+            in the 48 contiguous states; $7.50 flat rate for handling and shipping for orders under $99.
+            </font>
+            </p>
+            <br>
+            <p>
+            <font face="Arial" size="+1" color="#ff0000">Alaska, Hawaii</font>
+            <font face="Arial">
+            <br>
+            Orders to Alaska, Hawaii we offer USPS Priority Mail shipping to save you money.
+            </font>
+            </p>
+            <br>
+            <p>
+            <b>
+            <font face="Arial" color="#ff0000">
+            NOTE
+            <br>
+            </font>
+            </b>
+            <font face="Arial" color="#ff0000">Alaska Hawaii shipping is not Guaranteed for Next Day, 2nd Day or 3 Day.</font>
+            </p>
+            <br>
+            <p>
+            <font face="Arial" size="+1" color="#ff0000">Sales Tax</font>
+            <font face="Arial">
+            .
+            <br>
+            No sales tax except Calif. residents.
+            </font>
+            </p>
+            <br>
+            </font>
+            <p>
+            <font face="Arial">
+            <font face="Arial" size="+1" color="#ff0000">Spa Covers Shipping Charges</font>
+            <font face="Arial">
+            ,
+            <br>
+            Covers are shipped in large trucks, there are shipping charges on covers.
+            <br>
+            San Diego Delivery $75.00
+            <br>
+            Delivery Out Side of San Diego and the 48 contiguous states is $175.00
+            <br>
+            Delivery to Hawaii $275.00
+            <br>
+            Delivery to Alaska $350.00
+            </font>
+            <br>
+            </font>
+            </p>
+            <p> </p>
+            </font>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+        </div>
+
 
 	</div>
-
+    
 </div><!-- /companyTemplate -->
 
 

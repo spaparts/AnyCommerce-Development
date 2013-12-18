@@ -21,6 +21,9 @@ var _store_spa = function() {
 		vars : {
 			catTemplates : {
 				".featured_items" : "categoryFeaturedProductsTemplate",
+				
+				//Help pages
+				".featured_items" : "categoryFeaturedProductsTemplate",
 			},
             searchSize : 4
 		},
