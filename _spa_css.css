@@ -88,7 +88,8 @@ p, a, h1, h2, h3, h4, h5, h6{
 .headerAcctCart{
 }
 .headerCartAcct{
-	float: right;
+	clear: both;
+    float: right;
 }
 .headerCartAcct span{
 	margin-left: 5px;
@@ -110,6 +111,8 @@ p, a, h1, h2, h3, h4, h5, h6{
 }
 
 .headerCartDetails{
+	clear: both;
+    float: right;
 }
 .headerCartDetails a{
 	color: #000000;
@@ -179,6 +182,10 @@ div.headerMidLeftSection font{
 	float: right;
     margin-right: 10px;
     margin-top: 6px;
+}
+
+.headerChatSupport{
+	float: left;
 }
 
 
@@ -1485,4 +1492,7 @@ div.mainColumn{
 .checkoutPlaceOrderButton{
 	opacity: 0.4;
     filter: alpha(opacity=40); /* msie */
+	height: 37px;
+	width: 134px;
+	font-size: 12pt !important;
 }
