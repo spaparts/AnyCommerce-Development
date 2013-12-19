@@ -378,8 +378,23 @@ item list and summary are separate just to give more control over location.
 	<input type='email' required='required' name='bill/email' size='30' placeholder="email address" data-bind="var:cart(bill/email); defaultVar:cart(customer/login); format:popVal;" data-app-event='orderCreate|execBuyerEmailUpdate' /><br />
     <div data-app-role='loginPasswordContainer' class='displayNone floatRight passwordContainer'>
 		<div>If you have an account with us, please enter your password below to login. If you would like to create an account, use the create customer account slider below. If you would like to make this purchase as a guest(No account created), simply enter your email address above with no password.</div>
+        <br />
+        <div class="checkoutReturnCustNote"><span>Note:</span> If you are a returning customer and you have never setup an account before, please use password recovery first before attempting to create an account as the old system may have automatically made an account for you on your previous purchase. We apologize for the inconvenience.</div>
 		<input type='password' placeholder='password' size='30' name='password' /><button data-app-event='orderCreate|execBuyerLogin'>login</button>
 	</div>
+    
+    <div id='checkoutRecoverPasswordContainer'>
+    	<hr />
+    	<div id='recoverPasswordMessaging' class='appMessaging'></div>
+    	<form action='#' onSubmit="app.calls.appBuyerPasswordRecover.init($('#passwordRecoveryLogin').val(),{'callback':'showMessaging','message':'Thank you, will receive an email shortly','jqObj':$('.appMessaging', $(this).parent())}); app.model.dispatchThis('immutable'); return false;">
+    		<fieldset>
+            	<legend>Password Recovery</legend>
+                <div class=''><label for='passwordRecoveryLogin'>Login/Email</label> <input type='text' name='login' required='required' id='passwordRecoveryLogin' size='25' /></div>
+                <span>(this is usually your email address) </span>
+                <div><input type='submit' class='ui-button-text ui-button ui-state-default ui-corner-all recoverPasswordButton' value='Recover Password' /></div>
+    		</fieldset>
+    	</form>
+	</div><!-- /recoverPasswordContainer -->
 
 	<label class='accountCreateContainer'><input type='checkbox' name='want/create_customer' data-app-event='orderCreate|tagAsAccountCreate' />Create customer account</label>
 </div>
@@ -603,7 +618,7 @@ the defaultVar on prodName & image is for promotions, which have a 'description'
         </button>
     </div>
 
-<div data-app-role='referenceNumber' class='displayNone'>
+<div data-app-role='referenceNumber' class='displayNone CheckoutReferenceNumberCont'>
 	<label>Purchase Order/Reference #: </label>
 	<input type'text' name='want/reference_number' size='12' />
 </div>

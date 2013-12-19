@@ -499,7 +499,7 @@ div.headerMidLeftSection font{
     padding: 0;
 }
 .homepageShopCatList li{
-	border: 2px solid #3F67D6;
+	border: 2px solid #1286B5;
     color: #666666;
     float: left;
     font-family: verdana,arial,helvetica;
@@ -535,7 +535,7 @@ div.headerMidLeftSection font{
 /***********************************************************************************************************************************/
 /*****featuredProductListTemplate****/
 .productList > li.featuredProductListTemplate{
-	height: 282px;
+	height: 253px;
     width: 176px;
 	border-right:1px solid transparent;
 	border-image:url(images/homepage/featured/border.gif) 1 202;
@@ -1260,9 +1260,19 @@ td.prodSummaryContainer a.productPrintProd{
     float: left;
 }
 
+.CheckoutReferenceNumberCont{
+	float:left;
+	clear:left;
+}
 
+.checkoutReturnCustNote{
+}
+.checkoutReturnCustNote span{
+	color:#cc0000;
+}
 
-
+#checkoutRecoverPasswordContainer{
+}
 
 
 
