@@ -1266,12 +1266,14 @@ td.prodSummaryContainer a.productPrintProd{
 }
 
 .checkoutReturnCustNote{
+	float:left;
 }
 .checkoutReturnCustNote span{
 	color:#cc0000;
 }
 
 #checkoutRecoverPasswordContainer{
+	float:left;
 }
 
 
