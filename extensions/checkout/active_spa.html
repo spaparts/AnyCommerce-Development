@@ -39,7 +39,7 @@ item list and summary are separate just to give more control over location.
             </b>
             you must use Bongo's Personal Shopper service.
             <br>
-            Please click the image below to get started if you do not have a Bongo account.
+            Please click the link below to get started if you do not have a Bongo account.
             <br>
         </p>
 		<p data-app-role='addressExists' class='displayNone clearfix'>Click the checkmark of the address you would like to use</p>
@@ -414,9 +414,14 @@ billing address panel spec
 This template is also used in the myAccount page, which is why a default using _ is present.
 -->
 
-<section id='chkoutAddressBillTemplate'>
+<section id='chkoutAddressBillTemplate' class="chkoutAddressBillTemplate">
 
-	<div><input type='text' placeholder='first name' name='bill/firstname' required='required' value='' data-bind='var: cart(bill/firstname); defaultVar: cart(bill/firstname); format:popVal;'  /></div>
+	<label class="checkoutResBusCB Cont">
+    	<input class="checkoutResBusCB" type="checkbox" onClick="app.ext._store_spa.a.residentBusinessClick();" />
+        Check if you are shipping to a business address
+    </label>
+	
+    <div><input type='text' placeholder='first name' name='bill/firstname' required='required' value='' data-bind='var: cart(bill/firstname); defaultVar: cart(bill/firstname); format:popVal;'  /></div>
 	<div><input type='text' placeholder='last name' name='bill/lastname' required='required' value='' data-bind='var: cart(bill/lastname); defaultVar: cart(bill/lastname); format:popVal;'  /></div>
 
 	<div class='bill_company'><input type='text' name='bill/company' placeholder='company' value='' data-bind='var: cart(bill/company); defaultVar: cart(bill/company); format:popVal;'  /></div><!-- class is added so it can be easily disabled w/ css -->

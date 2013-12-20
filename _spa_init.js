@@ -116,6 +116,17 @@ app.rq.push(['templateFunction','productTemplate','onCompletes',function(P) {
 	//End hover zoom code
 }]);
 
+app.rq.push(['templateFunction','checkoutTemplate','onCompletes',function(P) {
+	//Create checked value for residential or business selector/
+	if($(".chkoutAddressBillTemplate input.checkoutResBusCB").data('checked')){
+	}
+	else{
+		$(".chkoutAddressBillTemplate input.checkoutResBusCB").data('checked',false);
+	}
+	
+	
+}]);
+
 
 //sample of an onDeparts. executed any time a user leaves this page/template type.
 //app.rq.push(['templateFunction','homepageTemplate','onDeparts',function(P) {app.u.dump("just left the homepage")}]);

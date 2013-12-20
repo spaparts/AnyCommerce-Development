@@ -543,7 +543,7 @@ div.headerMidLeftSection font{
 /***********************************************************************************************************************************/
 /*****featuredProductListTemplate****/
 .productList > li.featuredProductListTemplate{
-	height: 253px;
+	height: 210px;
     width: 176px;
 	border-right:1px solid transparent;
 	border-image:url(images/homepage/featured/border.gif) 1 202;
@@ -1282,6 +1282,10 @@ td.prodSummaryContainer a.productPrintProd{
 
 #checkoutRecoverPasswordContainer{
 	float:left;
+}
+
+.chkoutAddressBillTemplate div.bill_company{
+	display:none;
 }
 
 
