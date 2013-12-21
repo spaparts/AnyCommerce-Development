@@ -1288,6 +1288,30 @@ td.prodSummaryContainer a.productPrintProd{
 	display:none;
 }
 
+.chkoutAddressBillTemplate div.billCountry{
+	float: left;
+}
+.chkoutAddressShipTemplate div.shipCountry{
+	float: left;
+}
+a.checkoutIntShippingLink{
+	color: #1286B5;
+    float: left;
+    font-size: 14px;
+    margin-left: 5px;
+}
+a.checkoutIntShippingLink:hover{
+	color:#cc0000;
+}
+.chkoutAddressBillTemplate div.checkoutBillPhone{
+	clear: left;
+    float: left;
+}
+div.checkoutBillToShipContainer{
+	clear: left;
+    float: left;
+}
+
 
 
 

@@ -50,7 +50,7 @@ item list and summary are separate just to give more control over location.
 		
 		<div class='panelContent' data-app-role='addressNew' data-bind='format:loadsTemplate; loadsTemplate: chkoutAddressBillTemplate;'></div><!-- for new customers -->
 		
-		<div data-app-role='billToShipContainer' >
+		<div class="checkoutBillToShipContainer" data-app-role='billToShipContainer' >
 		<label>
 		<input type='checkbox' name='want/bill_to_ship' data-bind="var: cart(want/bill_to_ship); format:popVal; hideZero:false;" checked='checked' data-app-event='orderCreate|tagAsBillToShip' />
 		ship to billing address
@@ -60,7 +60,7 @@ item list and summary are separate just to give more control over location.
 
 
 
-	<fieldset data-app-role='chkoutAddressShip'  data-app-addresstype='ship' class='displayNone marginBottom'>
+	<fieldset data-app-role='chkoutAddressShip'  data-app-addresstype='ship' class='displayNone marginBottom chkoutAddressShip'>
 		<legend class='headerPadding' >Shipping Address</legend>
 		<div class='panelContent displayNone addressList' data-app-role='addressExists' data-bind='var: buyer(@ship); format:processList; loadsTemplate: chkoutBuyerAddressTemplate;'></div><!-- for return customers -->
 		<div class='panelContent' data-app-role='addressNew' data-bind='format:loadsTemplate; loadsTemplate: chkoutAddressShipTemplate;'></div><!-- for new customers -->
@@ -363,6 +363,9 @@ item list and summary are separate just to give more control over location.
         </tbody>
         </table>
     </div><!-- termsOfAgreementTemplate -->
+    
+    <div id='internationalShippingTemplate' class="internationalShippingTemplate displayNone">
+    </div><!-- internationalShippingTemplate -->
 	
 </div>
 
@@ -438,8 +441,9 @@ This template is also used in the myAccount page, which is why a default using _
 	<div><input type='text'  name='bill/postal' placeholder='zip/postal code' required='required' size='14' value='' data-bind='var: cart(bill/postal); defaultVar: cart(bill/postal); format:popVal;' maxlength='10'  data-app-event='orderCreate|execAddressUpdate' /></div>
 
 	<div class='billCountry' data-app-role='billCountry'><select name='bill/countrycode' placeholder='country' data-bind='var: cart(bill/countrycode); defaultVar: cart(bill/countrycode); defaultValue:US; format:countriesAsOptions; extension: cco;forceRender:1;' required='required' data-app-event="orderCreate|execCountryUpdate" ></select></div>
+    <a class="pointer checkoutIntShippingLink" onClick="$('#internationalShippingTemplate').dialog({'modal':'true', 'title':'International Shipping Information','width':825, height:700, 'dialogClass' : 'internationalShippingTemplate'});">Shipping internationally? Click here</a>
 
-	<div><input type='tel' name='bill/phone' placeholder='phone number' required='required' value='' data-bind='var: cart(bill/phone); defaultVar: cart(bill/phone); format:popVal;'  /> <span class='hint zhint'>in case of billing/delivery problems</span></div>
+	<div class="checkoutBillPhone"><input type='tel' name='bill/phone' placeholder='phone number' required='required' value='' data-bind='var: cart(bill/phone); defaultVar: cart(bill/phone); format:popVal;'  /> <span class='hint zhint'>in case of billing/delivery problems</span></div>
 
 </section>
 
@@ -452,7 +456,7 @@ shipping address panel.
 don't add required to any inputs because if bill to ship is checked, NONE of these fields are required/populated.
 -->
 
-<section id='chkoutAddressShipTemplate'>
+<section id='chkoutAddressShipTemplate' class="chkoutAddressShipTemplate">
 
 	<div><input type='text' placeholder='first name' name='ship/firstname' required='required' value='' data-bind='var: cart(ship/firstname); defaultVar: cart(ship/firstname); format:popVal;'  /></div>
 	<div><input type='text' placeholder='last name' name='ship/lastname' required='required' value='' data-bind='var: cart(ship/lastname); defaultVar: cart(ship/lastname); format:popVal;'  /></div>
@@ -471,6 +475,7 @@ don't add required to any inputs because if bill to ship is checked, NONE of the
 	<div><input type='text'  name='ship/postal' placeholder='zip/postal code' required='required' size='14' value='' data-bind='var: cart(ship/postal); defaultVar: cart(ship/postal); format:popVal;' maxlength='10' data-app-event='orderCreate|execAddressUpdate'/></div>
 
 	<div class='shipCountry' data-app-role='shipCountry'><select name='ship/countrycode' placeholder='country' data-bind='var: cart(ship/countrycode); defaultVar: cart(ship/countrycode); defaultValue:US; format:countriesAsOptions; extension: cco;forceRender:1;'  data-app-event="orderCreate|execCountryUpdate" ></select></div>
+    <a class="pointer checkoutIntShippingLink" onClick="$('#internationalShippingTemplate').dialog({'modal':'true', 'title':'International Shipping Information','width':825, height:700, 'dialogClass' : 'internationalShippingTemplate'});">Shipping internationally? Click here</a>
 
 </section>
 
