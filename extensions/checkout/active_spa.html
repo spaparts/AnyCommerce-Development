@@ -365,6 +365,8 @@ item list and summary are separate just to give more control over location.
     </div><!-- termsOfAgreementTemplate -->
     
     <div id='internationalShippingTemplate' class="internationalShippingTemplate displayNone">
+    	<div style="width:100%; max-width:550px;"><a name="bongo"></a><b>
+International Shipping Now Available!</b><br><object width="550" height="90"><param name="movie" value="https://www.bongous.com/animations/partners/bongobanner.swf"><param name="wmode" value="transparent"><embed src="https://www.bongous.com/animations/partners/bongobanner.swf" width="100%" height="90" wmode="transparent"></embed></object><p>We have partnered with Bongo International to service our customers Worldwide!</p><p>Bongo International provides our customers with their very own US address. Once you have a US address, you will be able to make purchases with us as well as other US based online retailers. Bongo receives your purchases and logs them into their online system which you can use to view your items and consolidate them with multiple orders.</p> <p>International customers can save up to 82% off typical international shipping rates by following these four easy steps:</p><table border="0"><tr><td width="70" height="40" align="center"><img src="https://www.bongous.com/images/implement/1.png" border="0"></td><td align="left"><b>Register with Bongo and receive a U.S. shipping address.</b></td></tr><tr><td width="70" height="40" align="center"><img src="https://bongous.com/images/implement/2.png" border="0"></td><td align="left"><b>Enter the Bongo address as both your billing and shipping address.</b></td></tr><tr><td width="70" height="40" align="center"><img src="https://bongous.com/images/implement/3.png" border="0"></td><td align="left"><b>Use the credit card that you have on file with Bongo as the payment method.</b></td></tr><tr><td width="70" height="40" align="center"><img src="https://bongous.com/images/implement/4.png" border="0"></td><td align="left"><b>Once the order arrives at Bongo, log into your account to forward to your country.</b></td></tr></table><p>If you have any questions, please feel free to contact Bongo through <a href="mailto:support@bongous.com?subject=Bongo+Support" title="Email Bongo" target="_blank">e-mail</a>. They will be glad to assist you.</p><table><tr><td width="550" align="center"><h3><b>Click on the Bongo logo in the bottom left corner to get started!</b></h3><br></td></tr></table></div>
     </div><!-- internationalShippingTemplate -->
 	
 </div>
@@ -441,7 +443,7 @@ This template is also used in the myAccount page, which is why a default using _
 	<div><input type='text'  name='bill/postal' placeholder='zip/postal code' required='required' size='14' value='' data-bind='var: cart(bill/postal); defaultVar: cart(bill/postal); format:popVal;' maxlength='10'  data-app-event='orderCreate|execAddressUpdate' /></div>
 
 	<div class='billCountry' data-app-role='billCountry'><select name='bill/countrycode' placeholder='country' data-bind='var: cart(bill/countrycode); defaultVar: cart(bill/countrycode); defaultValue:US; format:countriesAsOptions; extension: cco;forceRender:1;' required='required' data-app-event="orderCreate|execCountryUpdate" ></select></div>
-    <a class="pointer checkoutIntShippingLink" onClick="$('#internationalShippingTemplate').dialog({'modal':'true', 'title':'International Shipping Information','width':825, height:700, 'dialogClass' : 'internationalShippingTemplate'});">Shipping internationally? Click here</a>
+    <a class="pointer checkoutIntShippingLink" onClick="$('#internationalShippingTemplate').dialog({'modal':'true', 'title':'International Shipping Information','width':600, height:700, 'dialogClass' : 'internationalShippingTemplate'});">Shipping internationally? Click here</a>
 
 	<div class="checkoutBillPhone"><input type='tel' name='bill/phone' placeholder='phone number' required='required' value='' data-bind='var: cart(bill/phone); defaultVar: cart(bill/phone); format:popVal;'  /> <span class='hint zhint'>in case of billing/delivery problems</span></div>
 
@@ -475,7 +477,7 @@ don't add required to any inputs because if bill to ship is checked, NONE of the
 	<div><input type='text'  name='ship/postal' placeholder='zip/postal code' required='required' size='14' value='' data-bind='var: cart(ship/postal); defaultVar: cart(ship/postal); format:popVal;' maxlength='10' data-app-event='orderCreate|execAddressUpdate'/></div>
 
 	<div class='shipCountry' data-app-role='shipCountry'><select name='ship/countrycode' placeholder='country' data-bind='var: cart(ship/countrycode); defaultVar: cart(ship/countrycode); defaultValue:US; format:countriesAsOptions; extension: cco;forceRender:1;'  data-app-event="orderCreate|execCountryUpdate" ></select></div>
-    <a class="pointer checkoutIntShippingLink" onClick="$('#internationalShippingTemplate').dialog({'modal':'true', 'title':'International Shipping Information','width':825, height:700, 'dialogClass' : 'internationalShippingTemplate'});">Shipping internationally? Click here</a>
+    <a class="pointer checkoutIntShippingLink" onClick="$('#internationalShippingTemplate').dialog({'modal':'true', 'title':'International Shipping Information','width':600, height:700, 'dialogClass' : 'internationalShippingTemplate'});">Shipping internationally? Click here</a>
 
 </section>
 
