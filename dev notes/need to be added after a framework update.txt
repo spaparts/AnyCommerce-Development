@@ -7,6 +7,7 @@ app-quickstart.js:
 'bestsellersProductListTemplate',
 'featuredProductListTemplate',
 'categoryListProductPageTemplate',
+'spaFiltersCategoryTemplate',
 
 to vars : template : [
 

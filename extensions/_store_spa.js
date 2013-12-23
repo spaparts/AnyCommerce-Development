@@ -20,10 +20,11 @@ var _store_spa = function() {
 	var r= {
 		vars : {
 			catTemplates : {
-				".featured_items" : "categoryFeaturedProductsTemplate",
-				
 				//Help pages
 				".featured_items" : "categoryFeaturedProductsTemplate",
+				
+				//Filter Cartridges custom cat page
+				".filter_cartridges" : "spaFiltersCategoryTemplate"
 			},
             searchSize : 4
 		},

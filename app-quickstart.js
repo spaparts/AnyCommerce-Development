@@ -45,6 +45,7 @@ var myRIA = function() {
 			'bestsellersProductListTemplate',
 			'featuredProductListTemplate',
 			'categoryListProductPageTemplate',
+			'spaFiltersCategoryTemplate',
 //the list of templates that, in most cases, are left alone. Also in the same order as appTemplates
 			'breadcrumbTemplate',
 			'companyTemplate',
@@ -3143,7 +3144,7 @@ else	{
 			createTemplateFunctions : function()	{
 
 				app.ext.myRIA.template = {};
-				var pageTemplates = new Array('categoryTemplate','categoryHelpTemplate','categoryFeaturedProductsTemplate','productRelatedItemsListTemplate','bestsellersProductListTemplate','featuredProductListTemplate','productTemplate','companyTemplate','customerTemplate','homepageTemplate','searchTemplate','cartTemplate','checkoutTemplate','pageNotFoundTemplate');
+				var pageTemplates = new Array('categoryTemplate','spaFiltersCategoryTemplate','categoryHelpTemplate','categoryFeaturedProductsTemplate','productRelatedItemsListTemplate','bestsellersProductListTemplate','featuredProductListTemplate','productTemplate','companyTemplate','customerTemplate','homepageTemplate','searchTemplate','cartTemplate','checkoutTemplate','pageNotFoundTemplate');
 				var L = pageTemplates.length;
 				for(var i = 0; i < L; i += 1)	{
 					app.ext.myRIA.template[pageTemplates[i]] = {"onCompletes":[],"onInits":[],"onDeparts":[]};

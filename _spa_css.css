@@ -796,6 +796,7 @@ li.featuredProductListTemplate div.prodThumbContainer{
 	font-family: verdana,arial,helvetica;
     font-size: 8pt;
 	color:#0000ee;
+	font-weight: 200;
 }
 .productList > li h3:hover{
 	color:#CC0000;
