@@ -128,6 +128,11 @@ app.rq.push(['templateFunction','checkoutTemplate','onCompletes',function(P) {
 }]);
 
 
+app.rq.push(['templateFunction','spaFiltersCategoryTemplate','onDeparts',function(P) {
+	$("#filterCatAladdinSelect").val("");
+}]);
+
+
 //sample of an onDeparts. executed any time a user leaves this page/template type.
 //app.rq.push(['templateFunction','homepageTemplate','onDeparts',function(P) {app.u.dump("just left the homepage")}]);
 /*
