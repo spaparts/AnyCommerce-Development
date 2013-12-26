@@ -130,6 +130,11 @@ app.rq.push(['templateFunction','checkoutTemplate','onCompletes',function(P) {
 
 app.rq.push(['templateFunction','spaFiltersCategoryTemplate','onDeparts',function(P) {
 	$("#filterCatAladdinSelect").val("");
+	$("#filterCatDiameterSelect").val("");
+	$("#filterCatBrandSelect").val("");
+	$("#filterCatFilburSelect").val("");
+	$("#filterCatPleatcoSelect").val("");
+	$("#filterCatUnicelSelect").val("");
 }]);
 
 
