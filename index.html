@@ -66,11 +66,7 @@ app.u.loadScript(app.vars.baseURL+"_spa_init.js");
 
 </head>
 
-<!--
 <body oncontextmenu="javascript:alert('Images and content Copyright(c) are the property of The Spa Parts Depot');return false;">
--->
-<body>
-
 
 <!-- what is displayed onLoad until the view is loaded -->
 <div class="centeringContainer">
@@ -986,7 +982,9 @@ don't modify the 'data-templateid' unless you are changing template names and up
 	<div class="categoryMainContentSection">
         <ul class='breadcrumb clearfix noPadOrMargin fluidList' data-bind='var: category(path); format:breadcrumb; extension:store_navcats; loadsTemplate: breadcrumbTemplate;'></ul>
     
-        <img data-bind="var: category(%page.banner1); format: banner; editor: banner; height:250; width:750; extension: myRIA;" src='images/blank.gif' alt='' />
+        <div class="catBanners">
+        	<img data-bind="var: category(%page.banner1); format: banner; editor: banner; height:250; width:750; extension: myRIA;" src='images/blank.gif' alt='' />
+    	</div>
     
         <h2 data-bind="var: category(%page.header); format: text; editor: text;"></h2>
     
@@ -1029,7 +1027,9 @@ don't modify the 'data-templateid' unless you are changing template names and up
 	<div class="categoryMainContentSection">
         <ul class='breadcrumb clearfix noPadOrMargin fluidList' data-bind='var: category(path); format:breadcrumb; extension:store_navcats; loadsTemplate: breadcrumbTemplate;'></ul>
     
-        <img data-bind="var: category(%page.banner1); format: banner; editor: banner; height:250; width:750; extension: myRIA;" src='images/blank.gif' alt='' />
+        <div class="catBanners">
+            <img data-bind="var: category(%page.banner1); format: banner; editor: banner; height:250; width:750; extension: myRIA;" src='images/blank.gif' alt='' />
+    	</div>
     
         <h2 data-bind="var: category(%page.header); format: text; editor: text;"></h2>
         
@@ -1882,8 +1882,10 @@ don't modify the 'data-templateid' unless you are changing template names and up
 	<div class="categoryMainContentSection">
         <ul class='breadcrumb clearfix noPadOrMargin fluidList' data-bind='var: category(path); format:breadcrumb; extension:store_navcats; loadsTemplate: breadcrumbTemplate;'></ul>
     
-        <img data-bind="var: category(%page.banner1); format: banner; editor: banner; height:250; width:750; extension: myRIA;" src='images/blank.gif' alt='' />
-    
+        <div class="catBanners">
+        	<img data-bind="var: category(%page.banner1); format: banner; editor: banner; height:250; width:750; extension: myRIA;" src='images/blank.gif' alt='' />
+    	</div>
+        
         <h2 data-bind="var: category(%page.header); format: text; editor: text;"></h2>
     
         <p data-bind="var: category(%page.description); format:wiki; wikiFormats:myRIA; editor: textarea;"></p>
