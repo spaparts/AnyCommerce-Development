@@ -18,7 +18,7 @@ app.rq.push(['extension',0,'myRIA','app-quickstart.js','startMyProgram']);
 //CUSTOM EXTENSIONS
 app.rq.push(['extension',0,'_store_spa','extensions/_store_spa.js']);
 app.rq.push(['extension',0,'prodlist_infinite','extensions/prodlist_infinite.js']);
-app.rq.push(['extension',0,'_store_banner','extensions/_store_banner.js']);
+//app.rq.push(['extension',0,'_store_banner','extensions/_store_banner.js']);
 
 
 //CUSTOM SCRIPTS

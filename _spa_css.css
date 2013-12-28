@@ -1526,3 +1526,116 @@ div.mainColumn{
 	width: 134px;
 	font-size: 12pt !important;
 }
+
+
+
+
+
+
+
+
+
+/***********************************************************************************************************************************/
+/***********************************************************************************************************************************/
+/*****SPA FILTER CAT TEMPLATE****/
+.filterCatBannerAndPointsCont{
+	float: left;
+}
+.filterCatBannerAndPointsCont img{
+	float:left;
+}
+.filterCatBannerAndPointsCont ul{
+	float: left;
+    width: 240px;
+}
+
+.filterCatDropdownCont{
+	float: left;
+    margin-top: 10px;
+}
+
+.filterCatBrandDropTextCont{
+}
+.filterCatBrandDropTextCont p{
+	float: left;
+    margin-left: 25px;
+    margin-top: -2px;
+    width: 310px;
+}
+.filterCatBrandCont{
+	float: left;
+}
+.filterCatBrandCont label{
+	float: left;
+}
+.filterCatBrandCont select{
+	float: left;
+    margin-left: 30px;
+    width: 145px;
+}
+
+.filterCatNumberDropAndTextCont{
+}
+.filterCatNumberDropAndTextCont p{
+	float: left;
+    margin-left: 25px;
+    margin-top: 3px;
+    width: 310px;
+}
+.filterCatNumberDropdownContainer{
+	float:left;
+}
+.filterCatNumberDropdownContainer div{
+	margin-top: 5px;
+}
+.filterCarAladdinCont{
+}
+.filterCarAladdinCont label{
+}
+.filterCarAladdinCont select{
+	margin-left: 8px;
+    width: 145px;
+}
+.filterCatFilburCont{
+}
+.filterCatFilburCont label{
+}
+.filterCatFilburCont select{
+	margin-left: 20px;
+    width: 145px;
+}
+.filterCatPleatcoCont{
+}
+.filterCatPleatcoCont label{
+}
+.filterCatPleatcoCont select{
+	margin-left: 12px;
+    width: 145px;
+}
+.filterCatUnicelCont{
+}
+.filterCatUnicelCont label{
+}
+.filterCatUnicelCont select{
+	margin-left: 16px;
+    width: 145px;
+}
+
+.filterCatDiameterCont{
+	float: left;
+    margin-top: 20px;
+}
+.filterCatDiameterCont label{
+	float: left;
+}
+.filterCatDiameterCont select{
+	float: left;
+    margin-left: 37px;
+    width: 145px;
+}
+.filterCatDiameterCont p{
+	float: left;
+    margin-left: 25px;
+    margin-top: -2px;
+    width: 310px;
+}
