@@ -1560,7 +1560,7 @@ div.mainColumn{
 	float: left;
     margin-left: 25px;
     margin-top: -2px;
-    width: 310px;
+    width: 300px;
 }
 .filterCatBrandCont{
 	float: left;
@@ -1580,7 +1580,7 @@ div.mainColumn{
 	float: left;
     margin-left: 25px;
     margin-top: 3px;
-    width: 310px;
+    width: 300px;
 }
 .filterCatNumberDropdownContainer{
 	float:left;
@@ -1609,7 +1609,7 @@ div.mainColumn{
 .filterCatPleatcoCont label{
 }
 .filterCatPleatcoCont select{
-	margin-left: 12px;
+	margin-left: 7px;
     width: 145px;
 }
 .filterCatUnicelCont{
@@ -1630,12 +1630,22 @@ div.mainColumn{
 }
 .filterCatDiameterCont select{
 	float: left;
-    margin-left: 37px;
+    margin-left: 38px;
     width: 145px;
 }
 .filterCatDiameterCont p{
 	float: left;
     margin-left: 25px;
     margin-top: -2px;
-    width: 310px;
+    width: 300px;
+}
+
+.spaFiltersCategoryTemplate div.categoryMainContentSection p{
+	font-family: Arial,Helvetica,sans-serif
+}
+.spaFiltersCategoryTemplate div.categoryMainContentSection li font{
+	font-family: Arial,Helvetica,sans-serif
+}
+.spaFiltersCategoryTemplate div.categoryMainContentSection label{
+	font-family: Arial,Helvetica,sans-serif
 }
