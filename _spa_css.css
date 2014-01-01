@@ -4,6 +4,7 @@
 body{
 	background-color:#DCDCDC;
 	margin:10px;
+	font-family:Arial, Helvetica, sans-serif;
 }
 .centeringContainer{
 	margin-left:auto;
@@ -223,7 +224,7 @@ div.headerMidLeftSection font{
     border: 1px solid #C0C0C0;
     color: #000000;
     float: left;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
     font-size: 8pt;
     height: 14px;
     margin-left: 8px;
@@ -273,7 +274,7 @@ div.headerMidLeftSection font{
     padding-left: 5px;
 }
 .sidebarNewsletterCont form fieldset p{
-	font-family: Verdana,Arial,Helvetica,sans-serif;
+	font-family: Arial,Helvetica,sans-serif;
     font-size: 8pt;
     margin-bottom: 2px;
     margin-top: 2px;
@@ -461,7 +462,7 @@ div.headerMidLeftSection font{
 }
 .homepageFeatProdListCont a{
 	text-decoration: none;
-	font-family: verdana,arial,helvetica;
+	font-family: arial,helvetica;
     font-size: 8pt;
 	color: #666666;
 	float:right;
@@ -510,7 +511,7 @@ div.headerMidLeftSection font{
 	border: 2px solid #1286B5;
     color: #666666;
     float: left;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
     font-size: 8pt;
     height: 210px;
     list-style: none outside none;
@@ -527,14 +528,14 @@ div.headerMidLeftSection font{
 }
 .homepageShopCatList li h5{
 	color: #666666;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
     font-size: 8pt;
 	font-weight:bold;
 	text-align:center;
 }
 .homepageShopCatList li p{
 	color: #666666;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
     font-size: 8pt;
 	text-align:center;
 }
@@ -564,7 +565,7 @@ li.featuredProductListTemplate div.prodThumbContainer{
     position: relative;
     width: 160px;
 	color: #000000;
-    font: bold 9pt Tahoma,Arial,Helvetica,sans-serif;
+    font: bold 9pt Arial,Helvetica,sans-serif;
     margin-top: 10px;
 	text-align:center;
 }
@@ -665,7 +666,7 @@ li.featuredProductListTemplate div.prodThumbContainer{
 .bestsellersProductListTemplate h3{
 	color: #666666;
     float: left;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
     font-size: 8pt;
     font-weight: bold;
     margin-left: 8px;
@@ -675,7 +676,7 @@ li.featuredProductListTemplate div.prodThumbContainer{
 .bestsellersProductListTemplate a{
 	color: #0F67EC;
     float: left;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
     font-size: 8pt;
     margin-left: 53px;
     margin-top: 5px;
@@ -740,7 +741,7 @@ li.featuredProductListTemplate div.prodThumbContainer{
 	padding-bottom:10px;
 }
 .catName{
-	font-family: verdana,arial,helvetica;
+	font-family: arial,helvetica;
     font-size: 9pt;
     font-weight: bold;
 	color: #0F67EC;
@@ -793,7 +794,7 @@ li.featuredProductListTemplate div.prodThumbContainer{
 .productList > li h3{
 	float: left;
     width: 215px;
-	font-family: verdana,arial,helvetica;
+	font-family: arial,helvetica;
     font-size: 8pt;
 	color:#0000ee;
 	font-weight: 200;
@@ -806,28 +807,28 @@ div.productListPriceSection{
 	float: left;
     width: 215px;
 	color: #666666;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
     font-size: 7pt;
 }
 div.productListPriceSection h6{
 	float: left;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
     font-size: 7pt;
     font-weight: normal;
 }
 div.productListPriceSection h5{
-	font-family: verdana,arial,helvetica;
+	font-family: arial,helvetica;
     font-size: 7pt;
     font-weight: normal;
     text-decoration: line-through;
 }
 div.productListPriceSection h4{
-	font-family: verdana,arial,helvetica;
+	font-family: arial,helvetica;
     font-size: 7pt;
 	font-weight:bold;
 }
 div.productListPriceSection span{
-	font-family: verdana,arial,helvetica;
+	font-family: arial,helvetica;
     font-size: 7pt;
 }
 
@@ -884,27 +885,27 @@ div.productListPriceSection span{
 	display:block;
 	float:left;
 	color: #000000;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
     font-size: 8pt;
 	height:25px;
 }
 .prodSummaryContainer h5.prodMSRP{
 	text-decoration: line-through;
 	color: #000000;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
     font-size: 8pt;
 	height:25px;
 }
 .prodSummaryContainer h4.basePrice{
 	color: #006EF1;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
     font-size: 8pt;
     font-weight: bold;
     margin-bottom: 10px;
 }
 .prodSummaryContainer span.savings{
 	color: #000000;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
     font-size: 8pt;
 	font-weight: bold;
 }
@@ -925,7 +926,7 @@ div.productListPriceSection span{
 }
 .productShipsWithinCont2 h3{
 	color: #000000;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
     font-size: 8pt;
 }
 
@@ -1012,7 +1013,7 @@ td.prodSummaryContainer a.productPrintProd{
 	width:268px;
 	height:124px;
 	color: #666666;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
     font-size: 8pt;
     border: 1px solid #025AAB;
 	border-top: 5px solid #016DF4;
@@ -1024,7 +1025,7 @@ td.prodSummaryContainer a.productPrintProd{
 }
 .productList > li.searchResultsProduct h5{
 	color: #0F67EC;
-	font-family: verdana,arial,helvetica;
+	font-family: arial,helvetica;
     font-size: 9pt;
     font-weight: bold;
 }
@@ -1034,12 +1035,12 @@ td.prodSummaryContainer a.productPrintProd{
 .productList > li.searchResultsProduct h6{
 	font-weight: bold;
 	color: #666666;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
     font-size: 8pt;
 }
 .productList > li.searchResultsProduct div.moreDetails{
 	color: #0F67EC;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
     font-size: 8pt;
     margin-top: 5px;
     text-decoration: underline;
@@ -1090,7 +1091,7 @@ td.prodSummaryContainer a.productPrintProd{
 }
 .cartStuffContainer p{
 	color: #000000;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
     font-size: 8pt;
 }
 .cartStuffContainer p a{
@@ -1124,7 +1125,7 @@ td.prodSummaryContainer a.productPrintProd{
 	color: #FFFFFF;
     display: block;
     float: left;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
     font-size: 9pt;
 	margin-right: 325px;
 }
@@ -1132,7 +1133,7 @@ td.prodSummaryContainer a.productPrintProd{
 	color: #FFFFFF;
     display: block;
     float: left;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
     font-size: 9pt;
     font-weight: bold;
     margin-right: 40px;
@@ -1180,7 +1181,7 @@ td.prodSummaryContainer a.productPrintProd{
 }
 .checkoutButtonsContainer i{
 	color: #333333;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
 	font-size:7pt;
 	float: left;
 }
@@ -1189,7 +1190,7 @@ td.prodSummaryContainer a.productPrintProd{
 }
 .cartBottomText ul li{
 	color: #000000;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
     font-size: 8pt;
 }
 
@@ -1329,7 +1330,7 @@ div.checkoutBillToShipContainer{
 }
 #loginFormContainer form fieldset legend{
 	color: #333333;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
     font-size: 9pt;
     font-weight: bold;
 }
@@ -1342,7 +1343,7 @@ div.checkoutBillToShipContainer{
 #loginFormContainer form fieldset span{
 	color: #666666;
     float: left;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
     font-size: 7pt;
     margin-bottom: 5px;
 }
@@ -1350,7 +1351,7 @@ div.checkoutBillToShipContainer{
 	background-color: #FFFFFF;
     border: 1px solid #C0C0C0;
     color: #000000;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
     font-size: 8pt;
 	width:152px;
 	height:14px;
@@ -1361,7 +1362,7 @@ div.checkoutBillToShipContainer{
     border: 1px solid #0B2F79;
     border-radius: 0;
     color: #FFFFFF;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
     font-size: 8pt;
     font-weight: 500;
     height: 19px;
@@ -1374,7 +1375,7 @@ div.checkoutBillToShipContainer{
     border: 1px solid #0B2F79;
     border-radius: 0;
     color: #FFFFFF;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
     font-size: 8pt;
     font-weight: 500;
     height: 19px;
@@ -1431,7 +1432,7 @@ div.mainColumn{
 .article div div{
 	line-height: 130%;
     color: #000000;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
 }
 .article div p{
 	color: #000000;
@@ -1459,7 +1460,7 @@ div.mainColumn{
 
 #paymentArticle p{
 	color: #000000;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
     font-size: 8pt;
     line-height: 130%;
     text-align: left;
@@ -1485,7 +1486,7 @@ div.mainColumn{
 }
 .checkoutTermsOfAgreementText{
 	color: #000000;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
     font-size: 10pt;
 	float:left;
 }
@@ -1499,7 +1500,7 @@ div.mainColumn{
 	clear: left;
     color: #000000;
     float: left;
-    font-family: verdana,arial,helvetica;
+    font-family: arial,helvetica;
     font-size: 8pt;
 }
 
