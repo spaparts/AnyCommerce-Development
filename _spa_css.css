@@ -1019,6 +1019,9 @@ td.prodSummaryContainer a.productPrintProd{
     margin: 0 0 0 5px;
     width: 409px;
 }
+.productBottomSection div.productSpecifications p{
+	font-size: 14px;
+}
 .prodlistRelatedContainer{
 	background-color: #FFFFFF;
     float: left;

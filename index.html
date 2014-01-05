@@ -2457,7 +2457,7 @@ It's done this way because ID's hard coded into template are bad mojo (templates
 <div class="productBottomContainer">
     <div class="productBottomSection">
         <div style="font:bold 9pt/18px Arial, Helvetica, sans-serif; color:#F21300; border-bottom:1px solid #C5C5C5; margin-top:10px;">Specifications</div>
-        <div data-bind='var: product(zoovy:prod_desc); format:wiki; wikiFormats:myRIA;'></div>
+        <div class="productSpecifications" data-bind='var: product(zoovy:prod_desc); format:wiki; wikiFormats:myRIA;'></div>
         <div style="font:bold 9pt/18px Arial, Helvetica, sans-serif; color:#F21300; border-bottom:1px solid #C5C5C5; margin-top:10px;">Look for Similar products by category:</div>
         <div class="relatedItems">
         	<ul data-bind="var: product(user:app_category); format: productRelatedCategoryList; extension: _store_spa; loadsTemplate: categoryListProductPageTemplate;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList'></ul>
