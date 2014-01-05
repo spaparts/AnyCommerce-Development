@@ -796,6 +796,11 @@ li.featuredProductListTemplate div.prodThumbContainer{
 	height:56px;
 	overflow:hidden;
 }
+.productListProductInfoContainer div{
+	color: #666666;
+    font-family: arial,helvetica;
+    font-size: 8pt;
+}
 
 .prodThumbContainer{
 	float: left;
