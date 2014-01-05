@@ -2367,7 +2367,7 @@ this will likely become more flexible in the future. ###
 
 	<form data-bind='var: product(pid); format:atcForm; extension:store_product;' class='prodViewerAddToCartForm clearfix' action='#' onSubmit="app.ext.myRIA.u.addItemToCart($(this), {'action':'modal'}); return false;">
 
-		<fieldset data-bind='var: product(pid); format:atcVariations; extension:store_product;' class='borderNone'></fieldset>
+		<fieldset data-bind='var: product(pid); format:atcVariations; extension:store_product;' class='borderNone productVariations'></fieldset>
 		<fieldset data-bind='useParentData:true; format:atcQuantityInput; extension:store_product; pretext:Quantity: ; defaultValue:1;' class='borderNone'></fieldset>
 		<div class="productShipsWithinCont2">
             <h3 data-bind='var: product(zoovy:ship_latency); format:hideIfSet;'>Normally ships within 1-2 days.</h3>
@@ -2450,7 +2450,6 @@ It's done this way because ID's hard coded into template are bad mojo (templates
 
 
 -->
-</div>
 
 	</td>
 </tr>
