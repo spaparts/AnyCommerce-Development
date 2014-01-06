@@ -144,8 +144,25 @@ var _store_spa = function() {
 					$(".chkoutAddressBillTemplate div.bill_company").show();
 					$('.chkoutAddressBillTemplate input.checkoutResBusCB').data('checked',false).append();
 				}
-			}
-		
+			},
+			
+			showDropdown : function($tag) {
+					var $dropdown = $(".dropdown", $tag);
+					var height = 370;
+					/*$dropdown.children().each(function(){
+						height += $(this).outerHeight(true);
+					});*/
+					$dropdown.stop().animate({"height":height+"px"}, 500);
+					$dropdown.css({'border-top':'7px dotted #909090'});
+					$dropdown.css({'border-top':'7px dotted rgba(200, 200, 200, 0.5)'});
+					$dropdown.css({'border-bottom':'10px solid #E61652'});
+				},
+					
+				hideDropdown : function($tag) {
+					$(".dropdown", $tag).stop().animate({"height":"0px"}, 500);
+					$(".dropdown", $tag).css({'border-top':'none'});
+					$(".dropdown", $tag).css({'border-bottom':'none'});
+				},		
 		},//END a FUNCTIONS
 		
 		u : {

@@ -2163,27 +2163,29 @@ remember to NOT put the button inside the 'onclick' container or two events will
 for product lists with addToCart feature (accessories, for example)
 container ul should have lineItemProdlist class on it instead of productList
 -->
-<li id='productListTemplateATC' class='loadingBG  ' >
+<li id='productListTemplateATC' class='loadingBG productListTemplateATC' >
 	<div data-bind='var:product(pid);format:assignAttribute; attribute:data-pid;'>
 
 		<div class='prodThumbContainer floatLeft'>
-		<img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='120' height='120' />
+            <img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='60' height='53' />
 		</div>
 
-		<h5 data-bind='var: product(zoovy:prod_name); format:text;'></h5>
-
-		<h6 data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; className:price; pretext: Our Price: ;'></h6>
-
-		<span data-bind='var: reviews(reviews.average); format:addClass; className:review_;' class='reviewSprite'></span>
-	
-		<form data-bind='var: product(pid); format:atcForm; extension:store_product;' class='prodViewerAddToCartForm clearfix' action='#' onSubmit="app.ext.myRIA.u.addItemToCart($(this)); return false;">
-	
-			<fieldset data-bind='var: product(pid); format:atcVariations; extension:store_product;' class='borderNone'></fieldset>
-			<fieldset data-bind='useParentData:true; format:atcQuantityInput; extension:store_product; pretext:Quantity: ; defaultValue:0;' class='borderNone'></fieldset>
-	
-			<input type='submit' value='Add to Cart' class='ui-button ui-button-text ui-corner-all ui-state-default addToCartButton displayNone' data-bind='var: product(pid); format:addToCartButton; extension:store_product;'  />
-		</form>
-
+		<div class="productListTemplateATCTextCont">
+            <div class="productListTemplateATCTextContent">
+                <h5 data-bind='var: product(zoovy:prod_name); format:text;'></h5>
+                <h6 data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; className:price; pretext: Our Price: ;'></h6>    
+            </div>
+            <form data-bind='var: product(pid); format:atcForm; extension:store_product;' class='prodViewerAddToCartForm' action='#' onSubmit="app.ext.myRIA.u.addItemToCart($(this)); return false;">
+                <a onMouseOver="app.ext._store_spa.a.showDropdown($(this))" onMouseOut="app.ext._store_spa.a.hideDropdown($(this))">Product options available. Please click here before adding product to cart.</a>
+                <div class="productListTemplateATCVariationsDropdownCont">
+                	<fieldset data-bind='var: product(pid); format:atcVariations; extension:store_product;' class='borderNone'></fieldset>
+                </div>
+                <div class="productListTemplateATCButtonCont">
+                    <fieldset data-bind='useParentData:true; format:atcQuantityInput; extension:store_product; pretext:Quantity: ; defaultValue:0;' class='borderNone'></fieldset>
+                    <input type='submit' value='Add to Cart' class='ui-button ui-button-text ui-corner-all ui-state-default addToCartButton displayNone' data-bind='var: product(pid); format:addToCartButton; extension:store_product;'  />
+            	</div>
+            </form>
+        </div>
 	</div>
 </li>
 
@@ -2457,6 +2459,11 @@ It's done this way because ID's hard coded into template are bad mojo (templates
 <div class="productBottomContainer">
     <div class="productBottomSection">
         <div style="font:bold 9pt/18px Arial, Helvetica, sans-serif; color:#F21300; border-bottom:1px solid #C5C5C5; margin-top:10px;">Specifications</div>
+        <div class="productSpecifications" data-bind='var: product(zoovy:prod_desc); format:wiki; wikiFormats:myRIA;'></div>
+        <div style="font:bold 9pt/18px Arial, Helvetica, sans-serif; color:#F21300; border-bottom:1px solid #C5C5C5; margin-top:10px;">Accessories</div>
+        <div class="productAccessories">
+            <ul class='listStyleNone fluidList clearfix noPadOrMargin lineItemProdlist' data-bind="var: product(zoovy:accessory_products); format:productList; extension:store_prodlist;loadsTemplate:productListTemplateATC;hide_pagination:true;hide_summary:true; withReviews:1; withInventory:1; withVariations:1;"></ul>
+        </div>
         <div class="productSpecifications" data-bind='var: product(zoovy:prod_desc); format:wiki; wikiFormats:myRIA;'></div>
         <div style="font:bold 9pt/18px Arial, Helvetica, sans-serif; color:#F21300; border-bottom:1px solid #C5C5C5; margin-top:10px;">Look for Similar products by category:</div>
         <div class="relatedItems">
@@ -2821,7 +2828,7 @@ if you change these, you should move them above this comment so that when you (o
 					<font color="#FF0000">Duty and Taxes will be your responsibility.</font>
                 </FONT>
     	<div style="width:100%; max-width:550px;"><a name="bongo"></a><b>
-International Shipping Now Available!</b><br><object width="550" height="90"><param name="movie" value="https://www.bongous.com/animations/partners/bongobanner.swf"><param name="wmode" value="transparent"><embed src="https://www.bongous.com/animations/partners/bongobanner.swf" width="100%" height="90" wmode="transparent"></embed></object><p>We have partnered with Bongo International to service our customers Worldwide!</p><p>Bongo International provides our customers with their very own US address. Once you have a US address, you will be able to make purchases with us as well as other US based online retailers. Bongo receives your purchases and logs them into their online system which you can use to view your items and consolidate them with multiple orders.</p> <p>International customers can save up to 82% off typical international shipping rates by following these four easy steps:</p><table border="0"><tr><td width="70" height="40" align="center"><img src="https://www.bongous.com/images/implement/1.png" border="0"></td><td align="left"><b>Register with Bongo and receive a U.S. shipping address.</b></td></tr><tr><td width="70" height="40" align="center"><img src="https://bongous.com/images/implement/2.png" border="0"></td><td align="left"><b>Enter the Bongo address as both your billing and shipping address.</b></td></tr><tr><td width="70" height="40" align="center"><img src="https://bongous.com/images/implement/3.png" border="0"></td><td align="left"><b>Use the credit card that you have on file with Bongo as the payment method.</b></td></tr><tr><td width="70" height="40" align="center"><img src="https://bongous.com/images/implement/4.png" border="0"></td><td align="left"><b>Once the order arrives at Bongo, log into your account to forward to your country.</b></td></tr></table><p>If you have any questions, please feel free to contact Bongo through <a href="mailto:support@bongous.com?subject=Bongo+Support" title="Email Bongo" target="_blank">e-mail</a>. They will be glad to assist you.</p><table><tr><td width="550" align="center"><h3><b>Click on the Bongo logo in the bottom left corner to get started!</b></h3><br></td></tr></table>
+International Shipping Now Available!</b><br><object width="550" height="90"><param name="movie" value="https://www.bongous.com/animations/partners/bongobanner.swf"><param name="wmode" value="transparent"><embed src="https://www.bongous.com/animations/partners/bongobanner.swf" width="100%" height="90" wmode="transparent"></embed></object><p>We have partnered with Bongo International to service our customers Worldwide!</p><p>Bongo International provides our customers with their very own US address. Once you have a US address, you will be able to make purchases with us as well as other US based online retailers. Bongo receives your purchases and logs them into their online system which you can use to view your items and consolidate them with multiple orders.</p> <p>International customers can save up to 82% off typical international shipping rates by following these four easy steps:</p><table border="0"><tr><td width="70" height="40" align="center"><img src="https://www.bongous.com/images/implement/1.png" border="0"></td><td align="left"><b>Sign up for Bongo’s Mail Forwarding Service.</b></td></tr><tr><td width="70" height="40" align="center"><img src="https://bongous.com/images/implement/2.png" border="0"></td><td align="left"><b>Request Bongo’s "Personal Shopper Service"</b></td></tr><tr><td width="70" height="40" align="center"><img src="https://bongous.com/images/implement/3.png" border="0"></td><td align="left"><b>Enter the URL of the items you wish to purchase from our site into the Bongo online system.</b></td></tr><tr><td width="70" height="40" align="center"><img src="https://bongous.com/images/implement/4.png" border="0"></td><td align="left"><b>Bongo will make the purchase on our site on your behalf and ship the items to you.</b></td></tr></table> <p>Click <a target="_blank" href="https://www.bongous.com/personal-shopping.php">here</a> to go to Bongo's personal shopper.</p> <p>If you have any questions, please feel free to contact Bongo through <a href="mailto:support@bongous.com?subject=Bongo+Support" title="Email Bongo" target="_blank">e-mail</a>. They will be glad to assist you.</p><table><tr><td width="550" align="center"><h3><b>Click on the Bongo logo in the bottom left corner to get started!</b></h3><br></td></tr></table>
 		</div>
 			<!--<div data-bind='var: profile(zoovy:shipping_policy); format:wiki; wikiFormats:myRIA;' id='shippingContent'></div>-->
 		</div>
@@ -3418,9 +3425,9 @@ So the cart template should contain these two elements and the extension should 
             <b>For International Customers</b>
             <br>
     	<div style="width:100%; max-width:550px;"><a name="bongo"></a><b>
-International Shipping Now Available!</b><br><object width="550" height="90"><param name="movie" value="https://www.bongous.com/animations/partners/bongobanner.swf"><param name="wmode" value="transparent"><embed src="https://www.bongous.com/animations/partners/bongobanner.swf" width="100%" height="90" wmode="transparent"></embed></object><p>We have partnered with Bongo International to service our customers Worldwide!</p><p>Bongo International provides our customers with their very own US address. Once you have a US address, you will be able to make purchases with us as well as other US based online retailers. Bongo receives your purchases and logs them into their online system which you can use to view your items and consolidate them with multiple orders.</p> <p>International customers can save up to 82% off typical international shipping rates by following these four easy steps:</p><table border="0"><tr><td width="70" height="40" align="center"><img src="https://www.bongous.com/images/implement/1.png" border="0"></td><td align="left"><b>Register with Bongo and receive a U.S. shipping address.</b></td></tr><tr><td width="70" height="40" align="center"><img src="https://bongous.com/images/implement/2.png" border="0"></td><td align="left"><b>Enter the Bongo address as both your billing and shipping address.</b></td></tr><tr><td width="70" height="40" align="center"><img src="https://bongous.com/images/implement/3.png" border="0"></td><td align="left"><b>Use the credit card that you have on file with Bongo as the payment method.</b></td></tr><tr><td width="70" height="40" align="center"><img src="https://bongous.com/images/implement/4.png" border="0"></td><td align="left"><b>Once the order arrives at Bongo, log into your account to forward to your country.</b></td></tr></table><p>If you have any questions, please feel free to contact Bongo through <a href="mailto:support@bongous.com?subject=Bongo+Support" title="Email Bongo" target="_blank">e-mail</a>. They will be glad to assist you.</p><table><tr><td width="550" align="center"><h3><b>Click on the Bongo logo in the bottom left corner to get started!</b></h3><br></td></tr></table></div>
-            <br>
-		</div>
+International Shipping Now Available!</b><br><object width="550" height="90"><param name="movie" value="https://www.bongous.com/animations/partners/bongobanner.swf"><param name="wmode" value="transparent"><embed src="https://www.bongous.com/animations/partners/bongobanner.swf" width="100%" height="90" wmode="transparent"></embed></object><p>We have partnered with Bongo International to service our customers Worldwide!</p><p>Bongo International provides our customers with their very own US address. Once you have a US address, you will be able to make purchases with us as well as other US based online retailers. Bongo receives your purchases and logs them into their online system which you can use to view your items and consolidate them with multiple orders.</p> <p>International customers can save up to 82% off typical international shipping rates by following these four easy steps:</p><table border="0"><tr><td width="70" height="40" align="center"><img src="https://www.bongous.com/images/implement/1.png" border="0"></td><td align="left"><b>Sign up for Bongo’s Mail Forwarding Service.</b></td></tr><tr><td width="70" height="40" align="center"><img src="https://bongous.com/images/implement/2.png" border="0"></td><td align="left"><b>Request Bongo’s "Personal Shopper Service"</b></td></tr><tr><td width="70" height="40" align="center"><img src="https://bongous.com/images/implement/3.png" border="0"></td><td align="left"><b>Enter the URL of the items you wish to purchase from our site into the Bongo online system.</b></td></tr><tr><td width="70" height="40" align="center"><img src="https://bongous.com/images/implement/4.png" border="0"></td><td align="left"><b>Bongo will make the purchase on our site on your behalf and ship the items to you.</b></td></tr></table> <p>Click <a target="_blank" href="https://www.bongous.com/personal-shopping.php">here</a> to go to Bongo's personal shopper.</p> <p>If you have any questions, please feel free to contact Bongo through <a href="mailto:support@bongous.com?subject=Bongo+Support" title="Email Bongo" target="_blank">e-mail</a>. They will be glad to assist you.</p><table><tr><td width="550" align="center"><h3><b>Click on the Bongo logo in the bottom left corner to get started!</b></h3><br></td></tr></table>
+		<br />
+        </div>
 	</td>
 
 	<td class='cartSummaryTotalsContainer'>
