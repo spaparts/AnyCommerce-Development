@@ -1138,6 +1138,12 @@ td.prodSummaryContainer a.productPrintProd{
 .productListTemplateATCTextCont form.prodViewerAddToCartForm fieldset div.variation span.labelsAsBreaks{
 }
 .productListTemplateATCTextCont form.prodViewerAddToCartForm fieldset div.variation span.labelsAsBreaks label{
+	clear: left;
+    color: #000000;
+    float: left;
+    font-size: 14px;
+    margin-top: 0;
+    width: 250px;
 }
 .productListTemplateATCTextCont form.prodViewerAddToCartForm fieldset div.variation span.labelsAsBreaks label input{
 }
@@ -1148,7 +1154,7 @@ td.prodSummaryContainer a.productPrintProd{
     width: 171px;
 	position:relative;
 }
-.productListTemplateATC div.productListTemplateATCTextCont form.prodViewerAddToCartForm a{
+.productListTemplateATC div.productListTemplateATCTextCont form.prodViewerAddToCartForm div.productListTemplateATCOptionsDropdown{
 	border-right: 4px solid #FFFFFF;
     color: #0F67EC;
     float: left;
@@ -1158,9 +1164,22 @@ td.prodSummaryContainer a.productPrintProd{
     width: 74px;
 	cursor:pointer;
 }
-.productListTemplateATC div.productListTemplateATCTextCont form.prodViewerAddToCartForm a:hover{
+.productListTemplateATC div.productListTemplateATCTextCont form.prodViewerAddToCartForm div.productListTemplateATCOptionsDropdown:hover{
 	color:#CC0000;
 }
+.productListTemplateATC div.productListTemplateATCTextCont form.prodViewerAddToCartForm div.productListTemplateATCOptionsDropdown p{
+    color: #0F67EC;
+    float: left;
+    font-size: 7pt;
+    height: 65px;
+    text-decoration: underline;
+    width: 74px;
+	cursor:pointer;
+}
+.productListTemplateATC div.productListTemplateATCTextCont form.prodViewerAddToCartForm div.productListTemplateATCOptionsDropdown p:hover{
+	color:#CC0000;
+}
+
 .productListTemplateATC div.productListTemplateATCTextCont form fieldset{
 	border-right: 4px solid #FFFFFF;
     float: left;
@@ -1172,7 +1191,9 @@ td.prodSummaryContainer a.productPrintProd{
 	height: 0;
     overflow: hidden;
     position: absolute;
-    width: 500px;
+    width: 250px;
+	z-index:3;
+	background-color:white;
 }
 
 .productListTemplateATC div.productListTemplateATCTextCont div.productListTemplateATCButtonCont{
@@ -1181,11 +1202,27 @@ td.prodSummaryContainer a.productPrintProd{
     width: 93px;
 }
 .productListTemplateATC div.productListTemplateATCTextCont div.productListTemplateATCButtonCont fieldset{
-	border:none;
+	border: medium none;
+    font-size: 12px;
+    height: 20px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    width: 100%;
+}
+.productListTemplateATC div.productListTemplateATCTextCont div.productListTemplateATCButtonCont fieldset input{
+	width: 27px;
 }
 .productListTemplateATC div.productListTemplateATCTextCont div.productListTemplateATCButtonCont input.addToCartButton{
 	background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
-    width: 30px;
+    float: left;
+    font-size: 12px;
+    margin-left: 5px;
+    padding: 0;
+    width: 83px;
+}
+.productListTemplateATC div.productListTemplateATCTextCont div.productListTemplateATCButtonCont input.addToCartButton:hover{
+	background-color:#1286B5;
+	color:#F8F8EE;
 }
 
 

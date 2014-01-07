@@ -147,21 +147,15 @@ var _store_spa = function() {
 			},
 			
 			showDropdown : function($tag) {
-					var $dropdown = $(".dropdown", $tag);
-					var height = 370;
-					/*$dropdown.children().each(function(){
-						height += $(this).outerHeight(true);
-					});*/
+					var $dropdown = $(".productListTemplateATCVariationsDropdownCont", $tag);
+					var height = 200;
 					$dropdown.stop().animate({"height":height+"px"}, 500);
-					$dropdown.css({'border-top':'7px dotted #909090'});
-					$dropdown.css({'border-top':'7px dotted rgba(200, 200, 200, 0.5)'});
-					$dropdown.css({'border-bottom':'10px solid #E61652'});
+					$(".productListTemplateATCVariationsDropdownCont", $tag).css({'border':'solid 1px #CAC4AE'});
 				},
 					
 				hideDropdown : function($tag) {
-					$(".dropdown", $tag).stop().animate({"height":"0px"}, 500);
-					$(".dropdown", $tag).css({'border-top':'none'});
-					$(".dropdown", $tag).css({'border-bottom':'none'});
+					$(".productListTemplateATCVariationsDropdownCont", $tag).stop().animate({"height":"0px"}, 500);
+					$(".productListTemplateATCVariationsDropdownCont", $tag).css({'border':'none'});
 				},		
 		},//END a FUNCTIONS
 		
@@ -299,8 +293,45 @@ the dom update for the lineitem needs to happen last so that the cart changes ar
 					numRequests += app.ext.store_navcats.calls[call].init(navCats[i],{'parentID':parentID,'callback':'translateTemplate'});
 				}
 				if(numRequests)	{app.model.dispatchThis()}
+			},
+			
+			atcVariations : function($tag,data)	{
+//				app.u.dump("BEGIN store_product.renderFormats.atcVariations");
+				var pid = data.value; 
+				var formID = $tag.closest('form').attr('id'); //move up the dom tree till the parent form is found
+				$tag.empty(); /* prodlist fix */
+//				app.u.dump(" -> pid: "+pid);
+//				app.u.dump(" -> formID: "+formID);
+				
+				if(app.ext.store_product.u.productIsPurchaseable(pid))	{
+//					app.u.dump(" -> item is purchaseable.");
+					if(!$.isEmptyObject(app.data['appProductGet|'+pid]['@variations']) && app.model.countProperties(app.data['appProductGet|'+pid]['@variations']) > 0)	{
+						$("<div \/>").attr('id','JSONpogErrors_'+pid).addClass('zwarn').appendTo($tag);
+						
+						//Hides variation section of accessory if no variations are present
+						//app.u.dump($tag);
+						$tag.parent().parent().show();
+					
+						var $display = $("<div \/>"); //holds all the pogs and is appended to at the end.
+						
+						pogs = new handlePogs(app.data['appProductGet|'+pid]['@variations'],{"formId":formID,"sku":pid});
+						var pog;
+						if(typeof pogs.xinit === 'function')	{pogs.xinit()}  //this only is needed if the class is being extended (custom sog style).
+						var ids = pogs.listOptionIDs();
+						for ( var i=0, len=ids.length; i<len; ++i) {
+							pog = pogs.getOptionByID(ids[i]);
+							$display.append(pogs.renderOption(pog,pid));
+							}
+						$display.appendTo($tag);	
+					}
+					else{
+//						app.u.dump(" -> @variations is empty.");
+					}
 				}
-			}
+					
+			} //atcVariations
+		}
+
 		}
 	return r;
 }

@@ -2176,9 +2176,11 @@ container ul should have lineItemProdlist class on it instead of productList
                 <h6 data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; className:price; pretext: Our Price: ;'></h6>    
             </div>
             <form data-bind='var: product(pid); format:atcForm; extension:store_product;' class='prodViewerAddToCartForm' action='#' onSubmit="app.ext.myRIA.u.addItemToCart($(this)); return false;">
-                <a onMouseOver="app.ext._store_spa.a.showDropdown($(this))" onMouseOut="app.ext._store_spa.a.hideDropdown($(this))">Product options available. Please click here before adding product to cart.</a>
-                <div class="productListTemplateATCVariationsDropdownCont">
-                	<fieldset data-bind='var: product(pid); format:atcVariations; extension:store_product;' class='borderNone'></fieldset>
+                <div class="productListTemplateATCOptionsDropdown displayNone" onMouseOver="app.ext._store_spa.a.showDropdown($(this))" onMouseOut="app.ext._store_spa.a.hideDropdown($(this))">
+                	<p>Hover here to see product options before adding to cart.</p>
+                    <div class="productListTemplateATCVariationsDropdownCont">
+                        <fieldset data-bind='var: product(pid); format:atcVariations; extension:_store_spa;' class='borderNone'></fieldset>
+                    </div>
                 </div>
                 <div class="productListTemplateATCButtonCont">
                     <fieldset data-bind='useParentData:true; format:atcQuantityInput; extension:store_product; pretext:Quantity: ; defaultValue:0;' class='borderNone'></fieldset>
