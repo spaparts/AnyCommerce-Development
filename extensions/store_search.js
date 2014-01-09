@@ -484,7 +484,7 @@ P.parentID - The parent ID is used as the pointer in the multipage controls obje
 						"filtered" : {
 						  "query" : {"query_string" : obj},
 						  "filter" : {
-						  "not" : { "term" : {"search_hidden":"1"}}
+						  "not" : { "term" : {"hidden_product":"hidden"}}
 						   /*"and" : [
 						    { "terms" : {"store_type":["both", "app"]}},
 							{"not" : { "term" : {"search_hidden":"1"}}}
