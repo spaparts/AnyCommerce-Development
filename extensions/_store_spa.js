@@ -137,11 +137,13 @@ var _store_spa = function() {
 			residentBusinessClick : function() {
 				if($(".chkoutAddressBillTemplate input.checkoutResBusCB").data('checked') === false){
 					$(".chkoutAddressBillTemplate div.bill_company").hide();
+					$(".chkoutAddressShipTemplate div.ship_company").hide();
 					$('.chkoutAddressBillTemplate input.checkoutResBusCB').data('checked',true).append();
 					
 				}
 				else{
 					$(".chkoutAddressBillTemplate div.bill_company").show();
+					$(".chkoutAddressShipTemplate div.ship_company").show();
 					$('.chkoutAddressBillTemplate input.checkoutResBusCB').data('checked',false).append();
 				}
 			},

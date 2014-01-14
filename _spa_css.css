@@ -1568,6 +1568,13 @@ div.checkoutBillToShipContainer{
     float: left;
 }
 
+.chkoutAddressBillTemplate div.bill_company{
+	display:none;
+}
+.chkoutAddressShipTemplate div.ship_company{
+	display:none;
+}
+
 
 
 
