@@ -995,6 +995,7 @@ div.productListPriceSection span{
 }
 
 td.prodSummaryContainer div.productActionButtonCont{
+	margin-top: 15px;
 }
 
 td.prodSummaryContainer a.productTellAFriend{
@@ -1020,7 +1021,15 @@ td.prodSummaryContainer a.productPrintProd{
     width: 409px;
 }
 .productBottomSection div.productSpecifications p{
-	font-size: 14px;
+	color: #000000;
+    font-family: verdana,arial,helvetica;
+    font-size: 8pt;
+}
+.productBottomSection div.productDetails ul li{
+	font:normal 8pt/17px Arial, Helvetica, sans-serif;
+	color:#595959;
+	padding:5px;
+	text-align:justify;
 }
 .prodlistRelatedContainer{
 	background-color: #FFFFFF;

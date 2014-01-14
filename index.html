@@ -2460,6 +2460,10 @@ It's done this way because ID's hard coded into template are bad mojo (templates
 </table>
 <div class="productBottomContainer">
     <div class="productBottomSection">
+        <div class="displayNone" data-bind="var: product(zoovy:prod_detail); format:showIfSet;">
+			<div style="font:bold 9pt/18px Arial, Helvetica, sans-serif; color:#F21300; border-bottom:1px solid #C5C5C5; margin-top:10px;">Details</div>
+			<div class="productDetails" data-bind='var: product(zoovy:prod_detail); format:wiki; wikiFormats:myRIA;'></div>
+		</div>        
         <div style="font:bold 9pt/18px Arial, Helvetica, sans-serif; color:#F21300; border-bottom:1px solid #C5C5C5; margin-top:10px;">Specifications</div>
         <div class="productSpecifications" data-bind='var: product(zoovy:prod_desc); format:wiki; wikiFormats:myRIA;'></div>
 		<div class="displayNone" data-bind="var: product(zoovy:accessory_products); format:showIfSet;">
