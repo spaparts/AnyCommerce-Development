@@ -1039,11 +1039,7 @@ td.prodSummaryContainer a.productPrintProd{
 	border:1px solid #D9D9D9;
 }
 .productBottomContainer h2{
-	color: #F21300;
-    float: left;
     font: bold 9pt/20px Arial,Helvetica,sans-serif;
-    margin-top: 8px;
-    width: 254px;
 }
 .prodlistRelatedContainer li{
 	width: 275px;
