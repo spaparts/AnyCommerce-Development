@@ -3,7 +3,15 @@
 {
         "categoryBanners" : {
 			
-				"fragrancessalts" : {
+		"fragrancessalts" : {
+			"src"               : ["banners/crystals_banner.jpg"],  
+			"alt"               : ["saltsBanner"],
+			"title"             : ["SaltsBanner"],
+			"height"		 	: ["107"],
+			"bannersPerCat"		: "1"
+		},
+		
+		"fragrancessalts" : {
 			"src"               : ["banners/crystals_banner.jpg"],  
 			"alt"               : ["saltsBanner"],
 			"title"             : ["SaltsBanner"],
