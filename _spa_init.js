@@ -18,7 +18,7 @@ app.rq.push(['extension',0,'myRIA','app-quickstart.js','startMyProgram']);
 //CUSTOM EXTENSIONS
 app.rq.push(['extension',0,'_store_spa','extensions/_store_spa.js']);
 app.rq.push(['extension',0,'prodlist_infinite','extensions/prodlist_infinite.js']);
-//app.rq.push(['extension',0,'_store_banner','extensions/_store_banner.js']);
+app.rq.push(['extension',0,'_store_banner','extensions/_store_banner.js']);
 
 
 //CUSTOM SCRIPTS
@@ -53,7 +53,9 @@ app.rq.push(['templateFunction','homepageTemplate','onCompletes',function(P) {
 }]);
 
 app.rq.push(['templateFunction','categoryTemplate','onCompletes',function(P) {
+	var $context = $(app.u.jqSelector('#',P.parentID));
 	$("#headerManufacturerSelect").val("");
+	app.ext._store_banner.u.showCategoryBanners($context);
 }]);
 
 //add tabs to product data.
@@ -131,12 +133,14 @@ app.rq.push(['templateFunction','checkoutTemplate','onCompletes',function(P) {
 
 
 app.rq.push(['templateFunction','spaFiltersCategoryTemplate','onDeparts',function(P) {
+	var $context = $(app.u.jqSelector('#',P.parentID));
 	$("#filterCatAladdinSelect").val("");
 	$("#filterCatDiameterSelect").val("");
 	$("#filterCatBrandSelect").val("");
 	$("#filterCatFilburSelect").val("");
 	$("#filterCatPleatcoSelect").val("");
 	$("#filterCatUnicelSelect").val("");
+	app.ext._store_banner.u.showCategoryBanners($context);
 }]);
 
 
