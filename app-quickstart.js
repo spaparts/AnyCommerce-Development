@@ -2552,6 +2552,9 @@ elasticsearch.size = 50;
 								app.ext.cco.calls.appCheckoutDestinations.init({},'mutable'); //needed for country list in address editor.
 								app.calls.buyerAddressList.init({'callback':'showAddresses','extension':'myRIA'},'mutable');
 								break;
+							case 'createaccount':
+								 app.ext.cco.calls.appCheckoutDestinations.init({},'mutable'); //needed for country list in address entry.
+								 break;
 							default:
 								app.u.dump("WARNING - unknown article/show ["+infoObj.show+" in showCustomer. ");
 							}
@@ -3062,28 +3065,26 @@ else	{
 			
 //executed in checkout when 'next/submit' button is pushed for 'existing account' after adding an email/password. (preflight panel)
 //handles inline validation
-			loginFrmSubmit : function(email,password)	{
-				var errors = '';
-				var $errorDiv = $("#loginMessaging").empty(); //make sure error screen is empty. do not hide or callback errors won't show up.
-
-				if(app.u.isValidEmail(email) == false){
+			loginFrmSubmit : function(email,password,errorDiv) {
+				  var errors = '';
+				  $errorDiv = errorDiv.empty(); //make sure error screen is empty. do not hide or callback errors won't show up.
+				  if(app.u.isValidEmail(email) == false){
 					errors += "Please provide a valid email address<br \/>";
-					}
-				if(!password)	{
+				  }
+				  if(!password) {
 					errors += "Please provide your password<br \/>";
-					}
-					
-				if(errors == ''){
+				  }
+				  if(errors == ''){
 					app.calls.appBuyerLogin.init({"login":email,"password":password},{'callback':'authenticateBuyer','extension':'myRIA'});
 					app.calls.refreshCart.init({},'immutable'); //cart needs to be updated as part of authentication process.
-//					app.calls.buyerProductLists.init('forgetme',{'callback':'handleForgetmeList','extension':'store_prodlist'},'immutable');
-					
+				 // app.calls.buyerProductLists.init('forgetme',{'callback':'handleForgetmeList','extension':'store_prodlist'},'immutable');
 					app.model.dispatchThis('immutable');
-					}
-				else {
+				  }
+				  else {
 					$errorDiv.anymessage({'message':errors});
-					}
-				}, //loginFrmSubmit
+				  }
+				  showContent('customer',{'show':'myaccount'})
+			}, //loginFrmSubmit
 			
 
 //obj currently supports one param w/ two values:  action: modal|message

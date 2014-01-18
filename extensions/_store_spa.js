@@ -305,12 +305,12 @@ the dom update for the lineitem needs to happen last so that the cart changes ar
 								}
 						}
 						
-						formObj._vendor = "onlineformals";
+						formObj._vendor = "spaparts";
 						app.calls.appBuyerCreate.init(formObj,tagObj,'immutable');
 						app.model.dispatchThis('immutable');
 				}
 				else {
-						$('#globalMessaging').anymessage({'message':'$form not passed into _store_formals.u.handleBuyerAccountCreate','gMessage':true});
+						$('#globalMessaging').anymessage({'message':'$form not passed into _store_spa.u.handleBuyerAccountCreate','gMessage':true});
 				}
 		}
 			
