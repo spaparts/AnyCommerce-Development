@@ -3989,25 +3989,25 @@ The 'data-action' attribute is used to assign an onclick.
 <p id='loginMessaging' class='marginBottom appMessaging'></p>
 
 <div id='loginFormContainer'>
-    <form action='#' onSubmit='app.ext.myRIA.u.loginFrmSubmit($("input[name=login]", $(this)).val(),$("input[name=password]", $(this)).val()); return false;'>
-        <input type='hidden' name='loginCallback' id='loginCallback' value='' /><!-- used to save a callback action in -->
-        <fieldset>
-        	<legend>Account Login</legend>
-            <div>
-                <label for='login'>Login/Email</label>
-                <input type='email' class='zform_textbox zform_email'  name='login' value='' size='25' />
-                <span>(this is usually your email address) </span>
-            </div>
-        
-            <div>
-                <label for='password'>Password</label>
-                <input type='password' class='zform_textbox zform_password'   name='password' value='' size='25' />
-            </div>
-        
-            <div>
-                <input type='submit' value='Log In' class='ui-button-text ui-button ui-state-default ui-corner-all ' />
-            </div>
-        </fieldset>
+    <form action='#' onSubmit='app.ext._store_spa.a.loginFrmSubmit($("input[name=login]",$(this)).val(),$("input[name=password]",$(this)).val(),$("#loginMessaging")); return false;' id='modalLoginForm'>
+            <input type='hidden' name='loginCallback' id='loginCallback' value='' /><!-- used to save a callback action in -->
+            <fieldset>
+                <legend>Account Login</legend>
+                <div>
+                	<label for='login'>Login/Email</label>
+                    <input type='email' class='zform_textbox zform_email' name='login' id='modalLoginlogin' value='' size='30' placeholder='E-mail address' />
+                    <span>(this is usually your email address) </span>
+                </div>
+                
+                <div>
+                	<label for='password'>Password</label>
+                    <input type='password' class='zform_textbox zform_password' name='password' id='modalLoginpassword' value='' size='25' placeholder='Password' />
+                </div>
+                
+                <div>
+                    <input type='submit' value='Log In' class='smallcaps ui-button-text ui-button ui-corner-all secondaryColorHover' />
+                </div>
+            </fieldset>
     </form>
     
     <div id='recoverPasswordContainer'>

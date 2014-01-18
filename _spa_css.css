@@ -1574,6 +1574,10 @@ div.checkoutBillToShipContainer{
 	display:none;
 }
 
+section.chkoutAddressBillTemplate div.checkoutBillPhone span.zhint{
+	font-size: 14px;
+}
+
 
 
 
