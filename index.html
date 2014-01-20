@@ -692,9 +692,6 @@ ANIMATION TESTING
             </fieldset>
         </form>
     </div>
-    <div class="sidebarWholesaleSignup">
-    	<p>Wholesale Companies, <a onClick="return showContent('customer',{'show':'createaccount'});">click here</a>.</p>
-    </div>
 </div>
 
 <div id='mainContentArea'></div><!-- DO NOT REMOVE - this is where the specific page (ex: homepage, product, category) content is going to go -->
@@ -706,7 +703,7 @@ ANIMATION TESTING
             |
             <a class="pointer" href='#top' onclick="return showContent('company',{'show':'contact'});">Contact</a>
             |
-            <a class="pointer bindByAnchor" href="#!category?navcat=.wholesale">Wholesale</a>
+            <a class="pointer" onClick="return showContent('customer',{'show':'createaccount'});">Wholesale</a>
             |
             <a class="pointer bindByAnchor" href="#!category?navcat=.customer_service">Customer Service</a>
             |
@@ -3170,7 +3167,7 @@ subscribeListsArticle is used for authenticated buyers
                                         <span class="field mname">Middle Initial</span> <input name='middlename' type='text' size='3' class='textfmname' />
                                         <b>Last Name</b> <input name='lastname' type='text' size='30' placeholder='Last Name' class='textflast'/>
                                         -->
-                                        <div class="fieldM"><span class="field">Company Name</span> <input name='compname' type='text' size='50' class='textcname' placeholder='Company Name' required='required' /></div>
+                                        <div class="fieldM"><span class="field">Company Name</span> <input name='company' type='text' size='50' class='textcname' placeholder='Company Name' required='required' /></div>
                                         <!--<div class="passwordInput"><b>Password</b><input name="password" size="30" placeholder="Password" required /></div>-->
                                         <div class="fieldM"><span class="field">Address</span> <input name='address1' type='text' size='30' placeholder='Address' class='textfadd' required='required' /> 
                                         <input name='address2' type='text' size='30' placeholder='Address (Line 2)' class='textfadd1'/></div>
