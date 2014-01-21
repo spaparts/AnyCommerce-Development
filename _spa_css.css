@@ -1062,6 +1062,7 @@ td.prodSummaryContainer a.productPrintProd{
 .variation > label:after{
     content: "";
     float: left;
+	width: 100%;
 }
 .productVariations span{
 	float:right;
