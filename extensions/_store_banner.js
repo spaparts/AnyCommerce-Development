@@ -82,7 +82,12 @@ var _store_banner = function() {
 												var urlString = location.href;
  												//app.u.dump("urlString = " + urlString);
 												//**REPLACE category/ with navcat=. if testing locally and vice versa**
-												var urlString2 = urlString.split("navcat=.");
+												if(urlString.indexOf("file:") >= 0){
+													urlString2 = urlString.split("navcat=.");
+												}
+												else{
+													urlString2 = urlString.split("category/");
+												}
 												//app.u.dump("urlString2 = " + urlString2);
 												var urlString3 = urlString2[1].replace(/\./g, '');
 												var urlString4 = urlString3.replace(/\_/g, '');
