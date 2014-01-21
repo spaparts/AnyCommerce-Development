@@ -137,15 +137,19 @@ app.rq.push(['templateFunction','checkoutTemplate','onCompletes',function(P) {
 }]);
 
 
-app.rq.push(['templateFunction','spaFiltersCategoryTemplate','onDeparts',function(P) {
+app.rq.push(['templateFunction','spaFiltersCategoryTemplate','onCompletes',function(P) {
 	var $context = $(app.u.jqSelector('#',P.parentID));
+	app.ext._store_banner.u.showCategoryBanners($context);
+}]);
+
+
+app.rq.push(['templateFunction','spaFiltersCategoryTemplate','onDeparts',function(P) {
 	$("#filterCatAladdinSelect").val("");
 	$("#filterCatDiameterSelect").val("");
 	$("#filterCatBrandSelect").val("");
 	$("#filterCatFilburSelect").val("");
 	$("#filterCatPleatcoSelect").val("");
 	$("#filterCatUnicelSelect").val("");
-	app.ext._store_banner.u.showCategoryBanners($context);
 }]);
 
 
