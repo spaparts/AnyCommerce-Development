@@ -293,6 +293,18 @@ the dom update for the lineitem needs to happen last so that the cart changes ar
 								return;
 						}
 						
+						formObj._vendor = "spaparts";
+                                
+                                formObj.todonote  = formObj.company+"\n";
+                                formObj.todonote += formObj.address1+"\n";
+                                if(formObj.address2 && formformObj.address2 !== ""){
+                                        formObj.todonote += formObj.address2+"\n";
+                                        }
+                                formObj.todonote += formObj.city+","+formObj.region+" "+formObj.postal+"\n";
+								formObj.todonote += formObj.email+"\n";
+								formObj.todonote += formObj.phone+"\n";
+                                formObj.todonote += "Date Created: "+(new Date()).toDateString();
+						
 						var tagObj = {
 								'callback':function(rd) {
 										if(app.model.responseHasErrors(rd)) {
@@ -305,7 +317,6 @@ the dom update for the lineitem needs to happen last so that the cart changes ar
 								}
 						}
 						
-						formObj._vendor = "spaparts";
 						app.calls.appBuyerCreate.init(formObj,tagObj,'immutable');
 						app.model.dispatchThis('immutable');
 				}
