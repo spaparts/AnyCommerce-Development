@@ -1497,6 +1497,18 @@ td.prodSummaryContainer a.productPrintProd{
     margin-left: 5px;
 }
 
+.cartProductListVariationsCont{
+	border-top: 1px solid #016DF4;
+	float:left;
+	width:100%;
+}
+.cartProductListVariationsCont p{
+	margin:0;
+}
+.productListTemplateCart div.prodOptions{
+	float:left;
+}
+
 
 
 

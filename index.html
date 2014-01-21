@@ -3647,9 +3647,10 @@ International Shipping Now Available!</b><br><object width="550" height="90"><pa
         <div class="cartProductListTotalCont">
             <span data-bind='var: product(extended); format:money; currencySign: $; hideZero:false; pretext: = ;'></span>
         </div>
-
-
-		<div class='ztable_row_small prodOptions' data-bind='var: variations(%options); format:selectedOptionsDisplay;'></div>
+		<div class="cartProductListVariationsCont displayNone" data-bind='var: variations(%options); format:showIfSet;'>
+        	<p>Product Options for <span data-bind='var: product(prod_name); format:text;'></span>:</p>
+        	<div class='ztable_row_small prodOptions' data-bind='var: variations(%options); format:selectedOptionsDisplay;'></div>
+        </div>
 	</li>
 </ul>
 
