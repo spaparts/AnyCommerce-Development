@@ -22,7 +22,7 @@
                 "SET?company=$company",
                 "PASSWORDRESET?password=$pass",
 				"ADDRCREATE?SHORTCUT=DEFAULT&TYPE=BILL&company=$company&phone=$phone&address1=$address1&address2=$address2&email=$email&city=$city&region=$region&postal=$postal&countrycode=$country",
-                "ADDRCREATE?SHORTCUT=DEFAULT&TYPE=SHIP&company=$company&phone=$phone&address1=$address1&address2=$address2&email=$email&city=$city&region=$region&postal=$postal&countrycode=$country"
+                "ADDRCREATE?SHORTCUT=DEFAULT&TYPE=SHIP&company=$company&phone=$phone&address1=$address1&address2=$address2&email=$email&city=$city&region=$region&postal=$postal&countrycode=$country",
        			"ADDTODO?title=New%20SpaPartsDepot%20Account%20Request%20To%20Review&note=$todonote"
 	    ]
 
