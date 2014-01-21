@@ -3142,10 +3142,10 @@ subscribeListsArticle is used for authenticated buyers
 		</div>
         
         <div id='createaccountArticle' class="displayNone textContentArea">
-                <p id='loginMessagingInline' class='marginBottom appMessaging'></p>
+                <p id='loginMessagingInline' class='appMessaging'></p>
                 <div class="creatAccount">
                         <div id="gotAccount1"> 
-                                <h1 class='smallcaps'>ALREADY HAVE AN ACCOUNT?</h1>
+                                <h1 class='smallcaps'>ALREADY HAVE A WHOLESALE ACCOUNT?</h1>
                                 <!-- Third parameter is id of message destination -->
                                 <form action='#' onSubmit='app.ext._store_spa.a.loginFrmSubmit($("input[name=login]",$(this)).val(),$("input[name=password]",$(this)).val(),$("#loginMessagingInline")); return false;' id='modalLoginForm1'>
                                         <input type='hidden' name='loginCallback' id='loginCallback' value='' /><!-- used to save a callback action in -->
@@ -3159,9 +3159,10 @@ subscribeListsArticle is used for authenticated buyers
                         </div>
                         <div class="Account" >
                                 <!--<form action='#' class='inputsAsBreaks'  onSubmit="app.ext.myRIA.u.handleAppBuyerCreate($(this)); return false;">-->
+                                <h1>FIRST TIME WITH US?</h1>
                                 <form action='#' class='inputsAsBreaks'  onSubmit="app.ext._store_spa.u.handleAppLoginCreate($(this)); return false;">
                                         <input type="hidden" name="vendor" value="spaparts"/>
-                                        <h1>FIRST TIME WITH US?</h1><input type='hidden' name='form' value='wholesale' />
+                                        <input type='hidden' name='form' value='wholesale' />
                                         <!--
                                         <div class="fieldM"><span class="field">First Name</span> <input name='firstname' type='text' size='30' class='textfname' placeholder='First Name' />
                                         <span class="field mname">Middle Initial</span> <input name='middlename' type='text' size='3' class='textfmname' />
@@ -3173,7 +3174,7 @@ subscribeListsArticle is used for authenticated buyers
                                         <input name='address2' type='text' size='30' placeholder='Address (Line 2)' class='textfadd1'/></div>
                                         <div class="fieldM stateFix"><span class="field">City</span> <input name='city' type='text' size='30' placeholder='City' required='required' class='textfcity'/>         
                                                 <div class='selectWrapperState'>
-                                                		<b class="accountCreateStateLabel">State</b>
+                                                		<span class="accountCreateStateLabel">State</span>
                                                         <select name='region' class='textfstate sprite'>
                                                                 <option value='AL'>AL</option>
                                                                 <option value='AK'>AK</option>
@@ -3228,18 +3229,18 @@ subscribeListsArticle is used for authenticated buyers
                                                                 <option value='WY'>WY</option>
                                                         </select>
                                                 </div>
-                                                <b>Zip</b> <input name='postal' type='text' size='10' placeholder='00000-0000' class='textfzip'/>
+                                                <span>Zip</span> <input name='postal' type='text' size='10' placeholder='00000-0000' class='textfzip'/>
                                         </div>
                                         <div class="fieldM">
-                                                <div class="field selectField">Country</div> 
+                                                <span class="field selectField">Country</span> 
                                                 <div class='selectWrapperC'>
                                                         <select name="country" class="textfcountry sprite">
                                                                 <option value='USA'>United States of America</option>
                                                         </select>
                                                 </div>
                                         </div>
-                                        <div class="fieldM"><span class="field">E-mail</span> <input name='email' type='email' size='30' class='textfmail' placeholder='E-mail Address' required='required' /> <b>Phone Number</b> <input name='phone' type='tel' size='12' placeholder='Phone Number' class='textfphone' required='required'/> </div>
-                                        <div class="fieldM"><span class="field">Password</span> <input name='pass' type='password' size='30' class='textfpass' placeholder='7-18 Characters' required='required' /> <b>Confirm Password</b> <input name='pass2' type='password' size='12' placeholder='Must be a match' class='textfphone' required='required'/> </div>
+                                        <div class="fieldM"><span class="field">E-mail</span> <input name='email' type='email' size='30' class='textfmail' placeholder='E-mail Address' required='required' /> <span>Phone Number</span> <input name='phone' type='tel' size='12' placeholder='Phone Number' class='textfphone' required='required'/> </div>
+                                        <div class="fieldM"><span class="field">Password</span> <input name='pass' type='password' size='30' class='textfpass' placeholder='7-18 Characters' required='required' /> <span>Confirm Password</span> <input name='pass2' type='password' size='12' placeholder='Must be a match' class='textfphone' required='required'/> </div>
                                         <!--<fieldset class='marginBottom'>
                                                 <legend>About Your Business</legend>
                                                 <div class="fieldM"><input name='order_volume' type='text' size='30' placeholder='Anticipated Order Volume' />

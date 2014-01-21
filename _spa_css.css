@@ -1730,6 +1730,71 @@ div.mainColumn{
     text-align: left;
 }
 
+.creatAccount h1:first-child{
+	margin: 0 10px 10px 0;
+}
+.creatAccount h1{
+	float: left;
+    margin: 10px 10px 10px 0;
+}
+.creatAccount a{
+	float: left;
+    margin: 10px 10px 10px 0;
+}
+.creatAccount form#modalLoginForm1{
+	float:left;
+}
+.creatAccount form fieldset input.ui-button{
+	border: 1px outset #254A96;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: -2px;
+	
+	background: #2c54a9; /* Old browsers */
+	background: -moz-linear-gradient(top,  #2c54a9 1%, #10327a 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#2c54a9), color-stop(100%,#10327a)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #2c54a9 1%,#10327a 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #2c54a9 1%,#10327a 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #2c54a9 1%,#10327a 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #2c54a9 1%,#10327a 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c54a9', endColorstr='#10327a',GradientType=0 ); /* IE6-9 */
+
+}
+.creatAccount div form .createButton{
+	border: 1px outset #254A96;
+    border-radius: 5px;
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 3px;
+	float: left;
+	
+	background: #2c54a9; /* Old browsers */
+	background: -moz-linear-gradient(top,  #2c54a9 1%, #10327a 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,#2c54a9), color-stop(100%,#10327a)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #2c54a9 1%,#10327a 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #2c54a9 1%,#10327a 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #2c54a9 1%,#10327a 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #2c54a9 1%,#10327a 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c54a9', endColorstr='#10327a',GradientType=0 ); /* IE6-9 */
+}
+
+.Account form.inputsAsBreaks{
+	border: 2px groove threedface;
+	padding: 10px;
+	float: left;
+}
+.Account form.inputsAsBreaks span{
+	color: #666666;
+}
+
+.fieldM div.selectWrapperC{
+	display: inline-block;
+}
+
 
 
 
