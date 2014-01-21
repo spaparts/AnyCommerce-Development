@@ -118,6 +118,11 @@ app.rq.push(['templateFunction','productTemplate','onCompletes',function(P) {
 		   });
 		});
 	//End hover zoom code
+	
+	if($(".variation_AN",$context)){
+		$(".variation_AN label",$context).hide();
+		$(".variation_AN",$context).append("<h5>This item is non-refundable and cannot be returned.</h5>");
+	}
 }]);
 
 app.rq.push(['templateFunction','checkoutTemplate','onCompletes',function(P) {
