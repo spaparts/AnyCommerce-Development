@@ -2340,7 +2340,7 @@ this will likely become more flexible in the future. ###
 	<h1 data-bind='var: product(zoovy:prod_name); format:text;'></h1>
 
 	<div class='priceContainer marginBottom'>
-        <h5 class="prodMSRPPretext">MSRP:&nbsp;</h5><h5 class='prodMSRP' data-bind='var: product(zoovy:prod_msrp); format:money; currencySign: $;  hideZero:true;'></h5>
+        <h5 class="prodMSRPPretext displayNone" data-bind='var: product(zoovy:prod_msrp); format:showIfSet;'>MSRP:&nbsp;</h5><h5 class='prodMSRP' data-bind='var: product(zoovy:prod_msrp); format:money; currencySign: $;  hideZero:true;'></h5>
         <h4 class='basePrice' data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; pretext: Our Price: ;'></h4>
 		<span class='savings'>
 			<span class='savingsDifference' data-bind='var: product(pid); format:priceRetailSavingsDifference; extension:myRIA; pretext: Your savings: ;'></span>

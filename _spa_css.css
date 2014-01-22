@@ -936,7 +936,7 @@ div.productListPriceSection span{
 .prodSummaryContainer h1{
 	color: #F21300;
     font-size: 10pt;
-	margin-top: 10px;
+    line-height: 25px;
 }
 
 .priceContainer{
