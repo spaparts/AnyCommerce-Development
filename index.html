@@ -2458,10 +2458,10 @@ It's done this way because ID's hard coded into template are bad mojo (templates
 <div class="productBottomContainer">
     <div class="productBottomSection">
         <div class="displayNone" data-bind="var: product(zoovy:prod_detail); format:showIfSet;">
-			<div style="font:bold 9pt/18px Arial, Helvetica, sans-serif; color:#F21300; border-bottom:1px solid #C5C5C5; margin-top:10px;">Details</div>
+			<div style="font:bold 10pt/18px Arial, Helvetica, sans-serif; color:#F21300; border-bottom:1px solid #C5C5C5; margin-top:10px;">Details</div>
 			<div class="productDetails" data-bind='var: product(zoovy:prod_detail); format:wiki; wikiFormats:myRIA;'></div>
 		</div>        
-        <div style="font:bold 9pt/18px Arial, Helvetica, sans-serif; color:#F21300; border-bottom:1px solid #C5C5C5; margin-top:10px;">Specifications</div>
+        <div style="font:bold 10pt/18px Arial, Helvetica, sans-serif; color:#F21300; border-bottom:1px solid #C5C5C5; margin-top:10px;">Specifications</div>
         <div class="productSpecifications" data-bind='var: product(zoovy:prod_desc); format:wiki; wikiFormats:myRIA;'></div>
 		<div class="displayNone" data-bind="var: product(zoovy:accessory_products); format:showIfSet;">
 			<div style="font:bold 9pt/18px Arial, Helvetica, sans-serif; color:#F21300; border-bottom:1px solid #C5C5C5; margin-top:10px;">Accessories</div>
@@ -2469,7 +2469,7 @@ It's done this way because ID's hard coded into template are bad mojo (templates
 				<ul class='listStyleNone fluidList clearfix noPadOrMargin lineItemProdlist' data-bind="var: product(zoovy:accessory_products); format:productList; extension:store_prodlist;loadsTemplate:productListTemplateATC;hide_pagination:true;hide_summary:true; withReviews:1; withInventory:1; withVariations:1;"></ul>
 			</div>
 		</div>        
-        <div style="font:bold 9pt/18px Arial, Helvetica, sans-serif; color:#F21300; border-bottom:1px solid #C5C5C5; margin-top:10px;">Look for Similar products by category:</div>
+        <div style="font:bold 10pt/18px Arial, Helvetica, sans-serif; color:#F21300; border-bottom:1px solid #C5C5C5; margin-top:10px;">Look for Similar products by category:</div>
         <div class="relatedItems">
         	<ul data-bind="var: product(user:app_category); format: productRelatedCategoryList; extension: _store_spa; loadsTemplate: categoryListProductPageTemplate;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList'></ul>
         </div>
