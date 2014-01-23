@@ -24,7 +24,7 @@
         ],
         
         "createBuyer" : [
-                "SET?firstname=$firstname&lastname=$lastname&company=$company&licensepermit=$licensepermit",
+                "SET?firstname=$firstname&lastname=$lastname&company=$company",
                 "PASSWORDRESET?password=$pass",
 				"ADDRCREATE?SHORTCUT=DEFAULT&TYPE=BILL&firstname=$firstname&lastname=$lastname&phone=$phone&address1=$address1&address2=$address2&email=$email&city=$city&region=$region&postal=$postal&countrycode=$country",
 				"ADDRCREATE?SHORTCUT=DEFAULT&TYPE=SHIP&firstname=$firstname&lastname=$lastname&phone=$phone&address1=$address1&address2=$address2&email=$email&city=$city&region=$region&postal=$postal&countrycode=$country",				
