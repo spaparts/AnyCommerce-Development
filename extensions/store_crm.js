@@ -481,7 +481,7 @@ else{
 						$editor.append("<input type='hidden' name='shortcut' value='"+vars.addressID+"' \/>");
 						$editor.append("<input type='hidden' name='type' value='"+vars.addressType+"' \/>");
 						if(vars.addressType == 'bill')	{
-							$editor.append("<label><span>email:<\/span><input type='email' name='bill/email' data-bind='var: address(bill/email); format:popVal;' value='"+( addressData['bill/email'] || "" )+"' required='required' \/><\/label>");
+							$editor.append("<label class='editAddressEmailCont'><span>email:<\/span><input type='email' name='bill/email' placeholder='Email' data-bind='var: address(bill/email); format:popVal;' value='"+( addressData['bill/email'] || "" )+"' required='required' \/><\/label>");
 							}
 						$editor.wrapInner('<form \/>'); //needs this for serializeJSON later.
 						
