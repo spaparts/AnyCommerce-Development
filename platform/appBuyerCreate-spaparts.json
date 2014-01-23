@@ -28,7 +28,8 @@
                 "PASSWORDRESET?password=$pass",
 				"ADDRCREATE?SHORTCUT=DEFAULT&TYPE=BILL&firstname=$firstname&lastname=$lastname&company=$company&phone=$phone&address1=$address1&address2=$address2&email=$email&city=$city&region=$region&postal=$postal&countrycode=$country",
 				"ADDRCREATE?SHORTCUT=DEFAULT&TYPE=SHIP&firstname=$firstname&lastname=$lastname&company=$company&phone=$phone&address1=$address1&address2=$address2&email=$email&city=$city&region=$region&postal=$postal&countrycode=$country",				
-				"ADDTODO?title=New%20SpaPartsDepot%20Account%20Request%20To%20Review&note=$todonote"
+				"ORGCREATE?firstname=$firstname&lastname=$lastname&company=$company&address1=$address1&address2=$address2&city=$city&region=$region&postal=$postal&countrycode=$country&phone=$phone&email=$email",
+				"ADDTODO?title=New%20SpaPartsDepot%20Wholesale%20Account%20Request%20To%20Review&note=$todonote"
 	    ]
 
 
