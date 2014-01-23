@@ -23,6 +23,7 @@ app.rq.push(['extension',0,'_store_banner','extensions/_store_banner.js']);
 
 //CUSTOM SCRIPTS
 app.rq.push(['script',0,app.vars.baseURL+'zoom-master/jquery.zoom.js']);
+app.rq.push(['script',1,'https://s3bongous.s3.amazonaws.com/extend/loader/3dcc814f461f29b7ee5c43c80cfcf21d.js']);
 
 
 app.rq.push(['extension',0,'entomologist','extensions/entomologist/extension.js']);
