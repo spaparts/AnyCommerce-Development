@@ -296,7 +296,7 @@ the dom update for the lineitem needs to happen last so that the cart changes ar
 						formObj._vendor = "spaparts";
                                 
 						formObj.todonote  = formObj.company+"\n";
-						obj.todonote  = obj.firstname+" "+obj.lastname+"\n";
+						formObj.todonote  = formObj.firstname+" "+formObj.lastname+"\n";
 						formObj.todonote += formObj.address1+"\n";
 						if(formObj.address2 && formformObj.address2 !== ""){
 								formObj.todonote += formObj.address2+"\n";
@@ -323,7 +323,7 @@ the dom update for the lineitem needs to happen last so that the cart changes ar
 						app.model.dispatchThis('immutable');
 				}
 				else {
-						$('#globalMessaging').anymessage({'message':'$form not passed into _store_spa.u.handleBuyerAccountCreate','gMessage':true});
+						$('#globalMessaging').anymessage({'message':'$form not passed into _store_spa.u.handleAppLoginCreate','gMessage':true});
 				}
 		}
 			
