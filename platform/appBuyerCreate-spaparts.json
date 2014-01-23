@@ -3,6 +3,7 @@
         "_start":"createBuyer",
         "_inputs":[
                 
+				{ "required":1,"var":"company","type":"text","label":"Company Name" },
 				{ "required":1,"var":"email","type":"text","label":"Email" },
 				{ "required":0,"var":"firstname","type":"text","label":"Contact Firstname" },
 				{ "required":0,"var":"lastname","type":"text","label":"Contact Lastname" },
@@ -15,7 +16,6 @@
 				{ "required":1,"var":"phone","type":"text","label":"Contact Phone" },
 				{ "required":1,"var":"pass","type":"text","label":"Password" },
 				
-				{ "required":1,"var":"company","type":"text","label":"Company Name" },
                 { "required":1,"var":"licensepermit","type":"text","label":"Business license or permit" },
 				
 				{ "required":1,"var":"todonote","type":"text","label":"Note for Admin Todo Task" }
@@ -24,7 +24,7 @@
         ],
         
         "createBuyer" : [
-                "SET?firstname=$firstname&lastname=$lastname&company=$company",
+                "SET?company=$company&firstname=$firstname&lastname=$lastname",
                 "PASSWORDRESET?password=$pass",
 				"ADDRCREATE?SHORTCUT=DEFAULT&TYPE=BILL&firstname=$firstname&lastname=$lastname&phone=$phone&address1=$address1&address2=$address2&email=$email&city=$city&region=$region&postal=$postal&countrycode=$country",
 				"ADDRCREATE?SHORTCUT=DEFAULT&TYPE=SHIP&firstname=$firstname&lastname=$lastname&phone=$phone&address1=$address1&address2=$address2&email=$email&city=$city&region=$region&postal=$postal&countrycode=$country",				

@@ -295,16 +295,16 @@ the dom update for the lineitem needs to happen last so that the cart changes ar
 						
 						formObj._vendor = "spaparts";
                                 
-						formObj.todonote  = formObj.company+"\n";
-						formObj.todonote  = formObj.firstname+" "+formObj.lastname+"\n";
-						formObj.todonote += formObj.address1+"\n";
+						formObj.todonote  = "Conpany: " + formObj.company+"\n";
+						formObj.todonote  = "Company Contact Name: " + formObj.firstname+" "+formObj.lastname+"\n";
+						formObj.todonote += "Address: " +formObj.address1+"\n";
 						if(formObj.address2 && formformObj.address2 !== ""){
 								formObj.todonote += formObj.address2+"\n";
 								}
 						formObj.todonote += formObj.city+","+formObj.region+" "+formObj.postal+"\n";
-						formObj.todonote += formObj.email+"\n";
-						formObj.todonote += formObj.phone+"\n";
-						formObj.todonote += formObj.licensepermit+"\n";
+						formObj.todonote += "Email: " + formObj.email+"\n";
+						formObj.todonote += "Phone: " + formObj.phone+"\n";
+						formObj.todonote += "License or Permit Number" + formObj.licensepermit+"\n";
 						formObj.todonote += "Date Created: "+(new Date()).toDateString();
 						
 						var tagObj = {
