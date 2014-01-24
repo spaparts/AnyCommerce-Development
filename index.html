@@ -991,7 +991,9 @@ don't modify the 'data-templateid' unless you are changing template names and up
     
         <ul data-bind="var: category(@subcategoryDetail); format: categoryList; extension: store_navcats; loadsTemplate: categoryListTemplate; detail:max;" class='listStyleNone fluidList clearfix noPadOrMargin categoryList'></ul><!-- outputs a list of subcategories -->
     
-        <ul data-bind="var: category(@products); format: productList; editor: finder; extension: store_prodlist; loadsTemplate: productListTemplate; withReviews:1; items_per_page: 25;" class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul><!-- outputs the product list -->
+        <ul class='listStyleNone fluidList noPadOrMargin productList' data-bind="var: category(@products); format: infiniteProductList; extension:prodlist_infinite; loadsTemplate: productListTemplate; withReviews:1; withInventory:1; withVariations:1;"></ul>
+
+        <!--<ul data-bind="var: category(@products); format: productList; editor: finder; extension: store_prodlist; loadsTemplate: productListTemplate; withReviews:1; items_per_page: 25;" class='listStyleNone fluidList clearfix noPadOrMargin productList'></ul><!-- outputs the product list -->
     
         <p data-bind="var: category(%page.description2); format:wiki; wikiFormats:myRIA; editor: textarea;"></p>
     </div>
@@ -2052,7 +2054,7 @@ remember to NOT put the button inside the 'onclick' container or two events will
                 <img src='blank.gif' class='prodThumb' alt='' data-bind='var: product(zoovy:prod_image1); format:imageURL;' width='105' height='105' />
             </div>
     
-            <h3 data-bind='var: product(zoovy:prod_name); format:text;'></h3>    
+            <h3 data-bind='var: product(zoovy:prod_name); format:truncText; numCharacters: 80;'></h3>    
             <div class="productListPriceSection">
                 <h6 class="displayNone" data-bind='var: product(zoovy:prod_msrp); format:showIfSet;'>Regular Price: </h6><h5 class='prodMSRP' data-bind='var: product(zoovy:prod_msrp); format:money; currencySign: $;  hideZero:true;'></h5>
                 <h4 class='basePrice' data-bind='var: product(zoovy:base_price); format:money; currencySign: $;  hideZero:true; pretext: Our Price: ;'></h4>
@@ -3174,7 +3176,7 @@ subscribeListsArticle is used for authenticated buyers
                                         <!--<div class="passwordInput"><b>Password</b><input name="password" size="30" placeholder="Password" required /></div>-->
                                         <div class="fieldM"><span class="field">Address</span> <input name='address1' type='text' size='30' placeholder='Address' class='textfadd' required='required' /> 
                                         <input name='address2' type='text' size='30' placeholder='Address (Line 2)' class='textfadd1'/></div>
-                                        <div class="fieldM stateFix"><span class="field">City</span> <input name='city' type='text' size='30' placeholder='City' required='required' class='textfcity'/>         
+                                        <div class="fieldM stateFix"><span class="field">City</span> <input name='city' type='text' size='30' placeholder='City' required='required' class='textfcity' />         
                                                 <div class='selectWrapperState'>
                                                 		<span class="accountCreateStateLabel">State</span>
                                                         <select name='region' class='textfstate sprite'>
