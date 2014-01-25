@@ -608,6 +608,8 @@ li.featuredProductListTemplate div.prodThumbContainer{
 }
 
 .rightSidebarBestsellersSection{
+	float: left;
+    width: 100%;
 }
 .rightSidebarBestsellersTitleBar{
 	/*
@@ -644,9 +646,14 @@ li.featuredProductListTemplate div.prodThumbContainer{
 }
 
 .rightSidebarBestsellersList{
+	float: left;
 }
 
 .rightSidebarLinksSection{
+	float: right;
+}
+.rightSidebarLinksSection a{
+	float: left;
 }
 .rightSidebarLinksSection a img{
 	background-color: #FFFFFF;
@@ -654,6 +661,7 @@ li.featuredProductListTemplate div.prodThumbContainer{
     border-radius: 3px;
     margin: 3px;
     padding: 9px 5px;
+	float: left;
 }
 
 
@@ -717,7 +725,7 @@ li.featuredProductListTemplate div.prodThumbContainer{
 .categorySidebarSection{
 	float: left;
     margin-left: 5px;
-    width: 200px;
+    width: 205px;
 }
 
 .breadcrumb li a{
