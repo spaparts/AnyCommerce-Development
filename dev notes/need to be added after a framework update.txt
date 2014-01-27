@@ -1,5 +1,8 @@
 Things that need to be re-added after a framework update:
 
+Add this commit. Ignore the ABTesting section:
+https://github.com/downlite/SealyB2B-AnyCommerceApp/commit/4c3642f902d29d06f9bfc00f2c2abe38d557507f
+
 app-quickstart.js:
 - //CUSTOM TEMPLATES
 'categoryFeaturedProductsTemplate',
