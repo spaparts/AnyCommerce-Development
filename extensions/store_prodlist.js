@@ -69,7 +69,6 @@ The advantage of saving the data in memory and local storage is lost if the data
 			dispatch : function(pid,tagObj,Q)	{
 				var obj = {};
 				obj["_cmd"] = "appProductGet";
-				obj.withSchedule = 1;
 				obj["pid"] = pid;
 				obj["_tag"] = tagObj;
 				app.model.addDispatchToQ(obj,Q);
@@ -118,7 +117,6 @@ The advantage of saving the data in memory and local storage is lost if the data
 				},
 			dispatch : function(obj,tagObj,Q)	{
 				obj["_cmd"] = "appProductGet";
-				obj.withSchedule = 1;
 				obj["_tag"] = tagObj;
 				app.model.addDispatchToQ(obj,Q);
 				}

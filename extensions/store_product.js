@@ -75,7 +75,6 @@ var store_product = function() {
 //initially, reviews were obtained here automatically. But now it is likely a callback will be needed or that no reviews are needed, so removed. 20120326
 				var obj = {};
 				obj["_cmd"] = "appProductGet";
-				obj["withSchedule"] = 1;
 				obj["withVariations"] = 1;
 //only get inventory if it matters. inv_mode of 1 means inventory is not important.
 				if(app.vars.thisSessionIsAdmin || (typeof zGlobals == 'object' && zGlobals.globalSettings.inv_mode != 1))
