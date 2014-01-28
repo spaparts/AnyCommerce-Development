@@ -25,8 +25,10 @@
    return link;
  }
  
- loadcss('http://app.onlineformals.com/redirectmodal.css');
+ //loadcss('http://app.spapartsdepot.com/redirectmodal.css');
  </script>
+ <!--COMMENT OUT THIS LINE BEFORE TURNING THE MODAL LIVE-->
+ <link rel="stylesheet" type="text/css" href="redirectmodal.css" />
   
  <!--BEGIN MODAL FUNCTION SCRIPT-->
 <script type="text/javascript">
@@ -45,7 +47,7 @@ function handleRedirect() {
 		//console.log("urlString4 = " + urlString4);
 		var prodSku = urlString4[0];
 		//console.log("prodSku = " + prodSku);
-		window.location = "http://app.onlineformals.com/product/"+prodSku+"/";
+		window.location = "http://app.spapartsdepot.com/product/"+prodSku+"/";
  	}
 	else if(windowUrl.indexOf("category")>= 0){
 		var urlString = location.href;
@@ -54,10 +56,10 @@ function handleRedirect() {
 		//console.log("urlString2 = " + urlString2);
 		var catTitle = urlString2[1];
 		//console.log("catTitle = " + catTitle);
-		window.location = "http://app.onlineformals.com/category/"+catTitle;
+		window.location = "http://app.spapartsdepot.com/category/"+catTitle;
 	}
 	else{
-		window.location = "http://app.onlineformals.com";
+		window.location = "http://app.spapartsdepot.com";
 	}
 }
 function bugLater(){
@@ -81,7 +83,7 @@ function autoRedirect(){
 		//console.log("urlString4 = " + urlString4);
 		var prodSku = urlString4[0];
 		//console.log("prodSku = " + prodSku);
-		window.location = "http://app.onlineformals.com/product/"+prodSku+"/";
+		window.location = "http://app.spapartsdepot.com/product/"+prodSku+"/";
  	}
 	else if(windowUrl.indexOf("category")>= 0){
 		var urlString = location.href;
@@ -90,10 +92,10 @@ function autoRedirect(){
 		//console.log("urlString2 = " + urlString2);
 		var catTitle = urlString2[1];
 		//console.log("catTitle = " + catTitle);
-		window.location = "http://app.onlineformals.com/category/"+catTitle;
+		window.location = "http://app.spapartsdepot.com/category/"+catTitle;
 	}
 	else{
-		window.location = "http://app.onlineformals.com";
+		window.location = "http://app.spapartsdepot.com";
 	}
 }
 function resetRedirectPreferences(){
@@ -127,12 +129,12 @@ $(document).ready(function() {
   
   $('<div class="redirectToSiteApp"> '+
   '<h3>For an improved shopping experience, use our new site!</h3>' +
-  '<button onclick="handleRedirect(); return false;">New App Site</button>' +
+  '<button onclick="handleRedirect(); return false;">New Site</button>' +
   '<button class="bugLaterButton" onclick="bugLater()">Old Site</button>' +
   '<div>' +
-   '<img onclick="handleRedirect(); return false;" src="http://app.onlineformals.com/Images/Homepage/headerlogo.png" />' +
+   '<img onclick="handleRedirect(); return false;" src="Logo.png" />' +
   '</div>' +
-  '<button class="autoRedirectButton" onclick="autoRedirect()">Always redirect to the new site whenever visiting www.onlineformals.com</button>' +
+  '<button class="autoRedirectButton" onclick="autoRedirect()">Always redirect to the new site whenever visiting www.spapartsdepot.com</button>' +
   //'<button onclick="resetRedirectPreferences()">Reset Preferences</button>' +
   '</div>').appendTo('head');
   
@@ -142,8 +144,7 @@ $(document).ready(function() {
     $('<div style="background-color:white; float:left;" class="autoRedirectToSiteApp"> '+
     '<h3>Redirecting to app site. Please wait a few Seconds....</h3>' +
     '<div>' +
-    '<img src="http://app.onlineformals.com/Images/loadingscreen/loading_animation_online_formals.gif" />' +
-	'<img class="redirectLogoBody" src="http://app.onlineformals.com/V_store_app_store_redirect_modal/logo.png" />' +
+	'<img class="redirectLogoBody" src="http://app.spapartsdepot.com/V_store_app_store_redirect_modal/Logo.png" />' +
     '</div>' +
     '<p class="stopFutureRedirectMessage">Done!</p>' +
     '<button onclick="resetRedirectPreferences()">Prompt me next time instead of auto-redirecting</button>' +
@@ -162,7 +163,7 @@ $(document).ready(function() {
 		//console.log("urlString4 = " + urlString4);
 		var prodSku = urlString4[0];
 		//console.log("prodSku = " + prodSku);
-		window.location = "http://app.onlineformals.com/product/"+prodSku+"/";
+		window.location = "http://app.spapartsdepot.com/product/"+prodSku+"/";
  	}
 	else if(windowUrl.indexOf("category")>= 0){
 		var urlString = location.href;
@@ -171,10 +172,10 @@ $(document).ready(function() {
 		//console.log("urlString2 = " + urlString2);
 		var catTitle = urlString2[1];
 		//console.log("catTitle = " + catTitle);
-		window.location = "http://app.onlineformals.com/category/"+catTitle;
+		window.location = "http://app.spapartsdepot.com/category/"+catTitle;
 	}
 	else{
-		window.location = "http://app.onlineformals.com";
+		window.location = "http://app.spapartsdepot.com";
 	}
     }
     var autoRedirectTimer;
@@ -206,7 +207,7 @@ $(document).ready(function() {
 		//console.log("urlString4 = " + urlString4);
 		var prodSku = urlString4[0];
 		//console.log("prodSku = " + prodSku);
-		window.location = "http://app.onlineformals.com/product/"+prodSku+"/";
+		window.location = "http://app.spapartsdepot.com/product/"+prodSku+"/";
  	}
 	else if(windowUrl.indexOf("category")>= 0){
 		var urlString = location.href;
@@ -215,10 +216,10 @@ $(document).ready(function() {
 		//console.log("urlString2 = " + urlString2);
 		var catTitle = urlString2[1];
 		//console.log("catTitle = " + catTitle);
-		window.location = "http://app.onlineformals.com/category/"+catTitle;
+		window.location = "http://app.spapartsdepot.com/category/"+catTitle;
 	}
 	else{
-		window.location = "http://app.onlineformals.com";
+		window.location = "http://app.spapartsdepot.com";
 	}
  }
 });

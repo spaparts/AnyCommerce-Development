@@ -1,6 +1,6 @@
 .redirectToSiteApp{
 	float:left; 
-	border:5px solid #E61652 !important;
+	border:5px solid #1286B5 !important;
 }
 .redirectToSiteApp h3{
 	float: left;
@@ -16,12 +16,12 @@
 	clear:both;
 }
 .redirectToSiteApp div img{
-	margin-left:2px;
+	margin-left:0;
 	margin-top:20px;
 	cursor:pointer;
 }
 .redirectToSiteApp button{
-	background-color: #E61652;
+	background-color: #1286B5;
     border-color:#f28aa8;
 	border-color: rgba(230, 22, 82, 0.5);
     float: left;
@@ -83,7 +83,7 @@ div.ui-dialog-titlebar {
 	float: left;
     height: 55px;
     margin-top: 0;
-	background-color: #E61652;
+	background-color: #1286B5;
     border-color:#f28aa8;
 	border-color: rgba(230, 22, 82, 0.5);
 	color: #FFFFFF;
