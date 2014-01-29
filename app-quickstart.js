@@ -480,6 +480,7 @@ else	{
 
 		authenticateBuyer : {
 			onSuccess : function(tagObj)	{
+				app.vars.customerSchedule = app.data[tagObj.datapointer].schedule;
 				app.vars.cid = app.data[tagObj.datapointer].cid; //save to a quickly referencable location.
 				$('#loginSuccessContainer').show(); //contains 'continue' button.
 				$('#loginMessaging').empty().show().append("Thank you, you are now logged in."); //used for success and fail messaging.
@@ -1508,7 +1509,13 @@ if(ps.indexOf('?') >= 1)	{
 				if(app.u.getUsernameFromCart())	{
 					$('.username').text(app.u.getUsernameFromCart());
 					}
-				},
+				for(var index in app.data){
+			   	 if(index.indexOf("appProductGet|") == 0){
+             		app.model.destroy(index);
+             	 }
+           		}
+         		$('[data-templateid=productTemplate], [data-templateid=categoryTemplate]', '#mainContentArea').remove();
+			},
 			
 			
 			handleLogoutActions : function()  {
@@ -1516,7 +1523,13 @@ if(ps.indexOf('?') >= 1)	{
 				$('.username').empty();
 				app.u.logBuyerOut();
 				showContent('homepage',{});
-				},
+				for(var index in app.data){
+					if(index.indexOf("appProductGet|") == 0){
+				    	app.model.destroy(index);
+             		}
+           		}
+         		$('[data-templateid=productTemplate], [data-templateid=categoryTemplate]', '#mainContentArea').remove();
+			},
 
 /*
 

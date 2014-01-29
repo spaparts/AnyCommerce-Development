@@ -430,6 +430,7 @@ If the data is not there, or there's no data to be retrieved (a Set, for instanc
 				},
 			dispatch : function(obj,_tag,Q)	{
 				obj["_cmd"] = "appProductGet";
+				obj.withSchedule = 1;
  				obj["_tag"] = _tag;
 				app.model.addDispatchToQ(obj,Q);
 				}
