@@ -180,7 +180,19 @@ var _store_spa = function() {
 							$errorDiv.anymessage({'message':errors});
 							}
 					showContent('customer',{'show':'myaccount'})
-			} //loginFrmSubmit		
+			}, //END loginFrmSubmit	
+			
+			hideShowPasswordRecovery : 	function() {
+				app.u.dump("hideShowPasswordRecovery has ran");
+				if($(".checkoutRecoverPassLink").is(':checked')){
+					$("#checkoutRecoverPasswordContainer").show();
+					app.u.dump("Checked. Showing container");
+				}
+				else{
+					$("#checkoutRecoverPasswordContainer").hide();
+					app.u.dump("Unchecked. Hiding container");
+				}
+			}//END hideShowPasswordRecovery
 		},//END a FUNCTIONS
 		
 		u : {

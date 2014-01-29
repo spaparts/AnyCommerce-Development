@@ -8,8 +8,20 @@ The chkout prefix is reserved for checkout.
 item list and summary are separate just to give more control over location.
 -->
 <div id='checkoutTemplate' class='checkoutFormContainer' data-app-role='checkout'>
-
-	<form action='#'>
+    
+    <div id='checkoutRecoverPasswordContainer'>
+        <div id='recoverPasswordMessaging' class='appMessaging'></div>
+        <form action='#' onSubmit="app.calls.appBuyerPasswordRecover.init($('#passwordRecoveryLogin').val(),{'callback':'showMessaging','message':'Thank you, will receive an email shortly','jqObj':$('.appMessaging', $(this).parent())}); app.model.dispatchThis('immutable'); return false;">
+            <fieldset>
+                <legend>Password Recovery</legend>
+                <div class=''><label for='passwordRecoveryLogin'>Login/Email</label> <input type='text' name='login' required='required' id='passwordRecoveryLogin' size='25' /></div>
+                <span>(this is usually your email address) </span>
+                <div><input type='submit' class='ui-button-text ui-button ui-state-default ui-corner-all recoverPasswordButton' value='Recover Password' /></div>
+            </fieldset>
+        </form>
+    </div><!-- /recoverPasswordContainer -->
+    
+    <form class="checkoutForm" action='#'>
 	<input type='hidden' name='bill/shortcut' data-bind="var: cart(bill/shortcut); format:popVal;" />
 	<input type='hidden' name='ship/shortcut' data-bind="var: cart(ship/shortcut); format:popVal;" />
 
@@ -372,6 +384,8 @@ International Shipping Now Available!</b><br><object width="550" height="90"><pa
 	
 </div>
 
+ 	
+
 
 
 
@@ -382,25 +396,13 @@ International Shipping Now Available!</b><br><object width="550" height="90"><pa
 <div data-app-role='login'>
     
     <div>If you have an account with us, please enter your email and password below to login. If you would like to create an account, use the create customer account slider below. If you would like to make this purchase as a guest(No account created), simply enter your email address below with no password.</div>
-	<input type='email' required='required' name='bill/email' size='30' placeholder="email address" data-bind="var:cart(bill/email); defaultVar:cart(customer/login); format:popVal;" data-app-event='orderCreate|execBuyerEmailUpdate' /><br />
+    <hr />
+    <div class="checkoutReturnCustNote"><span>Note:</span> If you are a returning customer and you have never setup an account before, please use password recovery first before attempting to create an account as the old system may have automatically made an account for you on your previous purchase. We apologize for the inconvenience.</div>
+    <input class="checkoutEmailLogin" type='email' required='required' name='bill/email' size='30' placeholder="email address" data-bind="var:cart(bill/email); defaultVar:cart(customer/login); format:popVal;" data-app-event='orderCreate|execBuyerEmailUpdate' /><br />
     <div data-app-role='loginPasswordContainer' class='displayNone floatRight passwordContainer'>
 		<input type='password' placeholder='password' size='30' name='password' /><button data-app-event='orderCreate|execBuyerLogin'>login</button>
 	</div>
-    <div class="checkoutReturnCustNote"><span>Note:</span> If you are a returning customer and you have never setup an account before, please use password recovery first before attempting to create an account as the old system may have automatically made an account for you on your previous purchase. We apologize for the inconvenience.</div>
-
-    
-    <div id='checkoutRecoverPasswordContainer'>
-    	<hr />
-    	<div id='recoverPasswordMessaging' class='appMessaging'></div>
-    	<form action='#' onSubmit="app.calls.appBuyerPasswordRecover.init($('#passwordRecoveryLogin').val(),{'callback':'showMessaging','message':'Thank you, will receive an email shortly','jqObj':$('.appMessaging', $(this).parent())}); app.model.dispatchThis('immutable'); return false;">
-    		<fieldset>
-            	<legend>Password Recovery</legend>
-                <div class=''><label for='passwordRecoveryLogin'>Login/Email</label> <input type='text' name='login' required='required' id='passwordRecoveryLogin' size='25' /></div>
-                <span>(this is usually your email address) </span>
-                <div><input type='submit' class='ui-button-text ui-button ui-state-default ui-corner-all recoverPasswordButton' value='Recover Password' /></div>
-    		</fieldset>
-    	</form>
-	</div><!-- /recoverPasswordContainer -->
+    <p class="checkoutRecoverPassLinkCont">Show password recovery section<input type="checkbox" class="pointer checkoutRecoverPassLink" onChange="app.ext._store_spa.a.hideShowPasswordRecovery();" /></p>
 
 	<label class='accountCreateContainer'><input type='checkbox' name='want/create_customer' data-app-event='orderCreate|tagAsAccountCreate' />Create customer account</label>
 </div>

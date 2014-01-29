@@ -1542,6 +1542,12 @@ td.prodSummaryContainer a.productPrintProd{
 
 .panelContent section div div.passwordContainer{
 	float: left;
+	clear:left;
+}
+.passwordContainer button{
+	margin-top: -14px;
+}
+.passwordContainer input{
 }
 .panelContent section div input{
 }
@@ -1557,12 +1563,38 @@ td.prodSummaryContainer a.productPrintProd{
 
 .checkoutReturnCustNote{
 	float:left;
+	clear:left;
 }
 .checkoutReturnCustNote span{
 	color:#cc0000;
 }
 
+.checkoutEmailLogin{
+	float:left;
+	clear:left;
+}
+.checkoutRecoverPassLinkCont{
+	float:left;
+	clear:left;
+	margin-top: 10px;
+}
+.checkoutRecoverPassLink{
+	margin-left: 5px !important;
+	float: left;
+}
+
+.checkoutFormContainer form.checkoutForm{
+	float:left;
+}
+
 #checkoutRecoverPasswordContainer{
+	float:left;
+	display:none;
+}
+#checkoutRecoverPasswordContainer div#recoverPasswordMessaging{
+	float:left;
+}
+#checkoutRecoverPasswordContainer form{
 	float:left;
 }
 
