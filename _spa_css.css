@@ -1092,6 +1092,29 @@ td.prodSummaryContainer a.productPrintProd{
 .productAccessories{
 }
 
+.productQuantDiscountCont{
+	border: 1px solid #025AAB;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding: 1px;
+    width: 220px;
+}
+.productQuantDiscountTitle{
+	background-color: #016DF4;
+    color: #FFFFFF;
+    font-size: 10pt;
+	text-align: center;
+}
+.productQuantDiscountTitle b{
+	font-weight: bolder;
+	font-family: verdana,arial,helvetica;
+}
+.productQuantDiscountText{
+	font-size: 10pt;
+    padding: 5px;
+    text-align: center;
+}
+
 
 
 
