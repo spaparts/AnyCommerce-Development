@@ -89,6 +89,36 @@ var _store_spa = function() {
 		},
 		
 		
+		
+		
+		calls : {
+			
+			cartItemUpdate : {
+			init : function(stid,qty,tagObj)	{
+				app.u.dump('BEGIN app.ext._store_spa.calls.cartItemUpdate.');
+				tagObj = $.isEmptyObject(tagObj) ? {} : tagObj;
+				var r = 0;
+				qty = 0;
+				if(!stid || isNaN(qty))	{
+					app.u.dump(" -> cartItemUpdate requires both a stid ("+stid+") and a quantity as a number("+qty+")");
+					}
+				else	{
+					r = 1;
+					this.dispatch(stid,qty,tagObj);
+					}
+				return r;
+				},
+			dispatch : function(stid,qty,tagObj)	{
+//				app.u.dump(' -> adding to PDQ. callback = '+callback)
+				app.model.addDispatchToQ({"_cmd":"cartItemUpdate","stid":stid,"quantity":qty,"_tag": tagObj},'immutable');
+				app.calls.cartSet.init({'payment-pt':null}); //nuke paypal token anytime the cart is updated.
+				}
+			 },
+		},
+		
+		
+		
+		
 		////////////////////////////////////   ACTION    \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 //actions are functions triggered by a user interaction, such as a click/tap.
@@ -112,11 +142,16 @@ var _store_spa = function() {
 			clearCart : function() {
 				var itemCount = $("#cartStuffList > li").length;
 				app.u.dump("var itemCount = " + itemCount);
+				
 				for (var i=1;i<=itemCount;i++)
 				{
-					$(".qtyInput").val(0);
+					app.u.dump("Loop: " + i);
+					var $cartItem = $("#cartStuffList li:nth-child("+i+")");
+					$("#cartStuffList li:nth-child("+i+") input.qtyInput").val(0);
 					//app.u.dump($("#cartStuffList li:nth-child("+i+") input.qtyInput"));	
-					app.ext._store_spa.u.updateCartQty($("#cartStuffList li:nth-child("+i+") input.qtyInput")); 
+					
+					app.u.dump("$cartItem = " + $cartItem)
+					app.ext._store_spa.u.updateCartQty($cartItem); 
 				}
 					app.model.dispatchThis('immutable');
 			},
@@ -266,7 +301,8 @@ var _store_spa = function() {
 				updateCartQty : function($input,tagObj)	{
 				
 				var stid = $input.attr('data-stid');
-				var qty = $input.val();
+				var qty = $input.val(0);
+				app.u.dump("$input.val() = " + $input.val());
 				
 				if(stid && qty && !$input.hasClass('disabled'))	{
 					$input.attr('disabled','disabled').addClass('disabled').addClass('loadingBG');
@@ -282,7 +318,7 @@ var _store_spa = function() {
 the request for quantity change needs to go first so that the request for the cart reflects the changes.
 the dom update for the lineitem needs to happen last so that the cart changes are reflected, so a ping is used.
 */
-					app.ext.store_cart.calls.cartItemUpdate.init(stid,qty);
+					app.ext._store_spa.calls.cartItemUpdate.init(stid,qty);
 					app.ext.store_cart.u.updateCartSummary();
 //lineitem template only gets updated if qty > 1 (less than 1 would be a 'remove').
 					if(qty >= 1)	{
