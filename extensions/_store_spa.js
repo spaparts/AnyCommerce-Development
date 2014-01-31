@@ -150,9 +150,10 @@ var _store_spa = function() {
 					$("#cartStuffList li:nth-child("+i+") input.qtyInput").val(0);
 					//app.u.dump($("#cartStuffList li:nth-child("+i+") input.qtyInput"));	
 					
-					app.u.dump("$cartItem = " + $cartItem)
+					app.u.dump($cartItem)
 					app.ext._store_spa.u.updateCartQty($cartItem); 
 				}
+					app.ext.store_cart.u.updateCartSummary();
 					app.model.dispatchThis('immutable');
 			},
 			//END clearCart
@@ -319,7 +320,7 @@ the request for quantity change needs to go first so that the request for the ca
 the dom update for the lineitem needs to happen last so that the cart changes are reflected, so a ping is used.
 */
 					app.ext._store_spa.calls.cartItemUpdate.init(stid,qty);
-					app.ext.store_cart.u.updateCartSummary();
+					//app.ext.store_cart.u.updateCartSummary();
 //lineitem template only gets updated if qty > 1 (less than 1 would be a 'remove').
 					if(qty >= 1)	{
 						app.calls.ping.init(tagObj,'immutable');
