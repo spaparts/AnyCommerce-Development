@@ -1354,6 +1354,11 @@ app.u.dump("BEGIN orderCreate.e.cartItemAddWithChooser (Click!)");
 						if(app.ext.orderCreate.validate.checkout($form))	{
 							$('body').showLoading({'message':'Creating order...'});
 							app.ext.cco.u.sanitizeAndUpdateCart($form);
+							$(".paybySupplemental div label input.creditCard").val("");
+							$(".paybySupplemental div select.creditCardMonthExp").val("");
+							$(".paybySupplemental div select.creditCardYearExp").val("");
+							$(".paybySupplemental div label input.creditCardCVV").val("");
+
 //paypal payments are added to the q as soon as the user returns from paypal.
 //This will solve the double-add to the payment Q
 //payment method validation ensures a valid tender is present.
@@ -1362,15 +1367,29 @@ app.u.dump("BEGIN orderCreate.e.cartItemAddWithChooser (Click!)");
 								app.ext.cco.u.buildPaymentQ($form);
 								}
 							app.ext.cco.calls.cartOrderCreate.init({'callback':'cart2OrderIsComplete','extension':'orderCreate','jqObj':$form});
-							app.model.dispatchThis('immutable');						
+							app.model.dispatchThis('immutable');
+							$(".paybySupplemental div label input.creditCard").val("");
+							$(".paybySupplemental div select.creditCardMonthExp").val("");
+							$(".paybySupplemental div select.creditCardYearExp").val("");
+							$(".paybySupplemental div label input.creditCardCVV").val("");
+						
 							
 							}
 						else	{
 							//even though validation failed, take this opportunity to update the cart on the server.
 							app.ext.cco.u.sanitizeAndUpdateCart($form);
 							app.model.dispatchThis('immutable');
+							$(".paybySupplemental div label input.creditCard").val("");
+							$(".paybySupplemental div select.creditCardMonthExp").val("");
+							$(".paybySupplemental div select.creditCardYearExp").val("");
+							$(".paybySupplemental div label input.creditCardCVV").val("");
+
 							//scrolls up to first instance of an error.
 							$('html, body').animate({scrollTop : $('.formValidationError, .ui-widget-anymessage, .ui-state-error',$form).first().offset().top},1000); //scroll to first instance of error.
+							$(".paybySupplemental div label input.creditCard").val("");
+							$(".paybySupplemental div select.creditCardMonthExp").val("");
+							$(".paybySupplemental div select.creditCardYearExp").val("");
+							$(".paybySupplemental div label input.creditCardCVV").val("");
 							}
 						}
 					})
