@@ -1285,7 +1285,15 @@ td.prodSummaryContainer a.productPrintProd{
 /***********************************************************************************************************************************/
 /*****SEARCH TEMPLATE****/
 .searchRightSidebarCont{
-	margin-top: 9px;
+	float: right;
+    margin-left: 10px;
+    margin-top: 9px;
+    width: 200px;
+}
+
+.previewListContainer{
+	float: left;
+    margin-left: 10px;
 }
 
 
