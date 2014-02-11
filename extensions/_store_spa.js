@@ -444,7 +444,29 @@ the dom update for the lineitem needs to happen last so that the cart changes ar
 					}
 				}
 					
-			} //atcVariations
+			}, //atcVariations
+			
+			atcForm : function($tag,data)	{
+				$tag.append("<input type='hidden' name='sku' value='"+data.value.pid+"' />");
+				/*REPLACE THIS ATTRIBUTE WITH NEW CUSTOM ATTRIBUTE WHENEVER IT IS CREATED.*/if(data.value["%attribs"]["zoovy:schedule_whol"]){
+					$tag.attr("onSubmit","").unbind("submit");
+					$tag.bind('submit', function(){
+						var $notice = $('<div><div>I understand it takes 3-14 business days to customize my item. This item is not returnable / exchangeable as it is considered customized. Once this order is placed, no changes or cancellations are permitted.</div></div>');
+						
+						var $button = $('<div class="alignRight"><button class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"><span class="ui-button-text">I agree</span></button></div>');
+						$button.bind('click',function(){
+							$notice.dialog('close');
+							app.ext.myRIA.u.addItemToCart($tag,{'action':'modal'}); 
+							return false;
+							});
+							
+						$notice.append($button);
+						
+						$notice.dialog({'modal':'true','title':'Custom Product Agreement', 'width':400});
+						return false;
+						});
+					}
+				} //END atcForm
 		}
 
 		}
