@@ -255,7 +255,7 @@ renderOptionRADIO: function(pog)	{
     var i = 0;
     var len = pog['@options'].length;
 	while (i < len) {
-		$parentDiv.append($("<label \/>").append($('<input>').attr({type: "radio", name: pogid, value: pog['@options'][i]['v']})).append(pog['@options'][i]['prompt']));
+		$parentDiv.append($("<label \/>").append($('<input>').attr({type: "radio", name: pogid, value: pog['@options'][i]['v']})).append(pog['@options'][i]['prompt']).append(" " + pog['@options'][i]['p']));
 		i++;
 		}
 	return $parentDiv;
